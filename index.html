@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Yadav | Data Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .skill-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .skill-tag {
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+        }
+        .timeline-content {
+            padding: 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+        .rating-star {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .rating-star:hover {
+            transform: scale(1.2);
+        }
+        #visitorMap {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .visitor-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header with Dark Mode Toggle -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold">Akash Yadav</h1>
+            <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-100">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Akash Yadav</h1>
+                <h2 class="text-2xl md:text-3xl text-blue-600 mb-6">Data Engineer | Python Developer | Cloud Specialist</h2>
+                <p class="text-lg mb-8">I build scalable data solutions and robust cloud infrastructure to transform raw data into actionable insights.</p>
+                
+                <div class="flex items-center mb-6">
+                    <div class="mr-4 p-2 bg-blue-100 rounded-lg">
+                        <span class="text-2xl font-bold" id="visitorCount">0</span>
+                        <span class="text-sm">Visitors</span>
+                    </div>
+                    <div class="p-2 bg-blue-100 rounded-lg">
+                        <span class="text-2xl font-bold" id="currentTime">00:00</span>
+                        <span class="text-sm">Berlin</span>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="https://github.com/yourusername" class="text-2xl hover:text-blue-600"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourprofile" class="text-2xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="text-2xl hover:text-blue-600"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 flex flex-col items-center">
+                <img src="https://via.placeholder.com/300" alt="Akash Yadav" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-blue-500 mb-6">
+                <div class="text-center">
+                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Berlin, Germany</p>
+                    <p id="weatherInfo" class="text-sm"><i class="fas fa-cloud-sun mr-2"></i> Loading weather...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-6">Data engineer passionate about building scalable solutions in the cloud. I specialize in Python development and creating robust data pipelines that transform raw information into actionable insights.</p>
+                    <p class="text-lg mb-6">When I'm not optimizing ETL workflows, you might find me on the badminton court or diving into the latest machine learning research.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">How's your day going?</h3>
+                        <div class="flex justify-center mb-2" id="ratingStars">
+                            <i class="fas fa-star rating-star text-2xl mx-1 text-gray-300" data-rating="1"></i>
+                            <i class="fas fa-star rating-star text-2xl mx-1 text-gray-300" data-rating="2"></i>
+                            <i class="fas fa-star rating-star text-2xl mx-1 text-gray-300" data-rating="3"></i>
+                            <i class="fas fa-star rating-star text-2xl mx-1 text-gray-300" data-rating="4"></i>
+                            <i class="fas fa-star rating-star text-2xl mx-1 text-gray-300" data-rating="5"></i>
+                        </div>
+                        <p class="text-center text-sm" id="ratingText">Rate my day (1-5 stars)</p>
+                        <div class="mt-4 text-center">
+                            <p id="ratingStats">Average: <span id="averageRating">0</span> (<span id="totalRatings">0</span> votes)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4">Skills</h3>
+                    <div class="skill-cloud">
+                        <span class="skill-tag bg-blue-100 text-blue-800">Python</span>
+                        <span class="skill-tag bg-green-100 text-green-800">PySpark</span>
+                        <span class="skill-tag bg-yellow-100 text-yellow-800">AWS</span>
+                        <span class="skill-tag bg-purple-100 text-purple-800">Django</span>
+                        <span class="skill-tag bg-red-100 text-red-800">Docker</span>
+                        <span class="skill-tag bg-indigo-100 text-indigo-800">SQL</span>
+                        <span class="skill-tag bg-pink-100 text-pink-800">Cassandra</span>
+                        <span class="skill-tag bg-teal-100 text-teal-800">ETL</span>
+                        <span class="skill-tag bg-orange-100 text-orange-800">Spark</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800">Data Pipelines</span>
+                        <span class="skill-tag bg-green-100 text-green-800">Machine Learning</span>
+                        <span class="skill-tag bg-yellow-100 text-yellow-800">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Experience</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline-item">
+                    <div class="timeline-item:before bg-blue-500"></div>
+                    <div class="timeline-content bg-blue-50 border-l-4 border-blue-500">
+                        <h3 class="text-xl font-semibold">Software Engineer – Infrastructure & Data Applications</h3>
+                        <p class="text-blue-600 font-medium">Nocturne GmbH | Nov 2023 – Apr 2025 | Berlin, Germany</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Engineered scalable, cloud-native data pipelines to process medical imaging data using Python and AWS</li>
+                            <li>Led design and deployment of data quality validation and transformation workflows</li>
+                            <li>Built and containerized backend systems (Django, Docker) to enhance developer productivity</li>
+                            <li>Improved system performance through clean, testable Python code and CI best practices</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-item:before bg-green-500"></div>
+                    <div class="timeline-content bg-green-50 border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold">Associate Software Engineer – Data & Platform Team</h3>
+                        <p class="text-green-600 font-medium">National Payments Corporation of India (NPCI) | July 2022 – Oct 2023 | Chennai, India</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Designed distributed data solutions for real-time transaction monitoring and fraud detection</li>
+                            <li>Developed automated ETL pipelines and internal scripts for backend workflows</li>
+                            <li>Deployed secure RESTful APIs with integrated logging and alerting</li>
+                            <li>Built interactive dashboards for real-time analytics using internal telemetry data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Medical Imaging Data Pipeline</h3>
+                        <p class="text-gray-600 mb-4">Scalable pipeline for processing and analyzing medical images with AWS</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Python</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">AWS</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">Django</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:underline">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Fraud Detection System</h3>
+                        <p class="text-gray-600 mb-4">Real-time transaction monitoring with machine learning</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Python</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">PySpark</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">Cassandra</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:underline">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Developer Productivity Tools</h3>
+                        <p class="text-gray-600 mb-4">Automation scripts and monitoring dashboards</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Python</span>
+                            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded">SQL</span>
+                            <span class="px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded">Docker</span>
+                        </div>
+                        <a href="#" class="text-blue-600 hover:underline">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Visitor Analytics</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Visitor Locations</h3>
+                    <div id="visitorMap">
+                        <!-- Dots will be added dynamically -->
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Visitor Statistics</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-medium">Total Visitors: <span id="totalVisitors">1,250</span></p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="font-medium">Device Usage</p>
+                            <canvas id="deviceChart" height="150"></canvas>
+                        </div>
+                        
+                        <div>
+                            <p class="font-medium">Most Active Time</p>
+                            <canvas id="timeChart" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            
+            <div class="max-w-2xl mx-auto">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-1 font-medium">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block mb-1 font-medium">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block mb-1 font-medium">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="source" class="block mb-1 font-medium">How did you find me?</label>
+                        <select id="source" name="source" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Select an option</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="GitHub">GitHub</option>
+                            <option value="Search Engine">Search Engine</option>
+                            <option value="Referral">Referral</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                        Send Message
+                    </button>
+                </form>
+                
+                <div id="formSuccess" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg">
+                    <p>Thank you for your message! I'll get back to you soon.</p>
+                </div>
+                
+                <div id="formError" class="hidden mt-6 p-4 bg-red-100 text-red-800 rounded-lg">
+                    <p>There was an error sending your message. Please try again later.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-bold">Akash Yadav</h2>
+                    <p class="text-gray-400">Data Engineer | Python Developer | Cloud Specialist</p>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="https://github.com/yourusername" class="text-xl hover:text-blue-400"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourprofile" class="text-xl hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="text-xl hover:text-blue-400"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>© <span id="currentYear"></span> Akash Yadav. All rights reserved.</p>
+                <p class="mt-2">Made with ❤️ by Akash</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('bg-gray-900');
+            body.classList.toggle('text-white');
+            body.classList.toggle('bg-gray-50');
+            body.classList.toggle('text-gray-800');
+            
+            // Toggle icon
+            const icon = darkModeToggle.querySelector('i');
+            if (icon.classList.contains('fa-moon')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+            
+            // Save preference to localStorage
+            const isDark = body.classList.contains('bg-gray-900');
+            localStorage.setItem('darkMode', isDark);
+        });
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            darkModeToggle.click(); // Trigger dark mode
+        }
+        
+        // Visitor Counter
+        let visitorCount = localStorage.getItem('visitorCount') || 1000;
+        visitorCount = parseInt(visitorCount) + 1;
+        localStorage.setItem('visitorCount', visitorCount);
+        
+        // Animate counter
+        let currentCount = 0;
+        const counter = document.getElementById('visitorCount');
+        const increment = Math.ceil(visitorCount / 50);
+        
+        const countUp = setInterval(() => {
+            currentCount += increment;
+            if (currentCount >= visitorCount) {
+                currentCount = visitorCount;
+                clearInterval(countUp);
+            }
+            counter.textContent = currentCount.toLocaleString();
+        }, 20);
+        
+        // Current Time (Berlin)
+        function updateBerlinTime() {
+            const options = { 
+                timeZone: 'Europe/Berlin', 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: false 
+            };
+            const berlinTime = new Date().toLocaleTimeString('en-US', options);
+            document.getElementById('currentTime').textContent = berlinTime;
+        }
+        
+        updateBerlinTime();
+        setInterval(updateBerlinTime, 60000);
+        
+        // Weather (simulated - in a real app you'd use an API)
+        document.getElementById('weatherInfo').textContent = "☀️ 22°C | Sunny";
+        
+        // Day Rating System
+        const stars = document.querySelectorAll('.rating-star');
+        let currentRating = 0;
+        let totalRatings = localStorage.getItem('totalRatings') || 0;
+        let sumRatings = localStorage.getItem('sumRatings') || 0;
+        let averageRating = totalRatings > 0 ? (sumRatings / totalRatings).toFixed(1) : 0;
+        
+        // Update rating display
+        document.getElementById('averageRating').textContent = averageRating;
+        document.getElementById('totalRatings').textContent = totalRatings;
+        
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.getAttribute('data-rating'));
+                currentRating = rating;
+                
+                // Update star colors
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.classList.remove('text-gray-300');
+                        s.classList.add('text-yellow-400');
+                    } else {
+                        s.classList.add('text-gray-300');
+                        s.classList.remove('text-yellow-400');
+                    }
+                });
+                
+                // Update rating text
+                const ratingTexts = [
+                    "Terrible day",
+                    "Not great",
+                    "Okay day",
+                    "Good day",
+                    "Amazing day!"
+                ];
+                document.getElementById('ratingText').textContent = ratingTexts[rating - 1];
+                
+                // Update stats (in a real app, you'd send this to a server)
+                totalRatings++;
+                sumRatings += rating;
+                averageRating = (sumRatings / totalRatings).toFixed(1);
+                
+                document.getElementById('averageRating').textContent = averageRating;
+                document.getElementById('totalRatings').textContent = totalRatings;
+                
+                // Save to localStorage
+                localStorage.setItem('totalRatings', totalRatings);
+                localStorage.setItem('sumRatings', sumRatings);
+            });
+            
+            // Hover effect
+            star.addEventListener('mouseover', () => {
+                const hoverRating = parseInt(star.getAttribute('data-rating'));
+                stars.forEach((s, index) => {
+                    if (index < hoverRating && currentRating === 0) {
+                        s.classList.remove('text-gray-300');
+                        s.classList.add('text-yellow-300');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', () => {
+                if (currentRating === 0) {
+                    stars.forEach(s => {
+                        s.classList.add('text-gray-300');
+                        s.classList.remove('text-yellow-300');
+                    });
+                }
+            });
+        });
+        
+        // Visitor Map (simulated)
+        const visitorMap = document.getElementById('visitorMap');
+        const locations = [
+            { x: 30, y: 40 },  // Asia
+            { x: 25, y: 50 },  // Middle East
+            { x: 70, y: 30 },  // North America
+            { x: 75, y: 45 },  // South America
+            { x: 50, y: 30 },  // Europe
+            { x: 40, y: 70 },  // Africa
+            { x: 85, y: 70 }   // Australia
+        ];
+        
+        locations.forEach(loc => {
+            const dot = document.createElement('div');
+            dot.className = 'visitor-dot';
+            dot.style.left = `${loc.x}%`;
+            dot.style.top = `${loc.y}%`;
+            
+            // Random size for variation
+            const size = 6 + Math.random() * 4;
+            dot.style.width = `${size}px`;
+            dot.style.height = `${size}px`;
+            
+            visitorMap.appendChild(dot);
+        });
+        
+        // Charts
+        // Device Chart
+        const deviceCtx = document.getElementById('deviceChart').getContext('2d');
+        const deviceChart = new Chart(deviceCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Desktop', 'Mobile', 'Tablet'],
+                datasets: [{
+                    data: [65, 30, 5],
+                    backgroundColor: [
+                        '#3b82f6',
+                        '#10b981',
+                        '#f59e0b'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+        
+        // Time Chart
+        const timeCtx = document.getElementById('timeChart').getContext('2d');
+        const timeChart = new Chart(timeCtx, {
+            type: 'bar',
+            data: {
+                labels: ['12AM', '3AM', '6AM', '9AM', '12PM', '3PM', '6PM', '9PM'],
+                datasets: [{
+                    label: 'Visitors',
+                    data: [5, 2, 8, 15, 22, 18, 12, 7],
+                    backgroundColor: '#3b82f6',
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+        
+        // Contact Form
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+        const formError = document.getElementById('formError');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission
+            setTimeout(() => {
+                contactForm.reset();
+                formSuccess.classList.remove('hidden');
+                formError.classList.add('hidden');
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formSuccess.classList.add('hidden');
+                }, 5000);
+            }, 1000);
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
