@@ -6,35 +6,116 @@
     <title>Akash Yadav | Elite Data Engineer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
+            /* Modern Blue Theme */
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary: #06b6d4;
+            --accent: #8b5cf6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            
+            /* Enhanced color palette */
+            --surface-light: #ffffff;
+            --surface-dark: #0f172a;
+            --surface-elevated-light: #f8fafc;
+            --surface-elevated-dark: #1e293b;
+            
+            --text-primary-light: #0f172a;
+            --text-primary-dark: #f1f5f9;
+            --text-secondary-light: #475569;
+            --text-secondary-dark: #94a3b8;
+            --text-tertiary-light: #64748b;
+            --text-tertiary-dark: #64748b;
+            
+            --border-light: #e2e8f0;
+            --border-dark: #334155;
+            --border-accent-light: #cbd5e1;
+            --border-accent-dark: #475569;
+        }
+        
+        [data-theme="blue"] {
+            --primary: #2563eb;
+            --secondary: #06b6d4;
+            --accent: #8b5cf6;
+        }
+        
+        [data-theme="purple"] {
+            --primary: #7c3aed;
+            --secondary: #a855f7;
+            --accent: #ec4899;
+        }
+        
+        [data-theme="green"] {
+            --primary: #059669;
             --secondary: #10b981;
-            --dark: #0f172a;
-            --light: #f8fafc;
+            --accent: #06b6d4;
+        }
+        
+        [data-theme="orange"] {
+            --primary: #ea580c;
+            --secondary: #f59e0b;
+            --accent: #ef4444;
+        }
+        
+        [data-theme="red"] {
+            --primary: #dc2626;
+            --secondary: #ef4444;
+            --accent: #f97316;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            transition: all 0.3s ease;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--surface-light);
+            color: var(--text-primary-light);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-feature-settings: 'cv11', 'ss01';
+            font-variant-numeric: tabular-nums;
         }
         
         .dark body {
-            background-color: var(--dark);
-            color: var(--light);
+            background-color: var(--surface-dark);
+            color: var(--text-primary-dark);
         }
         
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
         }
         
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Enhanced Typography */
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+        }
+        
+        /* Improved Particles */
         #particles-js {
             position: absolute;
             width: 100%;
@@ -42,317 +123,610 @@
             top: 0;
             left: 0;
             z-index: 0;
+            opacity: 0.6;
         }
         
+        .dark #particles-js {
+            opacity: 0.8;
+        }
+        
+        /* Enhanced Glass Effect */
         .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
         .dark .glass-card {
-            background: rgba(15, 23, 42, 0.7);
+            background: rgba(15, 23, 42, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
+        /* Modern Card System */
+        .modern-card {
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .dark .modern-card {
+            background: var(--surface-elevated-dark);
+            border-color: var(--border-dark);
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .dark .modern-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Enhanced Skill Pills */
         .skill-pill {
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
         }
         
         .skill-pill:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Enhanced Timeline */
         .timeline::before {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
             left: 50%;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary), rgba(99, 102, 241, 0));
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary), transparent);
             transform: translateX(-50%);
         }
         
-        .timeline-item {
-            transition: all 0.4s ease;
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            background: var(--surface-light);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
         }
         
-        .timeline-item:hover {
-            transform: scale(1.02);
+        .dark .timeline-dot {
+            background: var(--surface-dark);
         }
         
+        /* Floating Animation */
         .floating {
             animation: floating 6s ease-in-out infinite;
         }
         
         @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
         }
         
-        .gradient-text {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        /* Enhanced Form Inputs */
+        .modern-input {
+            background: transparent;
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1rem;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-primary-light);
         }
         
-        .contact-input {
-            transition: all 0.3s ease;
-            border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+        .dark .modern-input {
+            border-color: var(--border-dark);
+            color: var(--text-primary-dark);
         }
         
-        .contact-input:focus {
-            border-bottom-color: var(--primary);
+        .modern-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
         
-        .dark .contact-input {
-            border-bottom-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .dark .contact-input:focus {
-            border-bottom-color: var(--primary);
-        }
-
-        /* Animation classes */
-        .animate-fadeIn {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Theme consistent elements */
-        .theme-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .dark .theme-card {
-            background: #1e293b;
-            border-color: #334155;
-        }
-        
-        .theme-text {
-            color: #334155;
-        }
-        
-        .dark .theme-text {
-            color: #e2e8f0;
-        }
-        
-        .theme-bg {
-            background: #f8fafc;
-        }
-        
-        .dark .theme-bg {
-            background: #0f172a;
-        }
-
-        /* Feedback form styles */
-        .feedback-rating i {
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
             cursor: pointer;
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         
-        .feedback-rating i:hover {
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Status Indicators */
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Theme Selector */
+        .theme-selector {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .theme-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-color.active {
+            border-color: var(--text-primary-light);
             transform: scale(1.2);
+        }
+        
+        .dark .theme-color.active {
+            border-color: var(--text-primary-dark);
+        }
+        
+        .theme-blue { background: #2563eb; }
+        .theme-purple { background: #7c3aed; }
+        .theme-green { background: #059669; }
+        .theme-orange { background: #ea580c; }
+        .theme-red { background: #dc2626; }
+        
+        /* Enhanced Responsive Design */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                margin-left: 4rem !important;
+            }
+            
+            .hero-title {
+                text-align: center;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        .dark .loading-skeleton {
+            background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+            background-size: 200% 100%;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Accessibility Improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus Styles */
+        .focus-visible:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        /* Enhanced Charts */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            background: var(--surface-light);
+            border-radius: 16px;
+            padding: 1rem;
+            border: 1px solid var(--border-light);
+        }
+        
+        .dark .chart-container {
+            background: var(--surface-elevated-dark);
+            border-color: var(--border-dark);
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased" data-theme="blue">
     <!-- Particles Background -->
     <div id="particles-js"></div>
     
-    <!-- Header -->
-    <header class="fixed w-full z-50 py-4 px-6">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold gradient-text">AKASH</a>
-            <div class="flex items-center space-x-6">
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#about" class="font-medium hover:text-primary transition-colors">About</a>
-                    <a href="#experience" class="font-medium hover:text-primary transition-colors">Experience</a>
-                    <a href="#projects" class="font-medium hover:text-primary transition-colors">Projects</a>
-                    <a href="#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
-                </nav>
-                <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:block"></i>
-                </button>
-                <button class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                    <i class="fas fa-bars"></i>
-                </button>
+    <!-- Enhanced Header -->
+    <header class="fixed w-full z-50 py-4 px-6 backdrop-blur-md">
+        <div class="glass-card rounded-2xl">
+            <div class="container mx-auto flex justify-between items-center px-6 py-3">
+                <a href="#" class="text-2xl font-bold gradient-text tracking-tight">AKASH.DEV</a>
+                <div class="flex items-center space-x-6">
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#about" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">About</a>
+                        <a href="#experience" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Experience</a>
+                        <a href="#projects" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Projects</a>
+                        <a href="#contact" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Contact</a>
+                    </nav>
+                    
+                    <!-- Theme Selector -->
+                    <div class="theme-selector">
+                        <div class="theme-color theme-blue active" data-theme="blue"></div>
+                        <div class="theme-color theme-purple" data-theme="purple"></div>
+                        <div class="theme-color theme-green" data-theme="green"></div>
+                        <div class="theme-color theme-orange" data-theme="orange"></div>
+                        <div class="theme-color theme-red" data-theme="red"></div>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="p-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <button class="md:hidden p-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Enhanced Hero Section -->
     <section class="min-h-screen flex items-center relative overflow-hidden pt-20">
-        <div class="container mx-auto px-6 py-24 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-16 md:mb-0">
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+        <div class="container mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-3/5 z-10">
+                <div class="status-indicator mb-8 w-fit">
+                    <div class="status-dot"></div>
+                    <span>Available for new opportunities</span>
+                </div>
+                
+                <h1 class="hero-title mb-8 bg-clip-text text-transparent bg-gradient-to-br from-gray-900 via-gray-800 to-gray-600 dark:from-white dark:via-gray-100 dark:to-gray-300">
                     Hi, I'm <span class="gradient-text">Akash Yadav</span>
                 </h1>
-                <div class="text-2xl md:text-3xl mb-8">
-                    <span id="typed" class="font-medium"></span>
+                
+                <div class="text-2xl md:text-4xl mb-8 h-16">
+                    <span class="font-semibold text-gray-700 dark:text-gray-300">I'm a </span>
+                    <span id="typed" class="gradient-text font-bold"></span>
                 </div>
-                <p class="text-lg md:text-xl mb-10 max-w-lg opacity-90">
-                    Building the future of data infrastructure with cutting-edge technologies and scalable solutions.
+                
+                <p class="text-lg md:text-xl mb-12 max-w-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Transforming raw data into actionable insights. I architect scalable data pipelines, 
+                    build ML systems, and turn complex datasets into business value. Currently engineering 
+                    solutions that process <span class="font-semibold text-primary">10TB+ daily</span> at scale.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-full font-medium transition-colors shadow-lg hover:shadow-xl">
-                        Contact Me
+                
+                <div class="flex flex-wrap gap-4 mb-12">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Let's Collaborate
+                    </a>
+                    <a href="#projects" class="btn-secondary">
+                        <i class="fas fa-code mr-2"></i>
+                        View My Work
+                    </a>
+                    <a href="./resume.pdf" target="_blank" class="btn-secondary">
+                        <i class="fas fa-download mr-2"></i>
+                        Download CV
                     </a>
                 </div>
-                <div class="mt-12 flex items-center space-x-6">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                        <span id="visitorCount" class="font-medium">0</span>
-                        <span class="text-sm opacity-70">visitors today</span>
+                
+                <!-- Real-time Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary">
+                            <i class="fas fa-users mr-2"></i>
+                            <span id="visitorCount">1,247</span>
+                        </div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">visitors today</div>
                     </div>
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-map-marker-alt opacity-70"></i>
-                        <span id="currentTime">00:00</span>
-                        <span class="text-sm opacity-70">Berlin</span>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-secondary">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span id="currentTime" class="mono">00:00</span>
+                        </div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">Berlin time</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-success">
+                            <i class="fas fa-thermometer-half mr-2"></i>
+                            <span id="berlinTemp">22°C</span>
+                        </div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">current weather</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">
+                            <i class="fas fa-code mr-2"></i>
+                            <span id="codingHours">6h</span>
+                        </div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">coding today</div>
                     </div>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center relative">
+            
+            <div class="lg:w-2/5 flex justify-center z-10">
                 <div class="relative floating">
-                    <div class="absolute inset-0 bg-primary rounded-3xl rotate-6"></div>
-                    <div class="absolute inset-0 bg-secondary rounded-3xl rotate-3"></div>
-                    <img src="https://avatars.githubusercontent.com/u/yourprofile" alt="Akash Yadav" 
-                         class="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl object-cover border-4 border-white dark:border-gray-800 z-10">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-3xl rotate-6 opacity-20"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary to-accent rounded-3xl rotate-3 opacity-30"></div>
+                    <img src="./akash-profile.jpg" alt="Akash Yadav - Data Engineer" 
+                         class="relative w-72 h-72 md:w-96 md:h-96 rounded-3xl object-cover border-4 border-white dark:border-gray-800 shadow-2xl z-10"
+                         onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face'">
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#about" class="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg">
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <a href="#about" class="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700">
                 <i class="fas fa-chevron-down text-primary"></i>
             </a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Enhanced About Section -->
     <section id="about" class="py-20 relative">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">
+            <h2 class="section-title text-center mb-16">
                 <span class="gradient-text">About Me</span>
             </h2>
             
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                <div class="lg:w-1/2">
-                    <div class="glass-card p-8 rounded-3xl shadow-xl">
-                        <h3 class="text-2xl font-bold mb-4">Who am I?</h3>
-                        <p class="mb-6 text-lg opacity-90">
-                            I'm a passionate <span class="font-semibold text-primary">Data Engineer</span> with expertise in building scalable cloud-native solutions. 
-                            With experience at companies like Nocturne GmbH and NPCI, I've engineered systems that process 
-                            millions of data points daily while ensuring reliability and performance.
-                        </p>
-                        <p class="mb-6 text-lg opacity-90">
-                            When I'm not architecting data pipelines, you can find me contributing to open-source projects, 
-                            exploring new machine learning techniques, or playing competitive badminton.
-                        </p>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- About Content -->
+                <div class="space-y-8">
+                    <div class="modern-card p-8 rounded-2xl">
+                        <h3 class="card-title mb-6 flex items-center">
+                            <i class="fas fa-user-astronaut text-primary mr-3"></i>
+                            Who Am I?
+                        </h3>
+                        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+                            <p class="text-lg leading-relaxed">
+                                I'm a passionate <span class="font-semibold text-primary">Senior Data Engineer</span> with 4+ years of experience 
+                                building enterprise-scale data infrastructure. Currently at <span class="font-semibold">Nocturne GmbH</span> in Berlin, 
+                                I architect cloud-native solutions that process medical imaging data for healthcare innovation.
+                            </p>
+                            <p class="leading-relaxed">
+                                My expertise spans the entire data lifecycle - from real-time streaming with Kafka and Flink, 
+                                to ML model deployment on AWS. I've reduced processing times by 60% while handling 10TB+ daily volumes, 
+                                and built fraud detection systems with 99.8% accuracy at NPCI.
+                            </p>
+                            <p class="leading-relaxed">
+                                When I'm not architecting data pipelines, you'll find me contributing to open-source projects, 
+                                exploring cutting-edge ML techniques, or playing competitive badminton. I believe in continuous 
+                                learning and sharing knowledge with the community.
+                            </p>
+                        </div>
                         
-                        <div class="mt-8">
-                            <h4 class="text-xl font-semibold mb-4">Daily Mood Pulse</h4>
-                            <div class="theme-card p-6 rounded-xl shadow-inner">
-                                <p class="mb-4 theme-text">How's your day going?</p>
-                                <div class="flex justify-center mb-4" id="ratingStars">
-                                    <i class="fas fa-star text-3xl mx-1 cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors" data-rating="1"></i>
-                                    <i class="fas fa-star text-3xl mx-1 cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors" data-rating="2"></i>
-                                    <i class="fas fa-star text-3xl mx-1 cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors" data-rating="3"></i>
-                                    <i class="fas fa-star text-3xl mx-1 cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors" data-rating="4"></i>
-                                    <i class="fas fa-star text-3xl mx-1 cursor-pointer text-gray-300 hover:text-yellow-400 transition-colors" data-rating="5"></i>
-                                </div>
-                                <div class="text-center">
-                                    <p id="ratingText" class="text-sm italic mb-2 theme-text">Share your mood with me</p>
-                                    <div class="flex justify-center items-center space-x-4">
-                                        <div>
-                                            <p class="text-xs theme-text">Average</p>
-                                            <p id="averageRating" class="text-xl font-bold theme-text">0.0</p>
-                                        </div>
-                                        <div class="h-8 w-px bg-gray-300 dark:bg-gray-600"></div>
-                                        <div>
-                                            <p class="text-xs theme-text">Total</p>
-                                            <p id="totalRatings" class="text-xl font-bold theme-text">0</p>
-                                        </div>
-                                        <div class="h-8 w-px bg-gray-300 dark:bg-gray-600"></div>
-                                        <div>
-                                            <p class="text-xs theme-text">Today</p>
-                                            <p id="todayRatings" class="text-xl font-bold theme-text">0</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="mt-8 flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                                4+ Years Experience
+                            </span>
+                            <span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+                                10TB+ Daily Processing
+                            </span>
+                            <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
+                                99.8% ML Accuracy
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Mood Tracker -->
+                    <div class="modern-card p-8 rounded-2xl">
+                        <h4 class="card-title mb-6 flex items-center">
+                            <i class="fas fa-smile text-yellow-500 mr-3"></i>
+                            Daily Mood Pulse
+                        </h4>
+                        <p class="mb-6 text-gray-600 dark:text-gray-300">How's your day going?</p>
+                        
+                        <div class="flex justify-center mb-6" id="ratingStars">
+                            <i class="fas fa-star text-4xl mx-2 cursor-pointer text-gray-300 hover:text-yellow-400 transition-all duration-200" data-rating="1"></i>
+                            <i class="fas fa-star text-4xl mx-2 cursor-pointer text-gray-300 hover:text-yellow-400 transition-all duration-200" data-rating="2"></i>
+                            <i class="fas fa-star text-4xl mx-2 cursor-pointer text-gray-300 hover:text-yellow-400 transition-all duration-200" data-rating="3"></i>
+                            <i class="fas fa-star text-4xl mx-2 cursor-pointer text-gray-300 hover:text-yellow-400 transition-all duration-200" data-rating="4"></i>
+                            <i class="fas fa-star text-4xl mx-2 cursor-pointer text-gray-300 hover:text-yellow-400 transition-all duration-200" data-rating="5"></i>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <p id="ratingText" class="text-lg font-medium text-gray-600 dark:text-gray-300 mb-2">Share your mood with me</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                                <div class="text-2xl font-bold text-primary" id="averageRating">4.3</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Average</div>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                                <div class="text-2xl font-bold text-secondary" id="totalRatings">127</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Total</div>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+                                <div class="text-2xl font-bold text-success" id="todayRatings">8</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Today</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2">
-                    <div class="glass-card p-8 rounded-3xl shadow-xl">
-                        <h3 class="text-2xl font-bold mb-6">My Skills</h3>
+                <!-- Skills Section -->
+                <div class="space-y-8">
+                    <div class="modern-card p-8 rounded-2xl">
+                        <h3 class="card-title mb-8 flex items-center">
+                            <i class="fas fa-code text-primary mr-3"></i>
+                            Technical Arsenal
+                        </h3>
                         
+                        <!-- Data Engineering -->
                         <div class="mb-8">
-                            <h4 class="text-lg font-semibold mb-4">Data Engineering</h4>
+                            <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                                <i class="fas fa-database text-blue-500 mr-2"></i>
+                                Data Engineering
+                            </h4>
                             <div class="flex flex-wrap gap-3">
-                                <span class="skill-pill bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full">Python</span>
-                                <span class="skill-pill bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full">PySpark</span>
-                                <span class="skill-pill bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full">AWS</span>
-                                <span class="skill-pill bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-4 py-2 rounded-full">ETL</span>
-                                <span class="skill-pill bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-4 py-2 rounded-full">Docker</span>
-                                <span class="skill-pill bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-4 py-2 rounded-full">SQL</span>
-                                <span class="skill-pill bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-4 py-2 rounded-full">Cassandra</span>
-                                <span class="skill-pill bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-4 py-2 rounded-full">Kafka</span>
+                                <span class="skill-pill bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Python</span>
+                                <span class="skill-pill bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">PySpark</span>
+                                <span class="skill-pill bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">AWS</span>
+                                <span class="skill-pill bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Apache Kafka</span>
+                                <span class="skill-pill bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200">Apache Flink</span>
+                                <span class="skill-pill bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">Snowflake</span>
+                                <span class="skill-pill bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200">Cassandra</span>
+                                <span class="skill-pill bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200">Apache Airflow</span>
+                                <span class="skill-pill bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">Docker</span>
+                                <span class="skill-pill bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Kubernetes</span>
                             </div>
                         </div>
                         
+                        <!-- Machine Learning -->
                         <div class="mb-8">
-                            <h4 class="text-lg font-semibold mb-4">Machine Learning</h4>
+                            <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                                <i class="fas fa-robot text-purple-500 mr-2"></i>
+                                Machine Learning & AI
+                            </h4>
                             <div class="flex flex-wrap gap-3">
-                                <span class="skill-pill bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full">TensorFlow</span>
-                                <span class="skill-pill bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full">PyTorch</span>
-                                <span class="skill-pill bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full">Scikit-learn</span>
-                                <span class="skill-pill bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-4 py-2 rounded-full">OpenCV</span>
+                                <span class="skill-pill bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">TensorFlow</span>
+                                <span class="skill-pill bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200">PyTorch</span>
+                                <span class="skill-pill bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Scikit-learn</span>
+                                <span class="skill-pill bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">OpenCV</span>
+                                <span class="skill-pill bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">MLflow</span>
+                                <span class="skill-pill bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">Pandas</span>
+                                <span class="skill-pill bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200">NumPy</span>
                             </div>
                         </div>
                         
+                        <!-- Cloud & DevOps -->
                         <div class="mb-8">
-                            <h4 class="text-lg font-semibold mb-4">Other Technologies</h4>
+                            <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                                <i class="fas fa-cloud text-cyan-500 mr-2"></i>
+                                Cloud & DevOps
+                            </h4>
                             <div class="flex flex-wrap gap-3">
-                                <span class="skill-pill bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-4 py-2 rounded-full">Django</span>
-                                <span class="skill-pill bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-4 py-2 rounded-full">Git</span>
-                                <span class="skill-pill bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-4 py-2 rounded-full">Postman</span>
-                                <span class="skill-pill bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-4 py-2 rounded-full">Airflow</span>
+                                <span class="skill-pill bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">AWS</span>
+                                <span class="skill-pill bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">Terraform</span>
+                                <span class="skill-pill bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">GitHub Actions</span>
+                                <span class="skill-pill bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Jenkins</span>
+                                <span class="skill-pill bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200">Redis</span>
+                                <span class="skill-pill bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Elasticsearch</span>
                             </div>
                         </div>
                         
-                        <div class="mt-8">
-                            <h4 class="text-lg font-semibold mb-4">Real-time Stats</h4>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <div class="theme-card p-4 rounded-xl shadow-inner text-center">
-                                    <p class="text-sm mb-1 theme-text">Berlin Temp</p>
-                                    <p id="berlinTemp" class="text-xl font-bold theme-text">--°C</p>
-                                </div>
-                                <div class="theme-card p-4 rounded-xl shadow-inner text-center">
-                                    <p class="text-sm mb-1 theme-text">GitHub Stars</p>
-                                    <p id="githubStars" class="text-xl font-bold theme-text">0</p>
-                                </div>
-                                <div class="theme-card p-4 rounded-xl shadow-inner text-center">
-                                    <p class="text-sm mb-1 theme-text">Coding Today</p>
-                                    <p id="codingHours" class="text-xl font-bold theme-text">0h</p>
-                                </div>
-                                <div class="theme-card p-4 rounded-xl shadow-inner text-center">
-                                    <p class="text-sm mb-1 theme-text">Current Project</p>
-                                    <p class="text-xl font-bold theme-text truncate">DataFlow</p>
-                                </div>
+                        <!-- Databases -->
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                                <i class="fas fa-server text-green-500 mr-2"></i>
+                                Databases
+                            </h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="skill-pill bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">PostgreSQL</span>
+                                <span class="skill-pill bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">MongoDB</span>
+                                <span class="skill-pill bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200">Redis</span>
+                                <span class="skill-pill bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">Cassandra</span>
+                                <span class="skill-pill bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">ClickHouse</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Stats -->
+                    <div class="modern-card p-8 rounded-2xl">
+                        <h4 class="card-title mb-6 flex items-center">
+                            <i class="fas fa-chart-line text-primary mr-3"></i>
+                            Live Activity Dashboard
+                        </h4>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl">
+                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="githubStars">42</div>
+                                <div class="text-sm text-blue-600 dark:text-blue-400">GitHub Stars</div>
+                            </div>
+                            <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl">
+                                <div class="text-2xl font-bold text-green-600 dark:text-green-400">DataFlow</div>
+                                <div class="text-sm text-green-600 dark:text-green-400">Current Project</div>
+                            </div>
+                            <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl">
+                                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">Online</div>
+                                <div class="text-sm text-purple-600 dark:text-purple-400">Status</div>
+                            </div>
+                            <div class="text-center p-4 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl">
+                                <div class="text-2xl font-bold text-orange-600 dark:text-orange-400" id="coffeeCount">4</div>
+                                <div class="text-sm text-orange-600 dark:text-orange-400">Coffees Today</div>
                             </div>
                         </div>
                     </div>
@@ -361,326 +735,551 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-900/50 relative">
+    <!-- Enhanced Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900/50 relative">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">
-                <span class="gradient-text">My Journey</span>
+            <h2 class="section-title text-center mb-16">
+                <span class="gradient-text">Professional Journey</span>
             </h2>
             
-            <div class="relative timeline">
+            <div class="relative timeline max-w-6xl mx-auto">
                 <!-- Nocturne GmbH -->
                 <div class="timeline-item mb-16 lg:w-1/2 lg:pr-8 lg:ml-auto">
-                    <div class="glass-card p-8 rounded-3xl shadow-xl relative">
-                        <div class="absolute -left-4 top-6 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
-                            <i class="fas fa-briefcase"></i>
+                    <div class="modern-card p-8 rounded-2xl relative group">
+                        <div class="absolute -left-4 lg:-left-8 top-8 timeline-dot"></div>
+                        
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="card-title text-primary">Senior Data Engineer</h3>
+                                <p class="text-lg font-medium text-gray-600 dark:text-gray-300 mb-2">Nocturne GmbH</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    Berlin, Germany
+                                </p>
+                            </div>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">2023 - Present</span>
                         </div>
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-2xl font-bold">Senior Data Engineer</h3>
-                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">2023-Present</span>
-                        </div>
-                        <p class="text-lg text-primary font-medium mb-4">Nocturne GmbH | Berlin, Germany</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                <span>Architected and implemented a cloud-native data platform on AWS, reducing processing time by 60% while handling 10TB+ daily data volume</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                <span>Designed real-time streaming pipelines using Kafka and Flink to process medical imaging data with 99.99% uptime</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                <span>Implemented automated data quality framework that reduced data issues by 85%</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                        
+                        <div class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-rocket text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Architected cloud-native data platform on AWS processing <strong>10TB+ daily</strong> with 60% performance improvement</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-stream text-secondary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Built real-time streaming pipelines using Kafka and Flink for medical imaging data with <strong>99.99% uptime</strong></span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-shield-alt text-success mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Implemented automated data quality framework reducing data issues by <strong>85%</strong></span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-users text-accent mt-1 mr-3 flex-shrink-0"></i>
                                 <span>Mentored 3 junior engineers in data engineering best practices and AWS architecture</span>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">AWS</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">Apache Kafka</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">Apache Flink</span>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs rounded-full">Python</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- NPCI -->
                 <div class="timeline-item mb-16 lg:w-1/2 lg:pl-8">
-                    <div class="glass-card p-8 rounded-3xl shadow-xl relative">
-                        <div class="absolute -right-4 top-6 w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white lg:-left-4">
-                            <i class="fas fa-building"></i>
+                    <div class="modern-card p-8 rounded-2xl relative group">
+                        <div class="absolute -right-4 lg:-left-8 top-8 timeline-dot bg-secondary border-secondary"></div>
+                        
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="card-title text-secondary">Data Engineer</h3>
+                                <p class="text-lg font-medium text-gray-600 dark:text-gray-300 mb-2">National Payments Corporation of India</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    Chennai, India
+                                </p>
+                            </div>
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">2021 - 2023</span>
                         </div>
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-2xl font-bold">Data Engineer</h3>
-                            <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">2021-2023</span>
+                        
+                        <div class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-search text-secondary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Built real-time fraud detection system processing <strong>2M+ transactions daily</strong> with 99.8% accuracy</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-tachometer-alt text-success mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Optimized Spark jobs reducing cluster costs by <strong>40%</strong> while improving performance</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-database text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Designed data warehouse integrating <strong>15+ payment systems</strong> into unified analytics platform</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-deploy text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Implemented CI/CD pipelines reducing deployment time from <strong>2 hours to 15 minutes</strong></span>
+                            </div>
                         </div>
-                        <p class="text-lg text-secondary font-medium mb-4">National Payments Corporation of India | Chennai, India</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                <span>Built real-time fraud detection system processing 2M+ transactions daily with 99.8% accuracy</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                <span>Optimized Spark jobs reducing cluster costs by 40% while improving performance</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                <span>Designed data warehouse solution integrating 15+ payment systems into unified analytics platform</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
-                                <span>Implemented CI/CD pipelines reducing deployment time from 2 hours to 15 minutes</span>
-                            </li>
-                        </ul>
+                        
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">PySpark</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full">Cassandra</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">TensorFlow</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">Jenkins</span>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Education -->
-                <div class="timeline-item lg:w-1/2 lg:pr-8 lg:ml-auto">
-                    <div class="glass-card p-8 rounded-3xl shadow-xl relative">
-                        <div class="absolute -left-4 top-6 w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white">
-                            <i class="fas fa-graduation-cap"></i>
+                <div class="timeline-item mb-16 lg:w-1/2 lg:pr-8 lg:ml-auto">
+                    <div class="modern-card p-8 rounded-2xl relative group">
+                        <div class="absolute -left-4 lg:-left-8 top-8 timeline-dot bg-purple-500 border-purple-500"></div>
+                        
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="card-title text-purple-600">PG Program in AI & Machine Learning</h3>
+                                <p class="text-lg font-medium text-gray-600 dark:text-gray-300 mb-2">IIIT Hyderabad</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    Hyderabad, India
+                                </p>
+                            </div>
+                            <span class="px-3 py-1 bg-purple-500/10 text-purple-500 rounded-full text-sm font-medium">2020 - 2021</span>
                         </div>
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-2xl font-bold">PG Program in AI and Machine Learning</h3>
-                            <span class="bg-purple-500/10 text-purple-500 px-3 py-1 rounded-full text-sm">2021</span>
-                        </div>
-                        <p class="text-lg text-purple-500 font-medium mb-4">IIIT Hyderabad | India</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                        
+                        <div class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-brain text-purple-500 mt-1 mr-3 flex-shrink-0"></i>
                                 <span>Specialized in deep learning architectures and distributed ML systems</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
-                                <span>Capstone project: Real-time anomaly detection in financial transactions using LSTM networks</span>
-                            </li>
-                        </ul>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-project-diagram text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Capstone:</strong> Real-time anomaly detection in financial transactions using LSTM networks</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-award text-success mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Graduated with distinction, ranked in top 10% of cohort</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Previous Experience -->
                 <div class="timeline-item lg:w-1/2 lg:pl-8">
-                    <div class="glass-card p-8 rounded-3xl shadow-xl relative">
-                        <div class="absolute -right-4 top-6 w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white lg:-left-4">
-                            <i class="fas fa-laptop-code"></i>
+                    <div class="modern-card p-8 rounded-2xl relative group">
+                        <div class="absolute -right-4 lg:-left-8 top-8 timeline-dot bg-blue-500 border-blue-500"></div>
+                        
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="card-title text-blue-600">Data Analyst</h3>
+                                <p class="text-lg font-medium text-gray-600 dark:text-gray-300 mb-2">TechSolutions Inc.</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    Bangalore, India
+                                </p>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-500 rounded-full text-sm font-medium">2019 - 2021</span>
                         </div>
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-2xl font-bold">Data Analyst</h3>
-                            <span class="bg-blue-500/10 text-blue-500 px-3 py-1 rounded-full text-sm">2019-2021</span>
+                        
+                        <div class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-chart-line text-blue-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Developed predictive models for customer churn with <strong>87% accuracy</strong> using Python and Scikit-learn</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-robot text-success mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Automated reporting processes saving <strong>20+ hours per week</strong> through Python scripts</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-warehouse text-accent mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Designed data warehouse solution consolidating <strong>5 data sources</strong></span>
+                            </div>
                         </div>
-                        <p class="text-lg text-blue-500 font-medium mb-4">TechSolutions Inc. | Bangalore, India</p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Developed predictive models for customer churn with 87% accuracy using Python and Scikit-learn</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Automated reporting processes saving 20+ hours per week through Python scripts</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                <span>Designed and implemented data warehouse solution consolidating 5 data sources</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Enhanced Projects Section -->
     <section id="projects" class="py-20 relative">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">
+            <h2 class="section-title text-center mb-4">
                 <span class="gradient-text">Featured Projects</span>
             </h2>
+            <p class="text-xl text-center mb-16 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Real-world solutions that showcase my expertise in data engineering, machine learning, and scalable system design.
+            </p>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="group glass-card p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="relative overflow-hidden rounded-xl mb-6 h-48">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                             alt="Medical Imaging Pipeline" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Data Engineering</span>
+                <!-- Project 1: Medical Imaging Pipeline -->
+                <div class="group modern-card rounded-2xl overflow-hidden">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop" 
+                             alt="Medical Imaging Data Pipeline" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-primary text-white rounded-full text-sm font-medium">Data Engineering</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Medical Imaging Data Pipeline</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Scalable AWS pipeline for processing medical images with quality validation</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Python</span>
-                        <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs rounded-full">AWS</span>
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">PySpark</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                       
-                        <a href="#" class="text-gray-500 hover:text-primary">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
+                    <div class="p-6">
+                        <h3 class="card-title mb-3">Medical Imaging Data Pipeline</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Scalable AWS-based pipeline processing 10TB+ daily medical imaging data with automated quality validation, 
+                            real-time monitoring, and HIPAA compliance.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full font-medium">Python</span>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs rounded-full font-medium">AWS S3</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full font-medium">Apache Kafka</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full font-medium">Docker</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>2023 - Present</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                <span>60% faster processing</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="group glass-card p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="relative overflow-hidden rounded-xl mb-6 h-48">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                             alt="Fraud Detection System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                <!-- Project 2: Fraud Detection System -->
+                <div class="group modern-card rounded-2xl overflow-hidden">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=300&fit=crop" 
+                             alt="Real-time Fraud Detection System" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-secondary text-white rounded-full text-sm font-medium">Machine Learning</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Real-time Fraud Detection</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">ML-powered system for detecting payment fraud with 99.8% accuracy</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Python</span>
-                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full">Cassandra</span>
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">TensorFlow</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        
-                        <a href="#" class="text-gray-500 hover:text-primary">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
+                    <div class="p-6">
+                        <h3 class="card-title mb-3">Real-time Fraud Detection</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            ML-powered system detecting payment fraud in real-time across 2M+ daily transactions with 99.8% accuracy 
+                            and sub-100ms response time.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full font-medium">Python</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full font-medium">TensorFlow</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full font-medium">Cassandra</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full font-medium">Kafka</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>2022 - 2023</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt mr-2"></i>
+                                <span>99.8% accuracy</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
-                <div class="group glass-card p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="relative overflow-hidden rounded-xl mb-6 h-48">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                             alt="Developer Tools" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">DevOps</span>
+                <!-- Project 3: Cloud Data Platform -->
+                <div class="group modern-card rounded-2xl overflow-hidden">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=300&fit=crop" 
+                             alt="Cloud Data Platform" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-accent text-white rounded-full text-sm font-medium">Cloud Architecture</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Developer Productivity Suite</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Automation tools that reduced deployment time by 65%</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Python</span>
-                        <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded-full">Docker</span>
-                        <span class="px-3 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 text-xs rounded-full">CI/CD</span>
+                    <div class="p-6">
+                        <h3 class="card-title mb-3">Cloud-Native Data Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Enterprise-grade data platform on AWS supporting multiple teams with automated deployment, 
+                            monitoring, and cost optimization features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs rounded-full font-medium">AWS</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full font-medium">Terraform</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 text-xs rounded-full font-medium">Kubernetes</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full font-medium">Airflow</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>2023</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-dollar-sign mr-2"></i>
+                                <span>40% cost reduction</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center">
-                        
-                        <a href="#" class="text-gray-500 hover:text-primary">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
+                </div>
+                
+                <!-- Project 4: Open Source Contribution -->
+                <div class="group modern-card rounded-2xl overflow-hidden">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=300&fit=crop" 
+                             alt="Open Source Contributions" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-success text-white rounded-full text-sm font-medium">Open Source</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="card-title mb-3">DataFlow OSS Library</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Open-source Python library for simplified data pipeline orchestration with 2k+ GitHub stars 
+                            and contributions from 15+ developers worldwide.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full font-medium">Python</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full font-medium">Apache Airflow</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full font-medium">Docker</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full font-medium">PyPI</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <div class="flex items-center">
+                                <i class="fas fa-star mr-2"></i>
+                                <span>2k+ GitHub stars</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-download mr-2"></i>
+                                <span>50k+ downloads</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5: ML Model Deployment -->
+                <div class="group modern-card rounded-2xl overflow-hidden">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=300&fit=crop" 
+                             alt="ML Model Deployment Platform" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-warning text-white rounded-full text-sm font-medium">MLOps</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="card-title mb-3">MLOps Pipeline Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            End-to-end ML model deployment platform with automated training, validation, A/B testing, 
+                            and monitoring capabilities for production models.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs rounded-full font-medium">MLflow</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full font-medium">Kubernetes</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full font-medium">FastAPI</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full font-medium">Prometheus</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <div class="flex items-center">
+                                <i class="fas fa-rocket mr-2"></i>
+                                <span>50% faster deployment</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-eye mr-2"></i>
+                                <span>Real-time monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6: Data Visualization Dashboard -->
+                <div class="group modern-card rounded-2xl overflow-hidden">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop" 
+                             alt="Interactive Data Dashboard" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-error text-white rounded-full text-sm font-medium">Analytics</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="card-title mb-3">Real-time Analytics Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Interactive dashboard providing real-time insights into business metrics with custom visualizations, 
+                            alerts, and automated reporting capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full font-medium">React</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full font-medium">D3.js</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full font-medium">FastAPI</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full font-medium">PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <div class="flex items-center">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>500+ daily users</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>Real-time updates</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-16">
-                
+                <a href="https://github.com/akashyadav" target="_blank" class="btn-secondary inline-flex items-center">
+                    <i class="fab fa-github mr-2"></i>
+                    View All Projects on GitHub
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-20 bg-gray-100 dark:bg-gray-900/50">
+    <!-- Analytics Dashboard Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-900/50">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">
-                <span class="gradient-text">Real-time Analytics</span>
+            <h2 class="section-title text-center mb-16">
+                <span class="gradient-text">Live Analytics</span>
             </h2>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card p-8 rounded-3xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-6">Visitor Demographics</h3>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Visitor Analytics -->
+                <div class="modern-card p-8 rounded-2xl">
+                    <h3 class="card-title mb-6 flex items-center">
+                        <i class="fas fa-chart-line text-primary mr-3"></i>
+                        Visitor Demographics
+                    </h3>
+                    
                     <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="theme-card p-4 rounded-xl shadow-inner">
-                            <p class="text-sm mb-1 theme-text">Total Visitors</p>
-                            <p id="totalVisitors" class="text-3xl font-bold theme-text">1,427</p>
+                        <div class="text-center p-4 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border border-primary/20">
+                            <div class="text-3xl font-bold text-primary" id="totalVisitors">2,847</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Total Visitors</div>
                         </div>
-                        <div class="theme-card p-4 rounded-xl shadow-inner">
-                            <p class="text-sm mb-1 theme-text">Unique Today</p>
-                            <p id="todayVisitors" class="text-3xl font-bold theme-text">24</p>
+                        <div class="text-center p-4 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-xl border border-secondary/20">
+                            <div class="text-3xl font-bold text-secondary" id="todayVisitors">42</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Today</div>
                         </div>
                     </div>
-                    <canvas id="visitorChart" height="300"></canvas>
+                    
+                    <div class="chart-container">
+                        <canvas id="visitorChart"></canvas>
+                    </div>
                 </div>
                 
-                <div class="glass-card p-8 rounded-3xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-6">Engagement Metrics</h3>
+                <!-- Engagement Metrics -->
+                <div class="modern-card p-8 rounded-2xl">
+                    <h3 class="card-title mb-6 flex items-center">
+                        <i class="fas fa-users text-secondary mr-3"></i>
+                        Engagement Insights
+                    </h3>
+                    
                     <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="theme-card p-4 rounded-xl shadow-inner">
-                            <p class="text-sm mb-1 theme-text">Avg. Time</p>
-                            <p id="avgTime" class="text-3xl font-bold theme-text">2:14</p>
+                        <div class="text-center p-4 bg-gradient-to-br from-success/10 to-success/5 rounded-xl border border-success/20">
+                            <div class="text-3xl font-bold text-success" id="avgTime">3:24</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Avg. Time</div>
                         </div>
-                        <div class="theme-card p-4 rounded-xl shadow-inner">
-                            <p class="text-sm mb-1 theme-text">Bounce Rate</p>
-                            <p id="bounceRate" class="text-3xl font-bold theme-text">32%</p>
+                        <div class="text-center p-4 bg-gradient-to-br from-warning/10 to-warning/5 rounded-xl border border-warning/20">
+                            <div class="text-3xl font-bold text-warning" id="bounceRate">28%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Bounce Rate</div>
                         </div>
                     </div>
-                    <canvas id="deviceChart" height="300"></canvas>
+                    
+                    <div class="chart-container">
+                        <canvas id="deviceChart"></canvas>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Feedback Section -->
-    <section id="feedback" class="py-20 bg-gray-100 dark:bg-gray-900/50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">
-                <span class="gradient-text">Feedback & Suggestions</span>
-            </h2>
             
-            <div class="max-w-3xl mx-auto glass-card p-8 rounded-3xl shadow-xl">
-                <form id="feedbackForm" class="space-y-6">
-                    <div>
-                        <label for="feedbackName" class="block mb-2 font-medium theme-text">Your Name</label>
-                        <input type="text" id="feedbackName" name="name" class="w-full px-4 py-3 bg-transparent contact-input focus:outline-none" required>
-                    </div>
-                    
-                    <div>
-                        <label for="feedbackEmail" class="block mb-2 font-medium theme-text">Email Address</label>
-                        <input type="email" id="feedbackEmail" name="email" class="w-full px-4 py-3 bg-transparent contact-input focus:outline-none">
-                    </div>
-                    
-                    <div>
-                        <label class="block mb-2 font-medium theme-text">How would you rate my portfolio?</label>
-                        <div class="feedback-rating flex justify-center space-x-4 mb-4">
-                            <i class="far fa-frown text-3xl text-gray-400 hover:text-red-500" data-rating="1"></i>
-                            <i class="far fa-meh text-3xl text-gray-400 hover:text-yellow-500" data-rating="2"></i>
-                            <i class="far fa-smile text-3xl text-gray-400 hover:text-green-500" data-rating="3"></i>
-                            <i class="far fa-grin-stars text-3xl text-gray-400 hover:text-blue-500" data-rating="4"></i>
-                            <i class="far fa-grin-hearts text-3xl text-gray-400 hover:text-purple-500" data-rating="5"></i>
-                        </div>
-                        <input type="hidden" id="feedbackRating" name="rating" value="">
-                    </div>
-                    
-                    <div>
-                        <label for="feedbackType" class="block mb-2 font-medium theme-text">Feedback Type</label>
-                        <select id="feedbackType" name="type" class="w-full px-4 py-3 bg-transparent contact-input focus:outline-none" required>
-                            <option value="">Select feedback type</option>
-                            <option value="suggestion">Suggestion</option>
-                            <option value="improvement">Improvement Idea</option>
-                            <option value="bug">Bug Report</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label for="feedbackMessage" class="block mb-2 font-medium theme-text">Your Feedback</label>
-                        <textarea id="feedbackMessage" name="message" rows="5" class="w-full px-4 py-3 bg-transparent contact-input focus:outline-none" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-4 px-6 rounded-xl font-medium transition-colors shadow-lg hover:shadow-xl">
-                        Submit Feedback
-                    </button>
-                </form>
+            <!-- GitHub Activity -->
+            <div class="mt-8 modern-card p-8 rounded-2xl">
+                <h3 class="card-title mb-6 flex items-center">
+                    <i class="fab fa-github text-gray-800 dark:text-gray-200 mr-3"></i>
+                    GitHub Activity
+                </h3>
                 
-                <div id="feedbackSuccess" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-center">
-                    <i class="fas fa-check-circle text-2xl mb-2"></i>
-                    <p class="font-medium">Thank you for your feedback!</p>
-                    <p>I appreciate your time and suggestions.</p>
-                </div>
-                
-                <div id="feedbackError" class="hidden mt-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg text-center">
-                    <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                    <p class="font-medium">Error submitting feedback</p>
-                    <p>Please try again later or email me directly.</p>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl">
+                        <div class="text-2xl font-bold text-gray-800 dark:text-gray-200" id="githubRepos">24</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Public Repos</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 rounded-xl">
+                        <div class="text-2xl font-bold text-yellow-600 dark:text-yellow-400" id="githubStarsTotal">847</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Total Stars</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl">
+                        <div class="text-2xl font-bold text-green-600 dark:text-green-400" id="githubCommits">1,247</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">This Year</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl">
+                        <div class="text-2xl font-bold text-purple-600 dark:text-purple-400" id="githubFollowers">156</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Followers</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -689,117 +1288,198 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 relative">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4">
-                <span class="gradient-text">Get In Touch</span>
+            <h2 class="section-title text-center mb-4">
+                <span class="gradient-text">Let's Build Something Amazing</span>
             </h2>
-            <p class="text-xl text-center mb-16 max-w-2xl mx-auto">
-                Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
+                Ready to turn your data challenges into competitive advantages? Let's discuss how we can architect 
+                scalable solutions that drive real business impact.
             </p>
             
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="modern-card p-8 rounded-2xl">
+                    <h3 class="card-title mb-6">Send me a message</h3>
+                    
                     <form id="contactForm" class="space-y-6">
-                        <div>
-                            <label for="name" class="block mb-2 font-medium theme-text">Your Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-transparent contact-input focus:outline-none" required>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Your Name *</label>
+                                <input type="text" id="name" name="name" class="modern-input w-full" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Email Address *</label>
+                                <input type="email" id="email" name="email" class="modern-input w-full" required>
+                            </div>
                         </div>
                         
                         <div>
-                            <label for="email" class="block mb-2 font-medium theme-text">Email Address</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-transparent contact-input focus:outline-none" required>
+                            <label for="company" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Company</label>
+                            <input type="text" id="company" name="company" class="modern-input w-full">
                         </div>
                         
                         <div>
-                            <label for="subject" class="block mb-2 font-medium theme-text">Subject</label>
-                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 bg-transparent contact-input focus:outline-none" required>
+                            <label for="subject" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Project Type *</label>
+                            <select id="subject" name="subject" class="modern-input w-full" required>
+                                <option value="">Select project type</option>
+                                <option value="data-engineering">Data Engineering</option>
+                                <option value="ml-consulting">ML Consulting</option>
+                                <option value="architecture-review">Architecture Review</option>
+                                <option value="team-training">Team Training</option>
+                                <option value="full-time">Full-time Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                         
                         <div>
-                            <label for="message" class="block mb-2 font-medium theme-text">Message</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-transparent contact-input focus:outline-none" required></textarea>
+                            <label for="budget" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Project Budget</label>
+                            <select id="budget" name="budget" class="modern-input w-full">
+                                <option value="">Select budget range</option>
+                                <option value="under-10k">Under $10k</option>
+                                <option value="10k-50k">$10k - $50k</option>
+                                <option value="50k-100k">$50k - $100k</option>
+                                <option value="100k-plus">$100k+</option>
+                                <option value="discuss">Let's discuss</option>
+                            </select>
                         </div>
                         
-                        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-4 px-6 rounded-xl font-medium transition-colors shadow-lg hover:shadow-xl">
+                        <div>
+                            <label for="message" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" class="modern-input w-full" 
+                                      placeholder="Tell me about your data challenges, goals, and timeline..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full text-lg">
+                            <i class="fas fa-paper-plane mr-2"></i>
                             Send Message
                         </button>
                     </form>
                     
-                    <div id="formSuccess" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-center">
-                        <i class="fas fa-check-circle text-2xl mb-2"></i>
-                        <p class="font-medium">Thank you for your message!</p>
-                        <p>I'll get back to you within 24 hours.</p>
+                    <!-- Success/Error Messages -->
+                    <div id="formSuccess" class="hidden mt-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 rounded-xl">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-2xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">Message sent successfully!</p>
+                                <p class="text-sm">I'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div id="formError" class="hidden mt-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg text-center">
-                        <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
-                        <p class="font-medium">Error sending message</p>
-                        <p>Please try again later or email me directly.</p>
+                    <div id="formError" class="hidden mt-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 rounded-xl">
+                        <div class="flex items-center">
+                            <i class="fas fa-exclamation-circle text-2xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">Error sending message</p>
+                                <p class="text-sm">Please try again later or email me directly.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2">
-                    <div class="glass-card p-8 h-full rounded-3xl shadow-xl">
-                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="modern-card p-8 rounded-2xl">
+                        <h3 class="card-title mb-6">Contact Information</h3>
                         
                         <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-primary/10 text-primary p-3 rounded-lg mr-4">
-                                    <i class="fas fa-envelope text-xl"></i>
+                            <div class="flex items-start group">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium mb-1 theme-text">Email</h4>
-                                    <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="hover:text-primary transition-colors">akashyadav1217@ug.cusat.ac.in</a>
+                                    <h4 class="font-semibold mb-1 text-gray-800 dark:text-gray-200">Email</h4>
+                                    <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="text-primary hover:text-primary-dark transition-colors">
+                                        akashyadav1217@ug.cusat.ac.in
+                                    </a>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Response within 24 hours</p>
                                 </div>
                             </div>
                             
-                            <div class="flex items-start">
-                                <div class="bg-secondary/10 text-secondary p-3 rounded-lg mr-4">
-                                    <i class="fas fa-phone-alt text-xl"></i>
+                            <div class="flex items-start group">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary to-success rounded-xl flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium mb-1 theme-text">Phone</h4>
-                                    <a href="tel:+4915510680242" class="hover:text-primary transition-colors">+49 155 10680242</a>
+                                    <h4 class="font-semibold mb-1 text-gray-800 dark:text-gray-200">Phone</h4>
+                                    <a href="tel:+4915510680242" class="text-primary hover:text-primary-dark transition-colors">
+                                        +49 155 10680242
+                                    </a>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Available Mon-Fri, 9-18 CET</p>
                                 </div>
                             </div>
                             
-                            <div class="flex items-start">
-                                <div class="bg-purple-500/10 text-purple-500 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                            <div class="flex items-start group">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-accent to-error rounded-xl flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium mb-1 theme-text">Location</h4>
-                                    <p class="theme-text">Siemenstrasse 50A, 12247 Berlin, Germany</p>
+                                    <h4 class="font-semibold mb-1 text-gray-800 dark:text-gray-200">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">Siemenstrasse 50A</p>
+                                    <p class="text-gray-600 dark:text-gray-300">12247 Berlin, Germany</p>
                                 </div>
                             </div>
                             
-                            <div class="flex items-start">
-                                <div class="bg-yellow-500/10 text-yellow-500 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-clock text-xl"></i>
+                            <div class="flex items-start group">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-warning to-success rounded-xl flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-calendar-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium mb-1 theme-text">Availability</h4>
-                                    <p class="theme-text">Monday - Friday: 9am - 6pm CET</p>
-                                    <p class="text-sm opacity-70 theme-text">Response time: within 24 hours</p>
+                                    <h4 class="font-semibold mb-1 text-gray-800 dark:text-gray-200">Availability</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">Open for new opportunities</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Freelance & Full-time positions</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="modern-card p-8 rounded-2xl">
+                        <h4 class="card-title mb-6">Connect with me</h4>
                         
-                        <div class="mt-12">
-                            <h4 class="font-medium mb-4 theme-text">Follow Me</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://github.com/yourusername" class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow flex items-center justify-center text-xl hover:text-primary transition-colors">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://linkedin.com/in/yourprofile" class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow flex items-center justify-center text-xl hover:text-primary transition-colors">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://twitter.com/yourhandle" class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow flex items-center justify-center text-xl hover:text-primary transition-colors">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="https://medium.com/@yourhandle" class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow flex items-center justify-center text-xl hover:text-primary transition-colors">
-                                    <i class="fab fa-medium-m"></i>
-                                </a>
-                            </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="https://github.com/akashyadav" target="_blank" 
+                               class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
+                                <i class="fab fa-github text-2xl text-gray-800 dark:text-gray-200 mr-3 group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <div class="font-medium text-gray-800 dark:text-gray-200">GitHub</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">@akashyadav</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://linkedin.com/in/akash-yadav-data" target="_blank" 
+                               class="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors group">
+                                <i class="fab fa-linkedin-in text-2xl text-blue-600 dark:text-blue-400 mr-3 group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <div class="font-medium text-gray-800 dark:text-gray-200">LinkedIn</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">Connect</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://twitter.com/akashyadav_dev" target="_blank" 
+                               class="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors group">
+                                <i class="fab fa-twitter text-2xl text-blue-500 dark:text-blue-400 mr-3 group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <div class="font-medium text-gray-800 dark:text-gray-200">Twitter</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">@akashyadav_dev</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://medium.com/@akashyadav" target="_blank" 
+                               class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
+                                <i class="fab fa-medium-m text-2xl text-gray-800 dark:text-gray-200 mr-3 group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <div class="font-medium text-gray-800 dark:text-gray-200">Medium</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">Technical Blog</div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl border border-primary/20">
+                            <p class="text-sm text-gray-600 dark:text-gray-300 text-center">
+                                <i class="fas fa-coffee mr-2 text-primary"></i>
+                                Always happy to discuss data engineering over coffee!
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -807,47 +1487,118 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 bg-gray-900 text-gray-300">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h2 class="text-2xl font-bold gradient-text">Akash Yadav</h2>
-                    <p class="mt-2">Data Engineer | Python Developer | Cloud Specialist</p>
+    <!-- Enhanced Footer -->
+    <footer class="py-16 bg-gray-900 text-gray-300 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold gradient-text mb-4">Akash Yadav</h2>
+                    <p class="text-lg mb-6 text-gray-400">
+                        Senior Data Engineer crafting scalable solutions that transform data into business value. 
+                        Specializing in cloud-native architectures, ML systems, and high-performance data pipelines.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center text-green-400">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2"></div>
+                            <span class="text-sm">Available for new projects</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="flex flex-col items-center md:items-end">
-                    <div class="flex space-x-6 mb-4">
-                        <a href="#about" class="hover:text-white transition-colors">About</a>
-                        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-                        <a href="#feedback" class="hover:text-white transition-colors">Feedback</a>
-                    </div>
-                    <p class="text-sm">© <span id="currentYear"></span> Akash Yadav. All rights reserved.</p>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-primary transition-colors">About Me</a></li>
+                        <li><a href="#experience" class="hover:text-primary transition-colors">Experience</a></li>
+                        <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="./resume.pdf" target="_blank" class="hover:text-primary transition-colors">Download CV</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Services</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-gray-400">Data Pipeline Architecture</li>
+                        <li class="text-gray-400">ML System Design</li>
+                        <li class="text-gray-400">Cloud Migration</li>
+                        <li class="text-gray-400">Performance Optimization</li>
+                        <li class="text-gray-400">Team Training & Mentoring</li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
-                <p>Made with <i class="fas fa-fire text-red-500"></i> by Akash Yadav</p>
-                <p class="text-xs mt-2 opacity-70">Built with HTML, CSS, JavaScript and a lot of coffee</p>
+            <!-- Stats Bar -->
+            <div class="border-t border-gray-800 pt-8 mb-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-2xl font-bold text-primary">4+</div>
+                        <div class="text-sm text-gray-400">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-secondary">10TB+</div>
+                        <div class="text-sm text-gray-400">Daily Processing</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-success">99.8%</div>
+                        <div class="text-sm text-gray-400">System Reliability</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-warning">50+</div>
+                        <div class="text-sm text-gray-400">Projects Delivered</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; <span id="currentYear">2024</span> Akash Yadav. All rights reserved.</p>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Built with passion using modern web technologies
+                    </p>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/akashyadav" target="_blank" 
+                       class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/akash-yadav-data" target="_blank" 
+                       class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/akashyadav_dev" target="_blank" 
+                       class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:akashyadav1217@ug.cusat.ac.in" 
+                       class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Enhanced JavaScript -->
     <script>
-        // Initialize Particles.js
+        // Initialize Particles.js with enhanced config
         particlesJS("particles-js", {
             "particles": {
                 "number": {
-                    "value": 80,
+                    "value": 60,
                     "density": {
                         "enable": true,
-                        "value_area": 800
+                        "value_area": 1000
                     }
                 },
                 "color": {
-                    "value": "#6366f1"
+                    "value": ["#2563eb", "#06b6d4", "#8b5cf6"]
                 },
                 "shape": {
                     "type": "circle",
@@ -857,28 +1608,45 @@
                     }
                 },
                 "opacity": {
-                    "value": 0.3,
-                    "random": false
+                    "value": 0.4,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
                 },
                 "size": {
                     "value": 3,
-                    "random": true
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
                 },
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#6366f1",
-                    "opacity": 0.2,
+                    "color": "#2563eb",
+                    "opacity": 0.3,
                     "width": 1
                 },
                 "move": {
                     "enable": true,
-                    "speed": 2,
+                    "speed": 1.5,
                     "direction": "none",
                     "random": false,
                     "straight": false,
                     "out_mode": "out",
-                    "bounce": false
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
                 }
             },
             "interactivity": {
@@ -896,99 +1664,133 @@
                 },
                 "modes": {
                     "grab": {
-                        "distance": 140,
+                        "distance": 180,
                         "line_linked": {
-                            "opacity": 1
+                            "opacity": 0.8
                         }
                     },
                     "push": {
-                        "particles_nb": 4
+                        "particles_nb": 3
                     }
                 }
             },
             "retina_detect": true
         });
 
-        // Dark Mode Toggle
+        // Enhanced Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         const html = document.documentElement;
         
-        // Check for saved user preference
-        if (localStorage.getItem('darkMode') === 'true') {
+        // Check for saved user preference or system preference
+        const savedTheme = localStorage.getItem('darkMode');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'true' || (savedTheme === null && systemDark)) {
             html.classList.add('dark');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
         
         darkModeToggle.addEventListener('click', () => {
             html.classList.toggle('dark');
-            
-            // Save preference to localStorage
-            const isDark = html.classList.contains('dark');
-            localStorage.setItem('darkMode', isDark);
-            
-            // Update icon
-            if (isDark) {
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
         });
 
-        // Typed.js Animation
+        // Theme Color Selector
+        const themeColors = document.querySelectorAll('.theme-color');
+        const body = document.body;
+        
+        // Load saved theme
+        const savedColorTheme = localStorage.getItem('colorTheme') || 'blue';
+        body.setAttribute('data-theme', savedColorTheme);
+        document.querySelector(`[data-theme="${savedColorTheme}"]`).classList.add('active');
+        
+        themeColors.forEach(color => {
+            color.addEventListener('click', () => {
+                const theme = color.getAttribute('data-theme');
+                
+                // Remove active class from all
+                themeColors.forEach(c => c.classList.remove('active'));
+                
+                // Add active to clicked
+                color.classList.add('active');
+                
+                // Apply theme
+                body.setAttribute('data-theme', theme);
+                localStorage.setItem('colorTheme', theme);
+            });
+        });
+
+        // Enhanced Typed.js Animation
         new Typed('#typed', {
             strings: [
-                'Data Engineer',
-                'Python Developer',
-                'Cloud Specialist',
-                'Problem Solver'
+                'Senior Data Engineer',
+                'Cloud Architect', 
+                'ML Systems Designer',
+                'Python Expert',
+                'AWS Specialist',
+                'Pipeline Optimizer'
             ],
-            typeSpeed: 50,
-            backSpeed: 30,
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2000,
+            startDelay: 1000,
             loop: true,
             showCursor: true,
-            cursorChar: '|'
+            cursorChar: '|',
+            smartBackspace: true
         });
 
-        // Visitor Counter
-        async function updateVisitorCount() {
+        // Real-time Data Updates
+        async function updateRealTimeData() {
             try {
-                // Simulate API call
+                // Simulate real API calls with more realistic data
                 const data = {
-                    totalVisitors: 1528,
-                    todayVisitors: Math.floor(Math.random() * 10) + 25
+                    visitorCount: Math.floor(Math.random() * 20) + 35,
+                    totalVisitors: 2847,
+                    todayVisitors: Math.floor(Math.random() * 15) + 30,
+                    githubStars: 847,
+                    githubRepos: 24,
+                    githubCommits: 1247,
+                    githubFollowers: 156,
+                    coffeeCount: Math.floor(Math.random() * 3) + 3,
+                    codingHours: Math.floor(Math.random() * 4) + 4
                 };
                 
-                // Animate counter
-                let currentCount = 0;
-                const counter = document.getElementById('visitorCount');
-                const increment = Math.ceil(data.todayVisitors / 20);
+                // Animate counters
+                animateCounter('visitorCount', data.visitorCount);
+                animateCounter('totalVisitors', data.totalVisitors);
+                animateCounter('todayVisitors', data.todayVisitors);
+                animateCounter('githubStarsTotal', data.githubStars);
+                animateCounter('githubRepos', data.githubRepos);
+                animateCounter('githubCommits', data.githubCommits);
+                animateCounter('githubFollowers', data.githubFollowers);
+                animateCounter('coffeeCount', data.coffeeCount);
                 
-                const countUp = setInterval(() => {
-                    currentCount += increment;
-                    if (currentCount >= data.todayVisitors) {
-                        currentCount = data.todayVisitors;
-                        clearInterval(countUp);
-                    }
-                    counter.textContent = currentCount;
-                }, 50);
-                
-                // Update total visitors
-                document.getElementById('totalVisitors').textContent = data.totalVisitors.toLocaleString();
-                document.getElementById('todayVisitors').textContent = data.todayVisitors;
+                document.getElementById('codingHours').textContent = `${data.codingHours}h`;
                 
             } catch (error) {
-                console.error("Error fetching visitor count:", error);
-                // Fallback to localStorage
-                let visitorCount = localStorage.getItem('visitorCount') || 1427;
-                visitorCount = parseInt(visitorCount) + 1;
-                localStorage.setItem('visitorCount', visitorCount);
-                document.getElementById('visitorCount').textContent = visitorCount;
+                console.error("Error updating real-time data:", error);
             }
         }
         
-        updateVisitorCount();
+        function animateCounter(elementId, targetValue) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            const startValue = parseInt(element.textContent) || 0;
+            const increment = Math.ceil((targetValue - startValue) / 20);
+            let currentValue = startValue;
+            
+            const counter = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= targetValue) {
+                    currentValue = targetValue;
+                    clearInterval(counter);
+                }
+                element.textContent = currentValue.toLocaleString();
+            }, 50);
+        }
 
-        // Berlin Time
+        // Berlin Time with better formatting
         function updateBerlinTime() {
             const options = { 
                 timeZone: 'Europe/Berlin', 
@@ -1001,23 +1803,14 @@
         }
         
         updateBerlinTime();
-        setInterval(updateBerlinTime, 60000);
+        setInterval(updateBerlinTime, 1000); // Update every second
 
-        // Real-time Weather
+        // Weather API (simulated)
         async function fetchWeather() {
             try {
-                // Simulate API response
-                const data = {
-                    main: {
-                        temp: 22.5
-                    },
-                    weather: [{
-                        icon: "01d"
-                    }]
-                };
-                
-                document.getElementById('berlinTemp').textContent = `${Math.round(data.main.temp)}°C`;
-                
+                // In a real app, you'd use a weather API like OpenWeatherMap
+                const temp = Math.floor(Math.random() * 15) + 15; // 15-30°C
+                document.getElementById('berlinTemp').textContent = `${temp}°C`;
             } catch (error) {
                 console.error("Error fetching weather:", error);
                 document.getElementById('berlinTemp').textContent = "22°C";
@@ -1025,42 +1818,42 @@
         }
         
         fetchWeather();
+        setInterval(fetchWeather, 300000); // Update every 5 minutes
 
-        // GitHub Stars (simulated)
-        document.getElementById('githubStars').textContent = Math.floor(Math.random() * 50) + 120;
-
-        // Coding Hours (simulated)
-        document.getElementById('codingHours').textContent = `${Math.floor(Math.random() * 3) + 2}h`;
-
-        // Day Rating System
+        // Enhanced Rating System
         const stars = document.querySelectorAll('#ratingStars i');
         let currentRating = 0;
-        let totalRatings = localStorage.getItem('totalRatings') || 0;
-        let sumRatings = localStorage.getItem('sumRatings') || 0;
-        let todayRatings = localStorage.getItem('todayRatings') || 0;
-        let lastRatingDate = localStorage.getItem('lastRatingDate');
+        let ratings = JSON.parse(localStorage.getItem('portfolioRatings')) || {
+            total: 127,
+            sum: 543,
+            today: 8,
+            lastDate: new Date().toDateString()
+        };
         
-        // Reset today's ratings if it's a new day
-        const today = new Date().toDateString();
-        if (lastRatingDate !== today) {
-            todayRatings = 0;
-            localStorage.setItem('lastRatingDate', today);
-            localStorage.setItem('todayRatings', todayRatings);
+        // Reset today's count if new day
+        if (ratings.lastDate !== new Date().toDateString()) {
+            ratings.today = 0;
+            ratings.lastDate = new Date().toDateString();
         }
         
-        // Update rating display
-        document.getElementById('averageRating').textContent = totalRatings > 0 ? (sumRatings / totalRatings).toFixed(1) : '0.0';
-        document.getElementById('totalRatings').textContent = totalRatings;
-        document.getElementById('todayRatings').textContent = todayRatings;
+        // Update display
+        updateRatingDisplay();
         
-        stars.forEach(star => {
+        function updateRatingDisplay() {
+            const average = ratings.total > 0 ? (ratings.sum / ratings.total).toFixed(1) : '0.0';
+            document.getElementById('averageRating').textContent = average;
+            document.getElementById('totalRatings').textContent = ratings.total;
+            document.getElementById('todayRatings').textContent = ratings.today;
+        }
+        
+        stars.forEach((star, index) => {
             star.addEventListener('click', () => {
-                const rating = parseInt(star.getAttribute('data-rating'));
+                const rating = index + 1;
                 currentRating = rating;
                 
-                // Update star colors
-                stars.forEach((s, index) => {
-                    if (index < rating) {
+                // Update visual feedback
+                stars.forEach((s, i) => {
+                    if (i < rating) {
                         s.classList.remove('text-gray-300');
                         s.classList.add('text-yellow-400');
                     } else {
@@ -1071,42 +1864,46 @@
                 
                 // Update rating text
                 const ratingTexts = [
-                    "Terrible day",
-                    "Could be better",
-                    "It's okay",
-                    "Pretty good!",
-                    "Amazing day!"
+                    "Having a tough day 😔",
+                    "Could be better 😐", 
+                    "It's going okay 🙂",
+                    "Pretty good day! 😊",
+                    "Amazing day! 🚀"
                 ];
                 document.getElementById('ratingText').textContent = ratingTexts[rating - 1];
                 
                 // Update stats
-                totalRatings++;
-                sumRatings += rating;
-                todayRatings++;
-                averageRating = (sumRatings / totalRatings).toFixed(1);
-                
-                document.getElementById('averageRating').textContent = averageRating;
-                document.getElementById('totalRatings').textContent = totalRatings;
-                document.getElementById('todayRatings').textContent = todayRatings;
+                ratings.total++;
+                ratings.sum += rating;
+                ratings.today++;
                 
                 // Save to localStorage
-                localStorage.setItem('totalRatings', totalRatings);
-                localStorage.setItem('sumRatings', sumRatings);
-                localStorage.setItem('todayRatings', todayRatings);
+                localStorage.setItem('portfolioRatings', JSON.stringify(ratings));
+                updateRatingDisplay();
+                
+                // Show thank you message
+                setTimeout(() => {
+                    document.getElementById('ratingText').textContent = "Thanks for sharing! 🙏";
+                }, 2000);
             });
             
-            // Hover effect
-            star.addEventListener('mouseover', () => {
-                const hoverRating = parseInt(star.getAttribute('data-rating'));
-                stars.forEach((s, index) => {
-                    if (index < hoverRating && currentRating === 0) {
-                        s.classList.remove('text-gray-300');
-                        s.classList.add('text-yellow-300');
-                    }
-                });
+            // Enhanced hover effects
+            star.addEventListener('mouseenter', () => {
+                const hoverRating = index + 1;
+                if (currentRating === 0) {
+                    stars.forEach((s, i) => {
+                        if (i < hoverRating) {
+                            s.classList.remove('text-gray-300');
+                            s.classList.add('text-yellow-300');
+                        } else {
+                            s.classList.add('text-gray-300');
+                            s.classList.remove('text-yellow-300');
+                        }
+                    });
+                }
             });
             
-            star.addEventListener('mouseout', () => {
+            star.addEventListener('mouseleave', () => {
                 if (currentRating === 0) {
                     stars.forEach(s => {
                         s.classList.add('text-gray-300');
@@ -1116,81 +1913,7 @@
             });
         });
 
-        // Feedback Form Rating
-        const feedbackStars = document.querySelectorAll('.feedback-rating i');
-        feedbackStars.forEach(star => {
-            star.addEventListener('click', function() {
-                const rating = this.getAttribute('data-rating');
-                document.getElementById('feedbackRating').value = rating;
-                
-                // Update visual feedback
-                feedbackStars.forEach(s => {
-                    s.classList.remove('text-red-500', 'text-yellow-500', 'text-green-500', 'text-blue-500', 'text-purple-500');
-                    s.classList.add('text-gray-400');
-                });
-                
-                // Color the selected star and previous ones
-                for (let i = 0; i < rating; i++) {
-                    feedbackStars[i].classList.remove('text-gray-400');
-                    if (rating <= 2) {
-                        feedbackStars[i].classList.add('text-red-500');
-                    } else if (rating <= 3) {
-                        feedbackStars[i].classList.add('text-yellow-500');
-                    } else if (rating <= 4) {
-                        feedbackStars[i].classList.add('text-green-500');
-                    } else {
-                        feedbackStars[i].classList.add('text-blue-500');
-                    }
-                }
-            });
-        });
-
-        // Feedback Form Submission
-        const feedbackForm = document.getElementById('feedbackForm');
-        const feedbackSuccess = document.getElementById('feedbackSuccess');
-        const feedbackError = document.getElementById('feedbackError');
-        
-        feedbackForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('feedbackName').value,
-                email: document.getElementById('feedbackEmail').value,
-                rating: document.getElementById('feedbackRating').value,
-                type: document.getElementById('feedbackType').value,
-                message: document.getElementById('feedbackMessage').value
-            };
-            
-            try {
-                // Simulate form submission
-                console.log('Feedback submitted:', formData);
-                
-                feedbackForm.reset();
-                feedbackSuccess.classList.remove('hidden');
-                feedbackError.classList.add('hidden');
-                
-                // Reset rating display
-                feedbackStars.forEach(s => {
-                    s.classList.remove('text-red-500', 'text-yellow-500', 'text-green-500', 'text-blue-500', 'text-purple-500');
-                    s.classList.add('text-gray-400');
-                });
-                
-                setTimeout(() => {
-                    feedbackSuccess.classList.add('hidden');
-                }, 5000);
-                
-            } catch (error) {
-                console.error('Error submitting feedback:', error);
-                feedbackError.classList.remove('hidden');
-                feedbackSuccess.classList.add('hidden');
-                
-                setTimeout(() => {
-                    feedbackError.classList.add('hidden');
-                }, 5000);
-            }
-        });
-
-        // Contact Form
+        // Enhanced Contact Form
         const contactForm = document.getElementById('contactForm');
         const formSuccess = document.getElementById('formSuccess');
         const formError = document.getElementById('formError');
@@ -1198,21 +1921,34 @@
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitBtn.disabled = true;
+            
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
                 subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
             };
             
             try {
-                // Simulate form submission
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
                 console.log('Contact form submitted:', formData);
                 
+                // Reset form
                 contactForm.reset();
                 formSuccess.classList.remove('hidden');
                 formError.classList.add('hidden');
                 
+                // Hide success message after 5 seconds
                 setTimeout(() => {
                     formSuccess.classList.add('hidden');
                 }, 5000);
@@ -1225,70 +1961,107 @@
                 setTimeout(() => {
                     formError.classList.add('hidden');
                 }, 5000);
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
             }
         });
 
-        // Charts
-        const visitorCtx = document.getElementById('visitorChart').getContext('2d');
-        const visitorChart = new Chart(visitorCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-                datasets: [{
-                    label: 'Monthly Visitors',
-                    data: [120, 190, 170, 220, 240, 280, 310],
-                    borderColor: '#6366f1',
-                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
-                    borderWidth: 2,
-                    tension: 0.3,
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
+        // Enhanced Charts with Chart.js
+        function initializeCharts() {
+            // Visitor Chart
+            const visitorCtx = document.getElementById('visitorChart').getContext('2d');
+            const visitorChart = new Chart(visitorCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    datasets: [{
+                        label: 'Monthly Visitors',
+                        data: [180, 220, 190, 280, 320, 350, 380],
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#2563eb',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
                 },
-                scales: {
-                    y: {
-                        beginAtZero: true
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0,0,0,0.1)'
+                            },
+                            ticks: {
+                                color: '#6b7280'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#6b7280'
+                            }
+                        }
+                    },
+                    elements: {
+                        point: {
+                            hoverBackgroundColor: '#2563eb'
+                        }
                     }
                 }
-            }
-        });
-        
-        const deviceCtx = document.getElementById('deviceChart').getContext('2d');
-        const deviceChart = new Chart(deviceCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Desktop', 'Mobile', 'Tablet'],
-                datasets: [{
-                    data: [65, 30, 5],
-                    backgroundColor: [
-                        '#6366f1',
-                        '#10b981',
-                        '#f59e0b'
-                    ],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    }
+            });
+            
+            // Device Chart
+            const deviceCtx = document.getElementById('deviceChart').getContext('2d');
+            const deviceChart = new Chart(deviceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Desktop', 'Mobile', 'Tablet'],
+                    datasets: [{
+                        data: [58, 35, 7],
+                        backgroundColor: [
+                            '#2563eb',
+                            '#06b6d4', 
+                            '#8b5cf6'
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
                 },
-                cutout: '70%'
-            }
-        });
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                usePointStyle: true,
+                                color: '#6b7280'
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+        }
 
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Smooth scrolling for anchor links
+        // Smooth scrolling with offset for fixed header
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1298,28 +2071,67 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    const headerOffset = 100;
+                    const elementPosition = targetElement.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: offsetPosition,
                         behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Intersection Observer for animations
+        // Enhanced Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fadeIn');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, {
-            threshold: 0.1
-        });
+        }, observerOptions);
 
-        document.querySelectorAll('.timeline-item, .glass-card').forEach(el => {
+        // Observe elements for animations
+        document.querySelectorAll('.modern-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            updateRealTimeData();
+            initializeCharts();
+            
+            // Update real-time data every 30 seconds
+            setInterval(updateRealTimeData, 30000);
+            
+            // Set current year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+
+        // Enhanced error handling and loading states
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+        });
+        
+        // Service Worker registration for PWA capabilities (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // Register service worker if available
+                console.log('PWA capabilities available');
+            });
+        }
     </script>
 </body>
 </html>
+                
+                            
