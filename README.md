@@ -1,6 +1,5 @@
 # Akash Yadav - Data Engineer Portfolio
 
-![Preview](img.png)
 
 **Live Demo:** [https://yadavgkp.github.io](https://yadavgkp.github.io)
 
