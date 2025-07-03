@@ -2836,25 +2836,27 @@ print(f'Fibonacci(10): {fib(10)}')"></textarea>
             }
 
             // Typed.js Initialization
-            initializeTypedText() {
-                if (typeof Typed !== 'undefined') {
-                    new Typed('#typed', {
-                        strings: [
-                            'Data Infrastructure Engineer',
-                    'Cloud Architecture Specialist',
-                    'Python Backend Developer',
-                    'DevOps Engineer',
-                    'ML Pipeline Builder',
-                    'System Design Expert'
-                            'Problem Solver'
-                        ],
-                        typeSpeed: 70,
-                        backSpeed: 50,
-                        backDelay: 2000,
-                        loop: true
-                    });
-                }
-            }
+            // Typed.js Initialization
+initializeTypedText() {
+    if (typeof Typed !== 'undefined') {
+        new Typed('#typed', {
+            strings: [
+                'Data Infrastructure Engineer',
+                'Cloud Architecture Specialist',
+                'Python Backend Developer',
+                'DevOps Engineer',
+                'ML Pipeline Builder',
+                'System Design Expert',
+                'Problem Solver'
+            ],
+            typeSpeed: 70,
+            backSpeed: 50,
+            backDelay: 2000,
+            loop: true
+        });
+    }
+}
+
 
             // Charts Initialization
             initializeCharts() {
