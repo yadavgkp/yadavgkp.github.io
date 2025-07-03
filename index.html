@@ -982,126 +982,104 @@
                     </div>
                 </div>
                 
-                <!-- Skills Section with Interactive Progress Bars -->
-                <div class="space-y-8">
-                    <div class="modern-card interactive-card p-8">
-                        <h3 class="text-2xl font-bold mb-8 flex items-center">
-                            <i class="fas fa-code text-primary mr-3"></i>
-                            Interactive Skills
-                            <span class="ml-auto text-sm text-gray-500">Click to see proficiency!</span>
-                        </h3>
-                        
-                        <!-- ML & AI -->
-                        <div class="mb-8">
-                            <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                <i class="fas fa-robot text-purple-500 mr-2"></i>
-                                Machine Learning & AI
-                            </h4>
-                            <div class="space-y-4">
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">TensorFlow</span>
-                                        <span class="skill-percentage">90%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 90)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">PyTorch</span>
-                                        <span class="skill-percentage">85%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 85)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">Scikit-learn</span>
-                                        <span class="skill-percentage">95%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 95)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Data Engineering -->
-                        <div class="mb-8">
-                            <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                <i class="fas fa-database text-blue-500 mr-2"></i>
-                                Data Engineering & MLOps
-                            </h4>
-                            <div class="space-y-4">
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">Python</span>
-                                        <span class="skill-percentage">95%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 95)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">PySpark</span>
-                                        <span class="skill-percentage">88%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 88)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">Docker/Kubernetes</span>
-                                        <span class="skill-percentage">80%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 80)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Cloud Platforms -->
-                        <div>
-                            <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                <i class="fas fa-cloud text-cyan-500 mr-2"></i>
-                                Cloud & Databases
-                            </h4>
-                            <div class="space-y-4">
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">AWS</span>
-                                        <span class="skill-percentage">82%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 82)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">GCP</span>
-                                        <span class="skill-percentage">75%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 75)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">SQL/NoSQL</span>
-                                        <span class="skill-percentage">90%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 90)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+               <!-- Skills Section -->
+<div class="space-y-8">
+    <div class="modern-card interactive-card p-8">
+        <h3 class="text-2xl font-bold mb-8 flex items-center">
+            <i class="fas fa-code text-primary mr-3"></i>
+            Technical Skills
+        </h3>
+        
+        <!-- Cloud & DevOps -->
+        <div class="mb-8">
+            <div class="category-header">
+                <h4 class="text-lg font-semibold flex items-center text-gray-800 dark:text-gray-200">
+                    <i class="fas fa-cloud text-blue-500 mr-2"></i>
+                    Cloud & DevOps
+                </h4>
+            </div>
+            <div class="flex flex-wrap">
+                <span class="skill-tag">AWS (EC2, S3, DynamoDB, CloudWatch)</span>
+                <span class="skill-tag">GCP & BigQuery</span>
+                <span class="skill-tag">Terraform</span>
+                <span class="skill-tag">Ansible</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">Git & GitHub Actions</span>
+                <span class="skill-tag">Docker & Compose</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">System Monitoring</span>
+                <span class="skill-tag">Cost Optimization</span>
+            </div>
+        </div>
+        
+        <!-- Backend & APIs -->
+        <div class="mb-8">
+            <div class="category-header">
+                <h4 class="text-lg font-semibold flex items-center text-gray-800 dark:text-gray-200">
+                    <i class="fas fa-server text-purple-500 mr-2"></i>
+                    Backend & APIs
+                </h4>
+            </div>
+            <div class="flex flex-wrap">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">API Testing (Postman)</span>
+                <span class="skill-tag">GraphQL</span>
+                <span class="skill-tag">OAuth</span>
+                <span class="skill-tag">RabbitMQ</span>
+                <span class="skill-tag">gRPC</span>
+            </div>
+        </div>
+        
+        <!-- Data Engineering & ML -->
+        <div class="mb-8">
+            <div class="category-header">
+                <h4 class="text-lg font-semibold flex items-center text-gray-800 dark:text-gray-200">
+                    <i class="fas fa-database text-green-500 mr-2"></i>
+                    Data Engineering & ML
+                </h4>
+            </div>
+            <div class="flex flex-wrap">
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">PySpark & Spark SQL</span>
+                <span class="skill-tag">Airflow</span>
+                <span class="skill-tag">Kafka</span>
+                <span class="skill-tag">ETL & DataWarehousing</span>
+                <span class="skill-tag">Data Modeling</span>
+                <span class="skill-tag">Pandas & NumPy</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">TensorFlow & Keras</span>
+                <span class="skill-tag">OpenCV</span>
+                <span class="skill-tag">MLflow</span>
+                <span class="skill-tag">Dockerized ML</span>
+                <span class="skill-tag">JupyterLab</span>
+            </div>
+        </div>
+        
+        <!-- Tools & IDEs -->
+        <div class="mb-8">
+            <div class="category-header">
+                <h4 class="text-lg font-semibold flex items-center text-gray-800 dark:text-gray-200">
+                    <i class="fas fa-tools text-orange-500 mr-2"></i>
+                    Tools & IDEs
+                </h4>
+            </div>
+            <div class="flex flex-wrap">
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">Jupyter Notebook</span>
+                <span class="skill-tag">PyCharm</span>
+                <span class="skill-tag">Linux Shell</span>
+                <span class="skill-tag">SonarQube & Scanner</span>
+                <span class="skill-tag">Postman</span>
+                <span class="skill-tag">Docker CLI</span>
+                <span class="skill-tag">GitLab</span>
+            </div>
+        </div>
+    </div>
+</div>
                     
                     <!-- Real-time Performance Dashboard -->
                     <div class="modern-card p-8">
