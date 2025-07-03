@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -843,7 +844,7 @@
                     </a>
                 </div>
                 
-                <!-- Interactive Real-time Stats -->
+               <!-- Interactive Real-time Stats -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="stats-card" onclick="incrementCounter('visitors')">
                         <div class="text-2xl font-bold text-primary mb-2">
@@ -880,12 +881,12 @@
                 <div class="relative floating">
                     <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-3xl rotate-6 opacity-20"></div>
                     <div class="absolute inset-0 bg-gradient-to-br from-accent to-secondary rounded-3xl rotate-3 opacity-30"></div>
-                    <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-3xl border-4 border-white dark:border-gray-800 shadow-2xl z-10 cursor-pointer bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center"
-                         onclick="triggerImageInteraction()">
-                        <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-300 dark:bg-gray-600 rounded-2xl flex items-center justify-center text-6xl">
-                            👨‍💻
-                        </div>
-                    </div>
+                  <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-3xl border-4 border-white dark:border-gray-800 shadow-2xl z-10 cursor-pointer bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center"
+     onclick="triggerImageInteraction()">
+  <img src="img.png" alt="User Avatar"
+       class="max-w-full max-h-full object-contain rounded-2xl" />
+</div>
+
                 </div>
             </div>
         </div>
@@ -913,7 +914,7 @@
                             <i class="fas fa-user-astronaut text-primary mr-3"></i>
                             Who Am I?
                         </h3>
-                        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+                       <div class="space-y-4 text-gray-600 dark:text-gray-300">
                             <p class="text-lg leading-relaxed">
                                 I'm a passionate <span class="font-semibold text-primary cursor-pointer" onclick="triggerEasterEgg('🤖')">Data Infrastructure Engineer</span> with expertise in 
                                 building scalable cloud-native systems. Currently at <span class="font-semibold cursor-pointer" onclick="triggerEasterEgg('🏢')">Nocturne GmbH</span> in Berlin, 
@@ -970,11 +971,11 @@
                                 <div class="text-sm text-gray-500 dark:text-gray-400">Average</div>
                             </div>
                             <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-                                <div class="text-2xl font-bold text-secondary" id="totalMoods">89</div>
+                                <div class="text-2xl font-bold text-secondary" id="totalMoods">--</div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">Total</div>
                             </div>
                             <div class="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-                                <div class="text-2xl font-bold text-success" id="todayMoods">3</div>
+                                <div class="text-2xl font-bold text-success" id="todayMoods">--</div>
                                 <div class="text-sm text-gray-500 dark:text-gray-400">Today</div>
                             </div>
                         </div>
@@ -990,16 +991,25 @@
                             <span class="ml-auto text-sm text-gray-500">Click to see proficiency!</span>
                         </h3>
                         
-                        <!-- Cloud & DevOps -->
+                        <!-- ML & AI -->
                         <div class="mb-8">
                             <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                <i class="fas fa-cloud text-blue-500 mr-2"></i>
-                                Cloud & DevOps
+                                <i class="fas fa-robot text-purple-500 mr-2"></i>
+                                Machine Learning & AI
                             </h4>
                             <div class="space-y-4">
                                 <div class="skill-item">
                                     <div class="flex justify-between mb-2">
-                                        <span class="font-medium">AWS (EC2, S3, DynamoDB, CloudWatch)</span>
+                                        <span class="font-medium">TensorFlow</span>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                    <div class="skill-progress" onclick="animateSkill(this, 90)">
+                                        <div class="skill-progress-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">PyTorch</span>
                                         <span class="skill-percentage">85%</span>
                                     </div>
                                     <div class="skill-progress" onclick="animateSkill(this, 85)">
@@ -1008,35 +1018,26 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="flex justify-between mb-2">
-                                        <span class="font-medium">Docker & Kubernetes</span>
-                                        <span class="skill-percentage">80%</span>
+                                        <span class="font-medium">Scikit-learn</span>
+                                        <span class="skill-percentage">95%</span>
                                     </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 80)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">CI/CD & GitHub Actions</span>
-                                        <span class="skill-percentage">90%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 90)">
+                                    <div class="skill-progress" onclick="animateSkill(this, 95)">
                                         <div class="skill-progress-bar" style="width: 0%"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Backend & APIs -->
+                        <!-- Data Engineering -->
                         <div class="mb-8">
                             <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                <i class="fas fa-server text-purple-500 mr-2"></i>
-                                Backend & APIs
+                                <i class="fas fa-database text-blue-500 mr-2"></i>
+                                Data Engineering & MLOps
                             </h4>
                             <div class="space-y-4">
                                 <div class="skill-item">
                                     <div class="flex justify-between mb-2">
-                                        <span class="font-medium">Python & Django</span>
+                                        <span class="font-medium">Python</span>
                                         <span class="skill-percentage">95%</span>
                                     </div>
                                     <div class="skill-progress" onclick="animateSkill(this, 95)">
@@ -1045,7 +1046,7 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="flex justify-between mb-2">
-                                        <span class="font-medium">FastAPI & REST APIs</span>
+                                        <span class="font-medium">PySpark</span>
                                         <span class="skill-percentage">88%</span>
                                     </div>
                                     <div class="skill-progress" onclick="animateSkill(this, 88)">
@@ -1054,35 +1055,26 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="flex justify-between mb-2">
-                                        <span class="font-medium">Spring Boot</span>
-                                        <span class="skill-percentage">75%</span>
+                                        <span class="font-medium">Docker/Kubernetes</span>
+                                        <span class="skill-percentage">80%</span>
                                     </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 75)">
+                                    <div class="skill-progress" onclick="animateSkill(this, 80)">
                                         <div class="skill-progress-bar" style="width: 0%"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Data Engineering & ML -->
+                        <!-- Cloud Platforms -->
                         <div>
                             <h4 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                                <i class="fas fa-database text-green-500 mr-2"></i>
-                                Data Engineering & ML
+                                <i class="fas fa-cloud text-cyan-500 mr-2"></i>
+                                Cloud & Databases
                             </h4>
                             <div class="space-y-4">
                                 <div class="skill-item">
                                     <div class="flex justify-between mb-2">
-                                        <span class="font-medium">SQL & ETL Pipelines</span>
-                                        <span class="skill-percentage">90%</span>
-                                    </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 90)">
-                                        <div class="skill-progress-bar" style="width: 0%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-medium">PySpark & Kafka</span>
+                                        <span class="font-medium">AWS</span>
                                         <span class="skill-percentage">82%</span>
                                     </div>
                                     <div class="skill-progress" onclick="animateSkill(this, 82)">
@@ -1091,10 +1083,19 @@
                                 </div>
                                 <div class="skill-item">
                                     <div class="flex justify-between mb-2">
-                                        <span class="font-medium">TensorFlow & ML Frameworks</span>
-                                        <span class="skill-percentage">78%</span>
+                                        <span class="font-medium">GCP</span>
+                                        <span class="skill-percentage">75%</span>
                                     </div>
-                                    <div class="skill-progress" onclick="animateSkill(this, 78)">
+                                    <div class="skill-progress" onclick="animateSkill(this, 75)">
+                                        <div class="skill-progress-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">SQL/NoSQL</span>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                    <div class="skill-progress" onclick="animateSkill(this, 90)">
                                         <div class="skill-progress-bar" style="width: 0%"></div>
                                     </div>
                                 </div>
@@ -1110,20 +1111,20 @@
                         </h4>
                         
                         <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl border border-blue-200 dark:border-blue-800 cursor-pointer" onclick="triggerEasterEgg('☁️')">
-                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Cloud</div>
-                                <div class="text-sm text-blue-600 dark:text-blue-400">Infrastructure</div>
+                            <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl border border-blue-200 dark:border-blue-800 cursor-pointer" onclick="triggerEasterEgg('🩺')">
+                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Medical AI</div>
+                                <div class="text-sm text-blue-600 dark:text-blue-400">Current Project</div>
                             </div>
                             <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl border border-green-200 dark:border-green-800 cursor-pointer" onclick="triggerEasterEgg('⚙️')">
-                                <div class="text-2xl font-bold text-green-600 dark:text-green-400">DevOps</div>
-                                <div class="text-sm text-green-600 dark:text-green-400">Automation</div>
+                                <div class="text-2xl font-bold text-green-600 dark:text-green-400">MLOps</div>
+                                <div class="text-sm text-green-600 dark:text-green-400">Specialization</div>
                             </div>
-                            <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border border-purple-200 dark:border-purple-800 cursor-pointer" onclick="triggerEasterEgg('🐍')">
-                                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">Python</div>
-                                <div class="text-sm text-purple-600 dark:text-purple-400">Development</div>
+                            <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border border-purple-200 dark:border-purple-800 cursor-pointer" onclick="triggerEasterEgg('🧠')">
+                                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">U-Net/CNN</div>
+                                <div class="text-sm text-purple-600 dark:text-purple-400">Deep Learning</div>
                             </div>
                             <div class="text-center p-4 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl border border-orange-200 dark:border-orange-800 cursor-pointer" onclick="incrementCoffee()">
-                                <div class="text-2xl font-bold text-orange-600 dark:text-orange-400" id="coffeeCount">7</div>
+                                <div class="text-2xl font-bold text-orange-600 dark:text-orange-400" id="coffeeCount">--</div>
                                 <div class="text-sm text-orange-600 dark:text-orange-400">Coffees Today</div>
                             </div>
                         </div>
@@ -1136,11 +1137,11 @@
                             </h5>
                             <div class="grid grid-cols-2 gap-4 text-center">
                                 <div>
-                                    <div id="githubCommits" class="text-2xl font-bold text-primary">234</div>
+                                    <div id="githubCommits" class="text-2xl font-bold text-primary">--</div>
                                     <div class="text-sm text-gray-500">Commits</div>
                                 </div>
                                 <div>
-                                    <div id="githubStars" class="text-2xl font-bold text-yellow-500">156</div>
+                                    <div id="githubStars" class="text-2xl font-bold text-yellow-500">--</div>
                                     <div class="text-sm text-gray-500">Stars</div>
                                 </div>
                             </div>
@@ -1178,11 +1179,15 @@
                     <div class="ml-22 space-y-3 text-gray-600 dark:text-gray-300">
                         <div class="flex items-start">
                             <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
-                            <span>Specialized in ML algorithms, neural networks, and Python data engineering tools (Pandas, NumPy, PySpark)</span>
+                            <span>Comprehensive coverage of supervised/unsupervised learning, deep learning (CNNs, RNNs), and deployment pipelines</span>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
-                            <span>Focus on data infrastructure and scalable machine learning systems</span>
+                            <span>Specialized in neural networks, computer vision, and ML system architecture</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Hands-on projects in medical imaging, NLP, and real-time ML systems</span>
                         </div>
                     </div>
                 </div>
@@ -1214,7 +1219,7 @@
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-check-circle text-secondary mt-1 mr-3 flex-shrink-0"></i>
-                            <span><strong>Key Courses:</strong> Database Management Systems, Data Structures & Algorithms, Operating Systems, Distributed Systems</span>
+                            <span><strong>Key Courses:</strong> Data Structures & Algorithms, DBMS, Computer Networks, OS, Machine Learning Fundamentals</span>
                         </div>
                     </div>
                 </div>
@@ -1348,20 +1353,20 @@
                 <span class="gradient-text">Featured Projects</span>
             </h2>
             <p class="text-xl text-center mb-16 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Real-world solutions showcasing expertise in cloud infrastructure, data engineering, and application development.
+                Real-world solutions showcasing expertise in ML engineering, data processing, and application development.
                 <span class="cursor-pointer text-primary" onclick="triggerEasterEgg('🚀')">Click around for surprises!</span>
             </p>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- PDF Q&A App with LLMs -->
+                <!-- AI Document Analysis -->
                 <div class="group modern-card interactive-card overflow-hidden bounce-in">
                     <div class="relative h-52 overflow-hidden cursor-pointer" onclick="window.open('https://qa-app-8dsm.onrender.com/', '_blank')">
                         <div class="w-full h-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 flex items-center justify-center transition-transform group-hover:scale-110">
-                            <i class="fas fa-file-alt text-6xl text-white opacity-80"></i>
+                            <i class="fas fa-file-medical-alt text-6xl text-white opacity-80"></i>
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                         <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-primary text-white rounded-full text-sm font-medium">LLM & AI</span>
+                            <span class="px-3 py-1 bg-primary text-white rounded-full text-sm font-medium">NLP & AI</span>
                         </div>
                         <div class="absolute bottom-4 right-4 flex space-x-2">
                             <a href="https://github.com/yadavgkp" target="_blank" class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors" onclick="event.stopPropagation()">
@@ -1376,18 +1381,18 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 cursor-pointer" onclick="triggerEasterEgg('📄')">PDF Q&A App with LLMs</h3>
+                        <h3 class="text-xl font-bold mb-3 cursor-pointer" onclick="triggerEasterEgg('📄')">AI Document Analysis Platform</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            AI-powered document analysis platform using GPT-3.5, RAG architecture, and LangChain for intelligent Q&A on PDF documents.
+                            NLP application with GPT-3.5 API integration, document processing, PDF extraction, and interactive chat interface with confidence scoring.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">GPT-3.5</span>
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">RAG</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 text-xs rounded-full border border-purple-200 dark:border-purple-800 cursor-pointer hover:scale-105 transition-transform">LangChain</span>
-                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 text-xs rounded-full border border-orange-200 dark:border-orange-800 cursor-pointer hover:scale-105 transition-transform">FastAPI</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">Python Flask</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">React</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 text-xs rounded-full border border-purple-200 dark:border-purple-800 cursor-pointer hover:scale-105 transition-transform">OpenAI API</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 text-xs rounded-full border border-orange-200 dark:border-orange-800 cursor-pointer hover:scale-105 transition-transform">LiteLLM</span>
                         </div>
                         <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-                            <span>2024 - Current</span>
+                            <span>2025 - Current</span>
                             <div class="flex items-center space-x-2">
                                 <span class="text-green-600 dark:text-green-400 font-medium">Live Demo Available</span>
                                 <i class="fas fa-rocket text-primary"></i>
@@ -1396,7 +1401,7 @@
                     </div>
                 </div>
                 
-                <!-- Medical AI Platform -->
+                <!-- Medical Image Segmentation -->
                 <div class="group modern-card interactive-card overflow-hidden bounce-in" style="animation-delay: 0.1s">
                     <div class="relative h-52 overflow-hidden cursor-pointer" onclick="triggerEasterEgg('🩺')">
                         <div class="w-full h-full bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 flex items-center justify-center transition-transform group-hover:scale-110">
@@ -1416,15 +1421,15 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 cursor-pointer" onclick="triggerEasterEgg('🧠')">Medical AI Platform (U-Net & MLOps)</h3>
+                        <h3 class="text-xl font-bold mb-3 cursor-pointer" onclick="triggerEasterEgg('🧠')">Medical Image Segmentation</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Enterprise-scale medical AI system using U-Net and CNN architectures with full MLOps pipeline for medical image analysis.
+                            Enterprise-scale medical AI system using U-Net and CNN architectures for precise image segmentation with MLOps pipelines.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">U-Net</span>
-                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 text-xs rounded-full border border-orange-200 dark:border-orange-800 cursor-pointer hover:scale-105 transition-transform">Docker</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 text-xs rounded-full border border-purple-200 dark:border-purple-800 cursor-pointer hover:scale-105 transition-transform">MLFlow</span>
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">AWS</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">Python</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 text-xs rounded-full border border-orange-200 dark:border-orange-800 cursor-pointer hover:scale-105 transition-transform">TensorFlow</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 text-xs rounded-full border border-purple-200 dark:border-purple-800 cursor-pointer hover:scale-105 transition-transform">U-Net</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">MLOps</span>
                         </div>
                         <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
                             <span>2023 - Present</span>
@@ -1433,7 +1438,7 @@
                     </div>
                 </div>
                 
-                <!-- Real-time UPI Fraud Detection -->
+                <!-- Fraud Detection System -->
                 <div class="group modern-card interactive-card overflow-hidden bounce-in" style="animation-delay: 0.2s">
                     <div class="relative h-52 overflow-hidden cursor-pointer" onclick="triggerEasterEgg('🛡️')">
                         <div class="w-full h-full bg-gradient-to-br from-red-400 via-orange-500 to-yellow-500 flex items-center justify-center transition-transform group-hover:scale-110">
@@ -1441,7 +1446,7 @@
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                         <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-warning text-white rounded-full text-sm font-medium">Real-time ML</span>
+                            <span class="px-3 py-1 bg-warning text-white rounded-full text-sm font-medium">ML Systems</span>
                         </div>
                         <div class="absolute bottom-4 right-4">
                             <a href="https://github.com/yadavgkp" target="_blank" class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
@@ -1453,14 +1458,14 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 cursor-pointer" onclick="showFraudStats()">Real-time UPI Fraud Detection</h3>
+                        <h3 class="text-xl font-bold mb-3 cursor-pointer" onclick="showFraudStats()">Real-time Fraud Detection</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Large-scale ML system monitoring billions of UPI transactions using Spark Streaming with advanced anomaly detection.
+                            Large-scale ML system for monitoring billions of UPI transactions in real-time using Spark Streaming and advanced anomaly detection.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">Spark Streaming</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">PySpark</span>
-                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 text-xs rounded-full border border-orange-200 dark:border-orange-800 cursor-pointer hover:scale-105 transition-transform">Kafka</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">PySpark</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">Spark Streaming</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 text-xs rounded-full border border-orange-200 dark:border-orange-800 cursor-pointer hover:scale-105 transition-transform">ML</span>
                         </div>
                         <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
                             <span>2022 - 2023</span>
@@ -1469,7 +1474,7 @@
                     </div>
                 </div>
                 
-                <!-- CCTV Activity Summarizer -->
+                <!-- CCTV Footage Summarization -->
                 <div class="group modern-card interactive-card overflow-hidden bounce-in" style="animation-delay: 0.3s">
                     <div class="relative h-52 overflow-hidden cursor-pointer" onclick="triggerEasterEgg('📹')">
                         <div class="w-full h-full bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 flex items-center justify-center transition-transform group-hover:scale-110">
@@ -1489,12 +1494,12 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">CCTV Activity Summarizer</h3>
+                        <h3 class="text-xl font-bold mb-3">CCTV Footage Summarization</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Computer vision project using YOLO for activity detection, creating summarized clips from long CCTV footage.
+                            Computer vision project that extracts important activities from long CCTV footage and creates summarized clips with timestamps.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">YOLO</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">Python</span>
                             <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 text-xs rounded-full border border-orange-200 dark:border-orange-800 cursor-pointer hover:scale-105 transition-transform">OpenCV</span>
                             <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">Computer Vision</span>
                         </div>
@@ -1505,7 +1510,7 @@
                     </div>
                 </div>
                 
-                <!-- Electricity Billing System -->
+                <!-- Electrical Billing System -->
                 <div class="group modern-card interactive-card overflow-hidden bounce-in" style="animation-delay: 0.4s">
                     <div class="relative h-52 overflow-hidden cursor-pointer" onclick="triggerEasterEgg('⚡')">
                         <div class="w-full h-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 flex items-center justify-center transition-transform group-hover:scale-110">
@@ -1513,7 +1518,7 @@
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                         <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-accent text-white rounded-full text-sm font-medium">Web Application</span>
+                            <span class="px-3 py-1 bg-accent text-white rounded-full text-sm font-medium">Java Application</span>
                         </div>
                         <div class="absolute bottom-4 right-4">
                             <a href="https://github.com/yadavgkp" target="_blank" class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
@@ -1521,35 +1526,35 @@
                             </a>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="px-2 py-1 bg-yellow-500 text-white rounded-full text-xs font-medium">FULL STACK</span>
+                            <span class="px-2 py-1 bg-yellow-500 text-white rounded-full text-xs font-medium">DESKTOP</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Electricity Billing System</h3>
+                        <h3 class="text-xl font-bold mb-3">Electrical Billing System</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Web-based billing system built with Django, featuring automated calculations, bill generation, and user management.
+                            Computerized billing system for electricity department with automated calculations, bill generation, and user management.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 text-xs rounded-full border border-red-200 dark:border-red-800 cursor-pointer hover:scale-105 transition-transform">Django</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">Python</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 text-xs rounded-full border border-red-200 dark:border-red-800 cursor-pointer hover:scale-105 transition-transform">Java</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">NetBeans</span>
                             <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">MySQL</span>
                         </div>
                         <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-                            <span>Nov 2020 - Jan 2021</span>
-                            <span class="text-purple-600 dark:text-purple-400 font-medium">Full-stack</span>
+                            <span>Dec 2020 - Jan 2021</span>
+                            <span class="text-blue-600 dark:text-blue-400 font-medium">Desktop App</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Additional Project -->
+                <!-- ETL Analytics Dashboard -->
                 <div class="group modern-card interactive-card overflow-hidden bounce-in" style="animation-delay: 0.5s">
-                    <div class="relative h-52 overflow-hidden cursor-pointer" onclick="triggerEasterEgg('🌐')">
-                        <div class="w-full h-full bg-gradient-to-br from-cyan-400 via-teal-500 to-green-500 flex items-center justify-center transition-transform group-hover:scale-110">
-                            <i class="fas fa-globe text-6xl text-white opacity-80"></i>
+                    <div class="relative h-52 overflow-hidden cursor-pointer" onclick="triggerEasterEgg('📊')">
+                        <div class="w-full h-full bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 flex items-center justify-center transition-transform group-hover:scale-110">
+                            <i class="fas fa-chart-line text-6xl text-white opacity-80"></i>
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                         <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-cyan-600 text-white rounded-full text-sm font-medium">Portfolio</span>
+                            <span class="px-3 py-1 bg-error text-white rounded-full text-sm font-medium">Data Engineering</span>
                         </div>
                         <div class="absolute bottom-4 right-4">
                             <a href="https://github.com/yadavgkp" target="_blank" class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
@@ -1557,22 +1562,232 @@
                             </a>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="px-2 py-1 bg-cyan-500 text-white rounded-full text-xs font-medium">INTERACTIVE</span>
+                            <span class="px-2 py-1 bg-cyan-500 text-white rounded-full text-xs font-medium">ENTERPRISE</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Interactive Portfolio Website</h3>
+                        <h3 class="text-xl font-bold mb-3">ETL Analytics Dashboard</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            This very website! A modern, interactive portfolio with mini-games, animations, and easter eggs built with vanilla JavaScript.
+                            Comprehensive ETL workflows and analytics dashboards for audit transparency and compliance reporting with real-time monitoring.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 text-xs rounded-full border border-yellow-200 dark:border-yellow-800 cursor-pointer hover:scale-105 transition-transform">JavaScript</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">CSS3</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 text-xs rounded-full border border-purple-200 dark:border-purple-800 cursor-pointer hover:scale-105 transition-transform">Animations</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-full border border-blue-200 dark:border-blue-800 cursor-pointer hover:scale-105 transition-transform">Python</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 text-xs rounded-full border border-purple-200 dark:border-purple-800 cursor-pointer hover:scale-105 transition-transform">Apache Airflow</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs rounded-full border border-green-200 dark:border-green-800 cursor-pointer hover:scale-105 transition-transform">ETL</span>
                         </div>
                         <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-                            <span>2024 - Present</span>
-                            <span class="text-cyan-600 dark:text-cyan-400 font-medium">You're using it!</span>
+                            <span>2022 - 2023</span>
+                            <span class="text-green-600 dark:text-green-400 font-medium">Compliance Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="https://github.com/yadavgkp" target="_blank" class="btn-primary mr-4">
+                    <i class="fab fa-github"></i>
+                    View All Projects on GitHub
+                </a>
+                <button class="btn-primary" onclick="showProjectStats()">
+                    <i class="fas fa-chart-bar"></i>
+                    Project Statistics
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Fun Section -->
+    <section id="interactive" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-4">
+                <span class="gradient-text">Interactive Zone</span>
+            </h2>
+            <p class="text-xl text-center mb-16 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Welcome to the fun side! Play games, test your skills, and discover hidden features.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Typing Speed Test -->
+                <div class="game-card">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-keyboard text-primary mr-3"></i>
+                        Typing Speed Test
+                    </h3>
+                    <p class="text-gray-300 mb-4">Test your coding typing speed with this Python snippet!</p>
+                    
+                    <div class="typing-game">
+                        <div class="mb-4">
+                            <code id="typingText" class="text-green-400">
+def fibonacci(n):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if n <= 1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return fibonacci(n-1) + fibonacci(n-2)
+                            </code>
+                        </div>
+                        <input type="text" id="typingInput" class="w-full p-2 bg-gray-800 text-white rounded" placeholder="Start typing here..." disabled>
+                        <div class="flex justify-between mt-4">
+                            <span>WPM: <span id="wpm" class="text-primary font-bold">0</span></span>
+                            <span>Accuracy: <span id="accuracy" class="text-green-400 font-bold">100%</span></span>
+                            <span>Time: <span id="timer" class="text-yellow-400 font-bold">60s</span></span>
+                        </div>
+                        <button onclick="startTypingTest()" class="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors">
+                            <i class="fas fa-play mr-2"></i>
+                            Start Test
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Memory Game -->
+                <div class="game-card">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-brain text-secondary mr-3"></i>
+                        Memory Card Game
+                    </h3>
+                    <p class="text-gray-300 mb-4">Match pairs of programming languages!</p>
+                    
+                    <div id="memoryGame" class="grid grid-cols-4 gap-2 mb-4">
+                        <!-- Memory cards will be generated by JavaScript -->
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Moves: <span id="moves" class="text-primary font-bold">0</span></span>
+                        <span>Matches: <span id="matches" class="text-green-400 font-bold">0/8</span></span>
+                    </div>
+                    <button onclick="startMemoryGame()" class="mt-4 px-4 py-2 bg-secondary text-white rounded hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-sync mr-2"></i>
+                        New Game
+                    </button>
+                </div>
+                
+                <!-- Code Quiz -->
+                <div class="game-card">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-question-circle text-accent mr-3"></i>
+                        ML Quick Quiz
+                    </h3>
+                    <p class="text-gray-300 mb-4">Test your Machine Learning knowledge!</p>
+                    
+                    <div id="quizContainer">
+                        <div id="question" class="mb-4 text-lg font-semibold"></div>
+                        <div id="options" class="space-y-2 mb-4"></div>
+                        <div class="flex justify-between">
+                            <span>Score: <span id="quizScore" class="text-green-400 font-bold">0/10</span></span>
+                            <span>Question: <span id="questionNum" class="text-primary font-bold">1/10</span></span>
+                        </div>
+                    </div>
+                    <button onclick="startQuiz()" class="mt-4 px-4 py-2 bg-accent text-white rounded hover:bg-green-600 transition-colors">
+                        <i class="fas fa-play mr-2"></i>
+                        Start Quiz
+                    </button>
+                </div>
+                
+                <!-- Snake Game -->
+                <div class="game-card">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-gamepad text-warning mr-3"></i>
+                        Classic Snake
+                    </h3>
+                    <p class="text-gray-300 mb-4">Relax with a classic game! Use WASD or arrow keys.</p>
+                    
+                    <canvas id="snakeGame" width="300" height="300" class="border border-gray-600 bg-black mx-auto block"></canvas>
+                    <div class="text-center mt-4">
+                        <span>Score: <span id="snakeScore" class="text-warning font-bold">0</span></span>
+                        <span class="ml-4">High Score: <span id="snakeHighScore" class="text-red-400 font-bold">0</span></span>
+                    </div>
+                    <button onclick="startSnakeGame()" class="mt-4 px-4 py-2 bg-warning text-black rounded hover:bg-yellow-600 transition-colors">
+                        <i class="fas fa-play mr-2"></i>
+                        Start Game
+                    </button>
+                </div>
+                
+                <!-- Color Guessing Game -->
+                <div class="game-card">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-palette text-error mr-3"></i>
+                        RGB Color Guess
+                    </h3>
+                    <p class="text-gray-300 mb-4">Guess the color from RGB values!</p>
+                    
+                    <div id="colorTarget" class="w-full h-24 rounded mb-4 border border-gray-600"></div>
+                    <div id="rgbValue" class="text-center text-lg font-mono mb-4">RGB(?, ?, ?)</div>
+                    <div id="colorOptions" class="grid grid-cols-3 gap-2 mb-4"></div>
+                    <div class="text-center">
+                        <span>Score: <span id="colorScore" class="text-error font-bold">0</span></span>
+                        <span class="ml-4">Streak: <span id="colorStreak" class="text-green-400 font-bold">0</span></span>
+                    </div>
+                    <button onclick="startColorGame()" class="mt-4 px-4 py-2 bg-error text-white rounded hover:bg-red-600 transition-colors">
+                        <i class="fas fa-sync mr-2"></i>
+                        New Round
+                    </button>
+                </div>
+                
+                <!-- Random Fact Generator -->
+                <div class="game-card">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-lightbulb text-yellow-400 mr-3"></i>
+                        Tech Fact Generator
+                    </h3>
+                    <p class="text-gray-300 mb-4">Discover interesting tech and AI facts!</p>
+                    
+                    <div id="factDisplay" class="bg-gray-800 p-4 rounded min-h-24 mb-4 text-center flex items-center justify-center">
+                        <span class="text-gray-400">Click the button to generate a random tech fact!</span>
+                    </div>
+                    <div class="text-center">
+                        <span>Facts Read: <span id="factsRead" class="text-yellow-400 font-bold">0</span></span>
+                    </div>
+                    <button onclick="generateFact()" class="mt-4 px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-600 transition-colors">
+                        <i class="fas fa-magic mr-2"></i>
+                        Generate Fact
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Interactive Code Playground -->
+            <div class="mt-12">
+                <div class="modern-card p-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-code text-primary mr-3"></i>
+                        Interactive Code Playground
+                        <span class="ml-auto text-sm text-gray-500">Try running some Python!</span>
+                    </h3>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-4">Code Editor</h4>
+                            <textarea id="codeEditor" class="w-full h-64 p-4 bg-gray-900 text-green-400 font-mono rounded border border-gray-600 resize-none" placeholder="# Write your Python code here!
+print('Hello from Akash\'s portfolio!')
+
+# Try some ML libraries
+import numpy as np
+data = np.array([1, 2, 3, 4, 5])
+print(f'Mean: {np.mean(data)}')
+
+# Calculate fibonacci
+def fib(n):
+    if n <= 1: return n
+    return fib(n-1) + fib(n-2)
+
+print(f'Fibonacci(10): {fib(10)}')"></textarea>
+                            <div class="flex justify-between mt-4">
+                                <button onclick="runCode()" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
+                                    <i class="fas fa-play mr-2"></i>
+                                    Run Code
+                                </button>
+                                <button onclick="clearCode()" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors">
+                                    <i class="fas fa-trash mr-2"></i>
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-4">Output Console</h4>
+                            <div id="codeOutput" class="w-full h-64 p-4 bg-black text-green-400 font-mono rounded border border-gray-600 overflow-y-auto">
+                                <div class="text-gray-500"># Output will appear here...</div>
+                            </div>
+                            <div class="mt-4 text-sm text-gray-500">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                Note: This is a simulated Python environment for demonstration purposes.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1580,172 +1795,112 @@
         </div>
     </section>
 
-    <!-- Interactive Section with Mini-Games -->
-    <section id="interactive" class="py-20 relative">
+    <!-- Analytics Dashboard -->
+    <section class="py-20 relative">
         <div class="container mx-auto px-6">
-            <h2 class="section-title text-center mb-4">
-                <span class="gradient-text">Interactive Zone</span>
+            <h2 class="section-title text-center mb-16">
+                <span class="gradient-text">Live Analytics Dashboard</span>
             </h2>
-            <p class="text-xl text-center mb-16 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Take a break and enjoy some mini-games! 
-                <span class="cursor-pointer text-primary" onclick="triggerEasterEgg('🎮')">Everything is interactive here!</span>
-            </p>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Memory Game -->
-                <div class="game-card">
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-brain text-primary mr-3"></i>
-                        Memory Game
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Real-time Visitor Analytics -->
+                <div class="modern-card interactive-card p-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-chart-line text-primary mr-3"></i>
+                        Real-time Insights
+                        <span class="ml-auto">
+                            <span class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </span>
+                        </span>
                     </h3>
-                    <p class="mb-4 text-gray-300">Test your memory skills! Match the pairs.</p>
                     
-                    <div class="grid grid-cols-4 gap-2 mb-4" id="memoryGameBoard">
-                        <!-- Memory cards will be generated by JavaScript -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="stats-card cursor-pointer" onclick="incrementCounter('totalVisitors')">
+                            <div class="text-3xl font-bold text-primary" id="totalVisitors">--</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Total Visitors</div>
+                        </div>
+                        <div class="stats-card cursor-pointer" onclick="incrementCounter('todayVisitors')">
+                            <div class="text-3xl font-bold text-secondary" id="todayVisitors">--</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Today</div>
+                        </div>
+                        <div class="stats-card cursor-pointer" onclick="showEngagementDetails()">
+                            <div class="text-3xl font-bold text-success" id="avgTime">2:34</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Avg. Time</div>
+                        </div>
+                        <div class="stats-card cursor-pointer" onclick="triggerEasterEgg('📊')">
+                            <div class="text-3xl font-bold text-warning" id="bounceRate">35%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Engagement</div>
+                        </div>
                     </div>
                     
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-sm">Score: <span id="memoryScore" class="font-bold">0</span></span>
-                        <span class="text-sm">Moves: <span id="memoryMoves" class="font-bold">0</span></span>
-                        <button onclick="initMemoryGame()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-sm">
-                            New Game
-                        </button>
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                        <canvas id="visitorChart" height="200"></canvas>
                     </div>
                 </div>
                 
-                <!-- Snake Game -->
-                <div class="game-card">
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-gamepad text-green-500 mr-3"></i>
-                        Snake Game
+                <!-- Performance Metrics -->
+                <div class="modern-card interactive-card p-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-tachometer-alt text-secondary mr-3"></i>
+                        System Performance
                     </h3>
-                    <p class="mb-4 text-gray-300">Classic snake game! Use arrow keys to play.</p>
                     
-                    <canvas id="snakeGame" width="300" height="300" class="mx-auto block mb-4"></canvas>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="stats-card cursor-pointer" onclick="testPageSpeed()">
+                            <div class="text-3xl font-bold text-success" id="responseTime">--ms</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Response Time</div>
+                        </div>
+                        <div class="stats-card cursor-pointer" onclick="showUptimeDetails()">
+                            <div class="text-3xl font-bold text-primary" id="uptime">99.9%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Uptime</div>
+                        </div>
+                        <div class="stats-card cursor-pointer" onclick="showBandwidthUsage()">
+                            <div class="text-3xl font-bold text-warning" id="bandwidth">45MB</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Bandwidth</div>
+                        </div>
+                        <div class="stats-card cursor-pointer" onclick="triggerEasterEgg('⚡')">
+                            <div class="text-3xl font-bold text-error" id="pageSpeed">95</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Speed Score</div>
+                        </div>
+                    </div>
                     
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-sm">Score: <span id="snakeScore" class="font-bold">0</span></span>
-                        <span class="text-sm">High: <span id="snakeHigh" class="font-bold">0</span></span>
-                        <button onclick="initSnakeGame()" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm">
-                            Start Game
-                        </button>
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                        <canvas id="performanceChart" height="200"></canvas>
                     </div>
                 </div>
-                
-                <!-- Typing Speed Test -->
-                <div class="game-card">
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-keyboard text-yellow-500 mr-3"></i>
-                        Typing Speed Test
+            </div>
+            
+            <!-- Live GitHub Activity -->
+            <div class="mt-8">
+                <div class="modern-card interactive-card p-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fab fa-github text-gray-400 mr-3"></i>
+                        Live GitHub Activity
+                        <a href="https://github.com/yadavgkp" target="_blank" class="ml-auto btn-primary text-sm">
+                            <i class="fab fa-github mr-2"></i>
+                            View Profile
+                        </a>
                     </h3>
-                    <p class="mb-4 text-gray-300">How fast can you type? Test your WPM!</p>
                     
-                    <div class="typing-game mb-4">
-                        <div id="typingText" class="text-green-400 mb-4 leading-relaxed text-sm">
-                            Loading...
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl border border-blue-200 dark:border-blue-800 cursor-pointer" onclick="triggerEasterEgg('📁')">
+                            <div id="githubRepos2" class="text-3xl font-bold text-blue-600 dark:text-blue-400">--</div>
+                            <div class="text-sm text-blue-600 dark:text-blue-400">Repositories</div>
                         </div>
-                        <input 
-                            type="text" 
-                            id="typingInput" 
-                            placeholder="Start typing here..." 
-                            class="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-primary focus:outline-none"
-                            onkeyup="checkTyping()"
-                        />
-                    </div>
-                    
-                    <div class="grid grid-cols-3 gap-4 text-center text-sm">
-                        <div>
-                            <div class="font-bold text-lg" id="typingWPM">0</div>
-                            <div class="text-gray-400">WPM</div>
+                        <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl border border-green-200 dark:border-green-800 cursor-pointer" onclick="triggerEasterEgg('📝')">
+                            <div id="githubCommits2" class="text-3xl font-bold text-green-600 dark:text-green-400">--</div>
+                            <div class="text-sm text-green-600 dark:text-green-400">Commits</div>
                         </div>
-                        <div>
-                            <div class="font-bold text-lg" id="typingAccuracy">100%</div>
-                            <div class="text-gray-400">Accuracy</div>
+                        <div class="text-center p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 rounded-xl border border-yellow-200 dark:border-yellow-800 cursor-pointer" onclick="triggerEasterEgg('⭐')">
+                            <div id="githubStars2" class="text-3xl font-bold text-yellow-600 dark:text-yellow-400">--</div>
+                            <div class="text-sm text-yellow-600 dark:text-yellow-400">Stars</div>
                         </div>
-                        <div>
-                            <div class="font-bold text-lg" id="typingTime">60</div>
-                            <div class="text-gray-400">Time</div>
+                        <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border border-purple-200 dark:border-purple-800 cursor-pointer" onclick="triggerEasterEgg('🍴')">
+                            <div id="githubForks" class="text-3xl font-bold text-purple-600 dark:text-purple-400">--</div>
+                            <div class="text-sm text-purple-600 dark:text-purple-400">Forks</div>
                         </div>
-                    </div>
-                    
-                    <button onclick="startTypingTest()" class="w-full mt-4 px-4 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-600 transition-colors font-medium">
-                        Start Test
-                    </button>
-                </div>
-                
-                <!-- Code Quiz -->
-                <div class="game-card">
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-code text-purple-500 mr-3"></i>
-                        Quick Code Quiz
-                    </h3>
-                    <p class="mb-4 text-gray-300">Test your programming knowledge!</p>
-                    
-                    <div id="quizQuestion" class="mb-4 p-4 bg-gray-800 rounded-lg text-sm">
-                        <div class="font-semibold mb-2">Loading question...</div>
-                    </div>
-                    
-                    <div id="quizOptions" class="space-y-2 mb-4">
-                        <!-- Quiz options will be generated by JavaScript -->
-                    </div>
-                    
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm">Score: <span id="quizScore" class="font-bold">0/0</span></span>
-                        <button onclick="loadQuizQuestion()" class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors text-sm">
-                            Next Question
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Random Fact Generator -->
-                <div class="game-card">
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-lightbulb text-orange-500 mr-3"></i>
-                        Tech Facts
-                    </h3>
-                    <p class="mb-4 text-gray-300">Learn something new about technology!</p>
-                    
-                    <div id="techFact" class="mb-6 p-4 bg-gray-800 rounded-lg text-sm leading-relaxed">
-                        Click the button below to discover an interesting tech fact!
-                    </div>
-                    
-                    <button onclick="showRandomFact()" class="w-full px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-medium">
-                        <i class="fas fa-random mr-2"></i>
-                        Get Random Fact
-                    </button>
-                    
-                    <div class="text-center mt-4">
-                        <span class="text-sm text-gray-400">Facts learned: <span id="factsCount" class="font-bold">0</span></span>
-                    </div>
-                </div>
-                
-                <!-- Binary Clock -->
-                <div class="game-card">
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-clock text-blue-500 mr-3"></i>
-                        Binary Clock
-                    </h3>
-                    <p class="mb-4 text-gray-300">Can you read binary time?</p>
-                    
-                    <div id="binaryClock" class="mb-4 p-4 bg-gray-800 rounded-lg text-center font-mono">
-                        <div class="grid grid-cols-6 gap-2 mb-2">
-                            <!-- Binary clock will be generated by JavaScript -->
-                        </div>
-                        <div class="text-xs text-gray-400 grid grid-cols-6 gap-2">
-                            <span>H1</span>
-                            <span>H2</span>
-                            <span>M1</span>
-                            <span>M2</span>
-                            <span>S1</span>
-                            <span>S2</span>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="text-lg font-mono" id="normalTime">--:--:--</div>
-                        <button onclick="toggleBinaryClockMode()" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm">
-                            Toggle Mode
-                        </button>
                     </div>
                 </div>
             </div>
@@ -1756,175 +1911,173 @@
     <section id="contact" class="py-20 relative">
         <div class="container mx-auto px-6">
             <h2 class="section-title text-center mb-4">
-                <span class="gradient-text">Let's Connect</span>
+                <span class="gradient-text">Let's Build Something Amazing</span>
             </h2>
-            <p class="text-xl text-center mb-16 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Ready to build something amazing together? Let's discuss your next project!
-                <span class="cursor-pointer text-primary" onclick="triggerEasterEgg('📧')">I'd love to hear from you.</span>
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
+                Ready to transform your data challenges into AI-powered solutions? Let's discuss how we can architect 
+                scalable ML systems that drive real business impact.
             </p>
             
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Contact Form -->
-                <div class="modern-card p-8">
-                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                <div class="modern-card interactive-card p-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
                         <i class="fas fa-paper-plane text-primary mr-3"></i>
-                        Send me a message
+                        Send a Message
                     </h3>
                     
                     <form id="contactForm" class="space-y-6">
-                        <div class="form-group">
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                required 
-                                class="modern-input w-full" 
-                                placeholder="Your Name"
-                                oninput="validateForm()"
-                            />
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="name" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Name *</label>
+                                <input type="text" id="name" name="name" class="modern-input w-full" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Email *</label>
+                                <input type="email" id="email" name="email" class="modern-input w-full" required>
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                required 
-                                class="modern-input w-full" 
-                                placeholder="Your Email"
-                                oninput="validateForm()"
-                            />
+                            <label for="subject" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Project Type *</label>
+                            <select id="subject" name="subject" class="modern-input w-full" required>
+                                <option value="">Select project type</option>
+                                <option value="ml-engineering">ML Engineering</option>
+                                <option value="data-engineering">Data Engineering</option>
+                                <option value="mlops-consulting">MLOps Consulting</option>
+                                <option value="ai-development">AI Development</option>
+                                <option value="full-time">Full-time Opportunity</option>
+                                <option value="collaboration">Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                         
                         <div class="form-group">
-                            <input 
-                                type="text" 
-                                id="subject" 
-                                name="subject" 
-                                required 
-                                class="modern-input w-full" 
-                                placeholder="Subject"
-                                oninput="validateForm()"
-                            />
+                            <label for="message" class="block mb-2 font-medium text-gray-700 dark:text-gray-300">Message *</label>
+                            <textarea id="message" name="message" rows="5" class="modern-input w-full" 
+                                      placeholder="Tell me about your ML/Data challenges, goals, and timeline..." required></textarea>
                         </div>
                         
-                        <div class="form-group">
-                            <textarea 
-                                id="message" 
-                                name="message" 
-                                required 
-                                rows="5" 
-                                class="modern-input w-full resize-none" 
-                                placeholder="Your Message"
-                                oninput="validateForm()"
-                            ></textarea>
-                        </div>
-                        
-                        <button 
-                            type="submit" 
-                            class="btn-primary w-full" 
-                            id="submitBtn"
-                            disabled
-                        >
-                            <i class="fas fa-rocket mr-2"></i>
-                            <span id="submitText">Send Message</span>
+                        <button type="submit" class="btn-primary w-full text-lg">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
                         </button>
                     </form>
                     
-                    <div id="formMessage" class="mt-4 text-center hidden"></div>
+                    <!-- Form Status Messages -->
+                    <div id="formSuccess" class="hidden mt-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 rounded-xl">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-2xl mr-3"></i>
+                            <div>
+                                <p class="font-medium">Message sent successfully!</p>
+                                <p class="text-sm">I'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Contact Info & Social Links -->
+                <!-- Contact Information -->
                 <div class="space-y-8">
-                    <!-- Contact Information -->
-                    <div class="modern-card p-8">
-                        <h3 class="text-2xl font-bold mb-8 flex items-center">
-                            <i class="fas fa-address-card text-primary mr-3"></i>
-                            Get in touch
+                    <div class="modern-card interactive-card p-8">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-address-card text-secondary mr-3"></i>
+                            Get in Touch
                         </h3>
                         
                         <div class="space-y-6">
-                            <div class="flex items-center cursor-pointer hover:scale-105 transition-transform" onclick="triggerEasterEgg('📍')">
-                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                            <div class="flex items-start group cursor-pointer" onclick="copyToClipboard('akashyadav1217@ug.cusat.ac.in', 'Email copied!')">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold">Location</h4>
+                                    <h4 class="font-semibold mb-1 text-gray-800 dark:text-gray-200">Email</h4>
+                                    <p class="text-primary hover:text-primary-dark transition-colors">
+                                        akashyadav1217@ug.cusat.ac.in
+                                    </p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Response within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start group cursor-pointer" onclick="copyToClipboard('+4915510680242', 'Phone number copied!')">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary to-success rounded-xl flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1 text-gray-800 dark:text-gray-200">Phone</h4>
+                                    <p class="text-primary hover:text-primary-dark transition-colors">
+                                        +49 155 10680242
+                                    </p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Available Mon-Fri, 9-18 CET</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start group cursor-pointer" onclick="triggerEasterEgg('🏠')">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-accent to-warning rounded-xl flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1 text-gray-800 dark:text-gray-200">Location</h4>
                                     <p class="text-gray-600 dark:text-gray-300">Berlin, Germany 🇩🇪</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Available for remote & on-site</p>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center cursor-pointer hover:scale-105 transition-transform" onclick="window.open('mailto:your.email@example.com')">
-                                <div class="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mr-4">
-                                    <i class="fas fa-envelope text-success"></i>
+                            <div class="flex items-start group cursor-pointer" onclick="showAvailabilityCalendar()">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-calendar-check"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold">Email</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">akash.yadav@email.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center cursor-pointer hover:scale-105 transition-transform" onclick="triggerEasterEgg('💼')">
-                                <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-4">
-                                    <i class="fas fa-briefcase text-secondary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold">Current Role</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Data Infrastructure Engineer</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center cursor-pointer hover:scale-105 transition-transform" onclick="showResponseTime()">
-                                <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
-                                    <i class="fas fa-clock text-accent"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold">Response Time</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Usually within 24 hours</p>
+                                    <h4 class="font-semibold mb-1 text-gray-800 dark:text-gray-200">Availability</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">Open for opportunities</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Freelance & Full-time positions</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Social Links -->
-                    <div class="modern-card p-8">
-                        <h3 class="text-2xl font-bold mb-8 flex items-center">
-                            <i class="fas fa-share-alt text-primary mr-3"></i>
-                            Follow me
-                        </h3>
+                    <div class="modern-card interactive-card p-8">
+                        <h4 class="text-xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-share-alt text-accent mr-3"></i>
+                            Connect with Me
+                        </h4>
                         
-                        <div class="grid grid-cols-2 gap-4">
-                            <a href="https://github.com/yadavgkp" target="_blank" class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
-                                <i class="fab fa-github text-2xl mr-4 group-hover:scale-110 transition-transform"></i>
-                                <div>
-                                    <div class="font-semibold">GitHub</div>
-                                    <div class="text-sm text-gray-500">View my code</div>
+                        <div class="space-y-4">
+                            <a href="https://github.com/yadavgkp" target="_blank" 
+                               class="flex items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl hover:from-gray-100 hover:to-gray-200 dark:hover:from-gray-700 dark:hover:to-gray-600 transition-all group border border-gray-200 dark:border-gray-700">
+                                <i class="fab fa-github text-2xl text-gray-800 dark:text-gray-200 mr-4 group-hover:scale-110 transition-transform"></i>
+                                <div class="flex-grow">
+                                    <div class="font-medium text-gray-800 dark:text-gray-200">GitHub</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">@yadavgkp - Check out my repositories</div>
                                 </div>
+                                <i class="fas fa-external-link-alt text-gray-400"></i>
                             </a>
                             
-                            <a href="https://linkedin.com/in/akash-yadav" target="_blank" class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
-                                <i class="fab fa-linkedin text-2xl mr-4 text-blue-600 group-hover:scale-110 transition-transform"></i>
-                                <div>
-                                    <div class="font-semibold">LinkedIn</div>
-                                    <div class="text-sm text-gray-500">Connect with me</div>
+                            <a href="https://www.linkedin.com/in/akash-yadav-00ab68197" target="_blank" 
+                               class="flex items-center p-4 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl hover:from-blue-100 hover:to-blue-200 dark:hover:from-blue-900/30 dark:hover:to-blue-800/30 transition-all group border border-blue-200 dark:border-blue-800">
+                                <i class="fab fa-linkedin-in text-2xl text-blue-600 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform"></i>
+                                <div class="flex-grow">
+                                    <div class="font-medium text-gray-800 dark:text-gray-200">LinkedIn</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">Professional Network & Updates</div>
                                 </div>
+                                <i class="fas fa-external-link-alt text-gray-400"></i>
                             </a>
                             
-                            <a href="https://twitter.com/akashyadav" target="_blank" class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
-                                <i class="fab fa-twitter text-2xl mr-4 text-blue-400 group-hover:scale-110 transition-transform"></i>
-                                <div>
-                                    <div class="font-semibold">Twitter</div>
-                                    <div class="text-sm text-gray-500">Follow updates</div>
+                            <div class="flex items-center p-4 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl border border-green-200 dark:border-green-800 cursor-pointer" onclick="scheduleCall()">
+                                <i class="fas fa-video text-2xl text-green-600 dark:text-green-400 mr-4"></i>
+                                <div class="flex-grow">
+                                    <div class="font-medium text-gray-800 dark:text-gray-200">Schedule a Call</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">Let's discuss your project</div>
                                 </div>
-                            </a>
-                            
-                            <a href="mailto:akash.yadav@email.com" class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
-                                <i class="fas fa-envelope text-2xl mr-4 text-green-500 group-hover:scale-110 transition-transform"></i>
-                                <div>
-                                    <div class="font-semibold">Email</div>
-                                    <div class="text-sm text-gray-500">Direct contact</div>
-                                </div>
-                            </a>
+                                <i class="fas fa-calendar text-gray-400"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl border border-primary/20">
+                            <p class="text-sm text-gray-600 dark:text-gray-300 text-center">
+                                <i class="fas fa-coffee mr-2 text-primary"></i>
+                                Always excited to discuss ML engineering over coffee! ☕
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1933,933 +2086,1142 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-gray-200 dark:border-gray-800">
+    <footer class="py-12">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold gradient-text mb-2">Akash Yadav</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Data Infrastructure Engineer</p>
+            <div class="modern-card interactive-card p-8 text-center">
+                <div class="flex flex-col md:flex-row items-center justify-between mb-6">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-2xl font-bold gradient-text mb-2">Akash Yadav</h3>
+                        <p class="text-gray-600 dark:text-gray-300">ML/Data Engineer</p>
+                    </div>
+                    
+                    <div class="flex space-x-6">
+                        <a href="https://github.com/yadavgkp" target="_blank" class="text-gray-600 hover:text-primary transition-colors text-2xl">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/akash-yadav-00ab68197" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors text-2xl">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="text-gray-600 hover:text-green-600 transition-colors text-2xl">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="flex items-center space-x-6">
-                    <p class="text-sm text-gray-500 dark:text-gray-400">
-                        © 2024 Akash Yadav. Made with 
-                        <span class="text-red-500 cursor-pointer" onclick="triggerEasterEgg('❤️')">❤️</span> 
-                        in Berlin
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Built with passion for ML Engineering and Data Science
                     </p>
-                    <button onclick="scrollToTop()" class="p-2 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors">
-                        <i class="fas fa-arrow-up"></i>
-                    </button>
+                    <div class="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                        <span>© 2025 Akash Yadav. All rights reserved.</span>
+                        <span>•</span>
+                        <span>Made in Berlin 🇩🇪</span>
+                        <span>•</span>
+                        <span class="cursor-pointer hover:text-primary transition-colors" onclick="showPortfolioStats()">
+                            Portfolio Stats
+                        </span>
+                        <span>•</span>
+                        <span class="cursor-pointer hover:text-primary transition-colors" onclick="triggerEasterEgg('🎉')">
+                            Easter Eggs Found: <span id="easterEggCount">0</span>
+                        </span>
+                    </div>
+                    
+                    <div class="mt-4 text-xs text-gray-400">
+                        <span>Last updated: <span id="lastUpdated">--</span></span>
+                        <span class="ml-4">Visitors: <span id="footerVisitors">--</span></span>
+                        <span class="ml-4">Version: 2.0.0</span>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Interactivity -->
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed top-4 right-4 z-50 hidden">
+        <div class="bg-gray-900 text-white px-6 py-3 rounded-lg shadow-lg flex items-center">
+            <i id="toastIcon" class="fas fa-info-circle mr-3"></i>
+            <span id="toastMessage">Notification</span>
+        </div>
+    </div>
+
     <script>
-        // Global variables
-        let visitorCount = parseInt(localStorage.getItem('visitorCount') || '127');
-        let coffeeCount = parseInt(localStorage.getItem('coffeeCount') || '7');
-        let githubRepos = 42;
-        let githubCommits = 234;
-        let githubStars = 156;
-        let easterEggCount = 0;
-        let moodData = JSON.parse(localStorage.getItem('moodData') || '[]');
-        let factsCount = parseInt(localStorage.getItem('factsCount') || '0');
-        
-        // Memory Game Variables
-        let memoryCards = [];
-        let flippedCards = [];
-        let memoryScore = 0;
-        let memoryMoves = 0;
-        let memoryGameActive = false;
-        
-        // Snake Game Variables
-        let snake = [{x: 10, y: 10}];
-        let food = {x: 15, y: 15};
-        let dx = 0;
-        let dy = 0;
-        let snakeScore = 0;
-        let snakeGameActive = false;
-        let snakeHigh = parseInt(localStorage.getItem('snakeHigh') || '0');
-        
-        // Typing Test Variables
-        let typingTexts = [
-            "The quick brown fox jumps over the lazy dog and runs through the forest with incredible speed and agility.",
-            "Programming is not about what you know, it is about what you can figure out when you need to solve a problem.",
-            "Cloud computing is the delivery of computing services over the internet to offer faster innovation and economies of scale.",
-            "Data science is an interdisciplinary field that uses scientific methods to extract knowledge from structured and unstructured data.",
-            "Machine learning is a method of data analysis that automates analytical model building using algorithms that iteratively learn from data."
-        ];
-        let currentTypingText = '';
-        let typingStartTime = 0;
-        let typingTestActive = false;
-        let typingTimer = null;
-        let typingTimeLeft = 60;
-        
-        // Quiz Variables
-        let quizQuestions = [
-            {
-                question: "Which of the following is NOT a Python data type?",
-                options: ["List", "Dictionary", "Array", "Tuple"],
-                correct: 2
-            },
-            {
-                question: "What does AWS stand for?",
-                options: ["Amazon Web Services", "Advanced Web Solutions", "Automated Web Systems", "Amazon World Services"],
-                correct: 0
-            },
-            {
-                question: "Which HTTP status code indicates 'Not Found'?",
-                options: ["200", "404", "500", "301"],
-                correct: 1
-            },
-            {
-                question: "What is the default port for HTTPS?",
-                options: ["80", "8080", "443", "22"],
-                correct: 2
-            },
-            {
-                question: "Which database is known for horizontal scaling?",
-                options: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
-                correct: 2
+        // Enhanced Real-time Data Management System
+        class AdvancedPortfolio {
+            constructor() {
+                this.easterEggCount = 0;
+                this.gameStates = {
+                    memory: { flipped: [], matches: 0, moves: 0, cards: [] },
+                    typing: { started: false, timer: 60, wpm: 0, accuracy: 100 },
+                    quiz: { currentQuestion: 0, score: 0, questions: [] },
+                    snake: { score: 0, highScore: 0, game: null },
+                    color: { score: 0, streak: 0, currentColor: null }
+                };
+                this.stats = {
+                    totalVisitors: Math.floor(Math.random() * 1000) + 500,
+                    todayVisitors: Math.floor(Math.random() * 50) + 10,
+                    factCount: 0,
+                    coffeeCount: Math.floor(Math.random() * 5) + 1,
+                    moodStats: { total: 0, today: 0, average: '😊' }
+                };
+                this.initializeSystem();
             }
-        ];
-        let currentQuizQuestion = 0;
-        let quizCorrect = 0;
-        let quizTotal = 0;
-        
-        // Tech Facts
-        let techFacts = [
-            "The first computer bug was an actual bug! It was a moth trapped in a Harvard Mark II computer in 1947.",
-            "The term 'cloud computing' was inspired by the cloud symbol used to represent the internet in network diagrams.",
-            "Python was named after the British comedy group Monty Python, not the snake!",
-            "The first 1GB hard drive was released in 1980 and cost $40,000 (equivalent to about $130,000 today).",
-            "The @ symbol was used in email addresses because it was the only preposition available on the keyboard.",
-            "WiFi doesn't actually stand for anything. It's a trademark name created by a marketing company.",
-            "The first computer virus was created in 1971 and was called 'The Creeper'.",
-            "Docker containers are named after the creator's love for shipping containers and their standardization.",
-            "The term 'bug' in programming predates computers and was used by engineers to describe mechanical defects.",
-            "AWS was initially built to handle Amazon's own infrastructure needs during peak shopping seasons."
-        ];
-        
-        // Initialize everything when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            initializePortfolio();
-            initParticles();
-            initMatrixRain();
-            updateTimeAndStats();
-            initTypedText();
-            initMemoryGame();
-            initSnakeGame();
-            loadQuizQuestion();
-            updateBinaryClock();
-            
-            // Update time every second
-            setInterval(updateTimeAndStats, 1000);
-            setInterval(updateBinaryClock, 1000);
-        });
-        
-        // Initialize portfolio
-        function initializePortfolio() {
-            // Increment visitor count
-            visitorCount++;
-            localStorage.setItem('visitorCount', visitorCount.toString());
-            updateStats();
-            
-            // Set up event listeners
-            setupEventListeners();
-            
-            // Load saved data
-            loadSavedData();
-        }
-        
-        // Setup event listeners
-        function setupEventListeners() {
-            // Dark mode toggle
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            if (darkModeToggle) {
-                darkModeToggle.addEventListener('click', toggleDarkMode);
+
+            async initializeSystem() {
+                await this.loadStoredData();
+                await this.initializeAPIs();
+                this.startRealTimeUpdates();
+                this.setupEventListeners();
+                this.initializeParticles();
+                this.initializeTypedText();
+                this.initializeCharts();
+                this.initializeMatrixRain();
+                this.showWelcomeMessage();
+                this.initializeGames();
             }
-            
-            // Theme selector
-            const themeColors = document.querySelectorAll('.theme-color');
-            themeColors.forEach(color => {
-                color.addEventListener('click', function() {
-                    changeTheme(this.dataset.theme);
-                });
-            });
-            
-            // Contact form
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', handleContactForm);
-            }
-            
-            // Skill progress bars
-            const skillBars = document.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                bar.addEventListener('click', function() {
-                    const percentage = parseInt(this.previousElementSibling.querySelector('.skill-percentage').textContent);
-                    animateSkill(this, percentage);
-                });
-            });
-        }
-        
-        // Load saved data
-        function loadSavedData() {
-            document.getElementById('snakeHigh').textContent = snakeHigh;
-            document.getElementById('factsCount').textContent = factsCount;
-            updateMoodStats();
-        }
-        
-        // Update stats
-        function updateStats() {
-            document.getElementById('visitorCount').textContent = visitorCount;
-            document.getElementById('coffeeCount').textContent = coffeeCount;
-            document.getElementById('githubRepos').textContent = githubRepos;
-            document.getElementById('githubCommits').textContent = githubCommits;
-            document.getElementById('githubStars').textContent = githubStars;
-        }
-        
-        // Update time and weather
-        function updateTimeAndStats() {
-            const now = new Date();
-            const berlinTime = new Date(now.toLocaleString("en-US", {timeZone: "Europe/Berlin"}));
-            const timeString = berlinTime.toLocaleTimeString('en-US', { 
-                hour12: false, 
-                hour: '2-digit', 
-                minute: '2-digit' 
-            });
-            
-            const timeElement = document.getElementById('currentTime');
-            if (timeElement) {
-                timeElement.textContent = timeString;
-            }
-            
-            const normalTimeElement = document.getElementById('normalTime');
-            if (normalTimeElement) {
-                normalTimeElement.textContent = berlinTime.toLocaleTimeString('en-US', { hour12: false });
-            }
-        }
-        
-        // Initialize typed text animation
-        function initTypedText() {
-            const typed = new Typed('#typed', {
-                strings: [
-                    'Data Infrastructure Engineer',
-                    'Cloud Architecture Specialist',
-                    'Python Backend Developer',
-                    'DevOps Engineer',
-                    'ML Pipeline Builder',
-                    'System Design Expert'
-                ],
-                typeSpeed: 50,
-                backSpeed: 30,
-                backDelay: 2000,
-                loop: true,
-                showCursor: true,
-                cursorChar: '|'
-            });
-        }
-        
-        // Initialize particles
-        function initParticles() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    particles: {
-                        number: { value: 80, density: { enable: true, value_area: 800 } },
-                        color: { value: '#1e40af' },
-                        shape: { type: 'circle' },
-                        opacity: { value: 0.5, random: false },
-                        size: { value: 3, random: true },
-                        line_linked: {
-                            enable: true,
-                            distance: 150,
-                            color: '#1e40af',
-                            opacity: 0.4,
-                            width: 1
-                        },
-                        move: {
-                            enable: true,
-                            speed: 6,
-                            direction: 'none',
-                            random: false,
-                            straight: false,
-                            out_mode: 'out',
-                            bounce: false
-                        }
-                    },
-                    interactivity: {
-                        detect_on: 'canvas',
-                        events: {
-                            onhover: { enable: true, mode: 'repulse' },
-                            onclick: { enable: true, mode: 'push' },
-                            resize: true
-                        }
-                    },
-                    retina_detect: true
-                });
-            }
-        }
-        
-        // Initialize matrix rain effect
-        function initMatrixRain() {
-            const canvas = document.getElementById('matrix');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
-            const matrixArray = matrix.split("");
-            const fontSize = 10;
-            const columns = canvas.width / fontSize;
-            const drops = [];
-            
-            for (let x = 0; x < columns; x++) {
-                drops[x] = 1;
-            }
-            
-            function drawMatrix() {
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Data Management
+            loadStoredData() {
+                this.easterEggCount = parseInt(localStorage.getItem('easterEggCount')) || 0;
+                this.stats.totalVisitors = parseInt(localStorage.getItem('totalVisitors')) || this.stats.totalVisitors;
+                this.stats.todayVisitors = parseInt(localStorage.getItem('todayVisitors')) || this.stats.todayVisitors;
+                this.stats.factCount = parseInt(localStorage.getItem('factCount')) || 0;
+                this.gameStates.snake.highScore = parseInt(localStorage.getItem('snakeHighScore')) || 0;
                 
-                ctx.fillStyle = '#0F0';
-                ctx.font = fontSize + 'px arial';
-                
-                for (let i = 0; i < drops.length; i++) {
-                    const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
-                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                    
-                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                        drops[i] = 0;
+                document.getElementById('easterEggCount').textContent = this.easterEggCount;
+                document.getElementById('factsRead').textContent = this.stats.factCount;
+                document.getElementById('snakeHighScore').textContent = this.gameStates.snake.highScore;
+            }
+
+            saveData() {
+                localStorage.setItem('easterEggCount', this.easterEggCount);
+                localStorage.setItem('totalVisitors', this.stats.totalVisitors);
+                localStorage.setItem('todayVisitors', this.stats.todayVisitors);
+                localStorage.setItem('factCount', this.stats.factCount);
+                localStorage.setItem('snakeHighScore', this.gameStates.snake.highScore);
+            }
+
+            // Real-time APIs and Updates
+            async initializeAPIs() {
+                await this.updateTime();
+                await this.updateWeather();
+                await this.updateGitHubStats();
+                await this.updateVisitorStats();
+                await this.updatePerformanceMetrics();
+                this.updateLastUpdated();
+            }
+
+            startRealTimeUpdates() {
+                setInterval(() => this.updateTime(), 1000);
+                setInterval(() => this.updateWeather(), 30 * 60 * 1000);
+                setInterval(() => this.updateGitHubStats(), 60 * 60 * 1000);
+                setInterval(() => this.updateVisitorStats(), 5 * 60 * 1000);
+                setInterval(() => this.updatePerformanceMetrics(), 10 * 1000);
+                setInterval(() => this.updateCoffeeCount(), 15 * 60 * 1000);
+            }
+
+            updateTime() {
+                const berlinTime = new Date().toLocaleTimeString('en-US', {
+                    timeZone: 'Europe/Berlin',
+                    hour12: false,
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                document.getElementById('currentTime').textContent = berlinTime;
+            }
+
+            async updateWeather() {
+                try {
+                    // Simulate realistic Berlin weather
+                    const season = Math.floor((new Date().getMonth() + 1) / 3);
+                    let tempRange;
+                    switch(season) {
+                        case 0: tempRange = [0, 8]; break; // Winter
+                        case 1: tempRange = [8, 18]; break; // Spring
+                        case 2: tempRange = [18, 28]; break; // Summer
+                        default: tempRange = [8, 18]; // Fall
                     }
-                    drops[i]++;
+                    const temp = Math.floor(Math.random() * (tempRange[1] - tempRange[0]) + tempRange[0]);
+                    document.getElementById('berlinTemp').textContent = `${temp}°C`;
+                } catch (error) {
+                    document.getElementById('berlinTemp').textContent = '18°C';
                 }
             }
-            
-            setInterval(drawMatrix, 35);
-            
-            window.addEventListener('resize', function() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-        }
-        
-        // Toggle dark mode
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-            const isDark = document.documentElement.classList.contains('dark');
-            localStorage.setItem('darkMode', isDark.toString());
-            triggerEasterEgg('🌙');
-        }
-        
-        // Change theme
-        function changeTheme(themeName) {
-            document.body.setAttribute('data-theme', themeName);
-            
-            // Update active theme indicator
-            document.querySelectorAll('.theme-color').forEach(color => {
-                color.classList.remove('active');
-            });
-            document.querySelector(`[data-theme="${themeName}"]`).classList.add('active');
-            
-            localStorage.setItem('theme', themeName);
-            triggerEasterEgg('🎨');
-        }
-        
-        // Trigger easter egg
-        function triggerEasterEgg(emoji) {
-            easterEggCount++;
-            
-            const easterEgg = document.createElement('div');
-            easterEgg.className = 'easter-egg';
-            easterEgg.textContent = emoji;
-            easterEgg.style.left = Math.random() * window.innerWidth + 'px';
-            easterEgg.style.top = Math.random() * window.innerHeight + 'px';
-            
-            document.body.appendChild(easterEgg);
-            
-            setTimeout(() => {
-                easterEgg.remove();
-            }, 3000);
-            
-            // Special easter egg messages
-            if (easterEggCount === 10) {
-                showNotification('🎉 Easter Egg Hunter! You found 10 easter eggs!');
-            } else if (easterEggCount === 25) {
-                showNotification('🏆 Easter Egg Master! You found 25 easter eggs!');
-            }
-        }
-        
-        // Show notification
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.className = 'fixed top-4 right-4 bg-primary text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
-            notification.textContent = message;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 100);
-            
-            setTimeout(() => {
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => notification.remove(), 300);
-            }, 3000);
-        }
-        
-        // Animate skill progress bar
-        function animateSkill(progressBar, percentage) {
-            const bar = progressBar.querySelector('.skill-progress-bar');
-            bar.style.width = '0%';
-            
-            setTimeout(() => {
-                bar.style.width = percentage + '%';
-            }, 100);
-            
-            triggerEasterEgg('📊');
-        }
-        
-        // Increment coffee counter
-        function incrementCoffee() {
-            coffeeCount++;
-            localStorage.setItem('coffeeCount', coffeeCount.toString());
-            document.getElementById('coffeeCount').textContent = coffeeCount;
-            triggerEasterEgg('☕');
-        }
-        
-        // Increment visitor counter
-        function incrementCounter(type) {
-            if (type === 'visitors') {
-                visitorCount += Math.floor(Math.random() * 5) + 1;
-                document.getElementById('visitorCount').textContent = visitorCount;
-                localStorage.setItem('visitorCount', visitorCount.toString());
-                triggerEasterEgg('👥');
-            }
-        }
-        
-        // Set mood
-        function setMood(element, moodType) {
-            // Remove previous selection
-            document.querySelectorAll('.mood-emoji').forEach(emoji => {
-                emoji.classList.remove('selected');
-            });
-            
-            // Add selection to clicked emoji
-            element.classList.add('selected');
-            
-            // Save mood data
-            const today = new Date().toDateString();
-            moodData.push({
-                date: today,
-                mood: moodType,
-                emoji: element.dataset.mood
-            });
-            
-            localStorage.setItem('moodData', JSON.stringify(moodData));
-            
-            // Update mood text
-            const moodTexts = {
-                terrible: "Hope your day gets better! 💪",
-                bad: "Hang in there, tomorrow is a new day! 🌅",
-                okay: "Not bad! Keep going! 👍",
-                good: "Great to hear! Keep spreading positivity! 😊",
-                amazing: "Fantastic! Your energy is contagious! 🎉"
-            };
-            
-            document.getElementById('moodText').textContent = moodTexts[moodType];
-            updateMoodStats();
-            triggerEasterEgg(element.dataset.mood);
-        }
-        
-        // Update mood statistics
-        function updateMoodStats() {
-            const totalMoods = moodData.length;
-            const todayMoods = moodData.filter(mood => mood.date === new Date().toDateString()).length;
-            
-            document.getElementById('totalMoods').textContent = totalMoods;
-            document.getElementById('todayMoods').textContent = todayMoods;
-            
-            if (totalMoods > 0) {
-                const moodValues = { terrible: 1, bad: 2, okay: 3, good: 4, amazing: 5 };
-                const average = moodData.reduce((sum, mood) => sum + moodValues[mood.mood], 0) / totalMoods;
-                const averageEmojis = ['😭', '😞', '😐', '😊', '🤩'];
-                document.getElementById('averageMood').textContent = averageEmojis[Math.round(average) - 1];
-            }
-        }
-        
-        // Memory Game Functions
-        function initMemoryGame() {
-            const symbols = ['🎮', '🚀', '💻', '⚡', '🎯', '🔥', '💎', '🌟'];
-            memoryCards = [...symbols, ...symbols].sort(() => Math.random() - 0.5);
-            
-            const board = document.getElementById('memoryGameBoard');
-            if (!board) return;
-            
-            board.innerHTML = '';
-            memoryCards.forEach((symbol, index) => {
-                const card = document.createElement('div');
-                card.className = 'memory-card';
-                card.dataset.symbol = symbol;
-                card.dataset.index = index;
-                card.addEventListener('click', flipMemoryCard);
-                board.appendChild(card);
-            });
-            
-            memoryScore = 0;
-            memoryMoves = 0;
-            flippedCards = [];
-            memoryGameActive = true;
-            
-            updateMemoryScore();
-        }
-        
-        function flipMemoryCard(event) {
-            if (!memoryGameActive || event.target.classList.contains('flipped')) return;
-            
-            const card = event.target;
-            card.classList.add('flipped');
-            card.textContent = card.dataset.symbol;
-            flippedCards.push(card);
-            
-            if (flippedCards.length === 2) {
-                memoryMoves++;
-                setTimeout(checkMemoryMatch, 500);
-            }
-        }
-        
-        function checkMemoryMatch() {
-            const [card1, card2] = flippedCards;
-            
-            if (card1.dataset.symbol === card2.dataset.symbol) {
-                card1.classList.add('matched');
-                card2.classList.add('matched');
-                memoryScore += 10;
-                
-                if (document.querySelectorAll('.memory-card.matched').length === memoryCards.length) {
-                    memoryGameActive = false;
-                    showNotification('🎉 Memory Game Complete! Score: ' + memoryScore);
-                }
-            } else {
-                card1.classList.remove('flipped');
-                card2.classList.remove('flipped');
-                card1.textContent = '';
-                card2.textContent = '';
-            }
-            
-            flippedCards = [];
-            updateMemoryScore();
-        }
-        
-        function updateMemoryScore() {
-            document.getElementById('memoryScore').textContent = memoryScore;
-            document.getElementById('memoryMoves').textContent = memoryMoves;
-        }
-        
-        // Snake Game Functions
-        function initSnakeGame() {
-            const canvas = document.getElementById('snakeGame');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            
-            snake = [{x: 10, y: 10}];
-            food = {x: 15, y: 15};
-            dx = 0;
-            dy = 0;
-            snakeScore = 0;
-            snakeGameActive = true;
-            
-            document.addEventListener('keydown', changeSnakeDirection);
-            
-            function gameLoop() {
-                if (!snakeGameActive) return;
-                
-                moveSnake();
-                if (checkSnakeCollision()) {
-                    endSnakeGame();
-                    return;
-                }
-                if (checkFoodCollision()) {
-                    eatFood();
-                }
-                drawSnakeGame();
-                
-                setTimeout(gameLoop, 150);
-            }
-            
-            gameLoop();
-            updateSnakeScore();
-        }
-        
-        function moveSnake() {
-            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
-            snake.unshift(head);
-            snake.pop();
-        }
-        
-        function changeSnakeDirection(event) {
-            if (!snakeGameActive) return;
-            
-            const keyPressed = event.keyCode;
-            const goingUp = dy === -1;
-            const goingDown = dy === 1;
-            const goingRight = dx === 1;
-            const goingLeft = dx === -1;
-            
-            if (keyPressed === 37 && !goingRight) { dx = -1; dy = 0; }
-            if (keyPressed === 38 && !goingDown) { dx = 0; dy = -1; }
-            if (keyPressed === 39 && !goingLeft) { dx = 1; dy = 0; }
-            if (keyPressed === 40 && !goingUp) { dx = 0; dy = 1; }
-        }
-        
-        function checkSnakeCollision() {
-            const head = snake[0];
-            return head.x < 0 || head.x >= 30 || head.y < 0 || head.y >= 30 || 
-                   snake.slice(1).some(segment => segment.x === head.x && segment.y === head.y);
-        }
-        
-        function checkFoodCollision() {
-            return snake[0].x === food.x && snake[0].y === food.y;
-        }
-        
-        function eatFood() {
-            snakeScore += 10;
-            snake.push({x: snake[snake.length - 1].x, y: snake[snake.length - 1].y});
-            
-            do {
-                food.x = Math.floor(Math.random() * 30);
-                food.y = Math.floor(Math.random() * 30);
-            } while (snake.some(segment => segment.x === food.x && segment.y === food.y));
-            
-            updateSnakeScore();
-        }
-        
-        function drawSnakeGame() {
-            const canvas = document.getElementById('snakeGame');
-            const ctx = canvas.getContext('2d');
-            
-            // Clear canvas
-            ctx.fillStyle = '#000';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Draw snake
-            ctx.fillStyle = '#0F0';
-            snake.forEach(segment => {
-                ctx.fillRect(segment.x * 10, segment.y * 10, 10, 10);
-            });
-            
-            // Draw food
-            ctx.fillStyle = '#F00';
-            ctx.fillRect(food.x * 10, food.y * 10, 10, 10);
-        }
-        
-        function endSnakeGame() {
-            snakeGameActive = false;
-            if (snakeScore > snakeHigh) {
-                snakeHigh = snakeScore;
-                localStorage.setItem('snakeHigh', snakeHigh.toString());
-                document.getElementById('snakeHigh').textContent = snakeHigh;
-                showNotification('🏆 New High Score! ' + snakeHigh);
-            }
-            showNotification('🐍 Game Over! Final Score: ' + snakeScore);
-        }
-        
-        function updateSnakeScore() {
-            document.getElementById('snakeScore').textContent = snakeScore;
-        }
-        
-        // Typing Test Functions
-        function startTypingTest() {
-            currentTypingText = typingTexts[Math.floor(Math.random() * typingTexts.length)];
-            document.getElementById('typingText').textContent = currentTypingText;
-            
-            const input = document.getElementById('typingInput');
-            input.value = '';
-            input.disabled = false;
-            input.focus();
-            
-            typingStartTime = Date.now();
-            typingTimeLeft = 60;
-            typingTestActive = true;
-            
-            typingTimer = setInterval(() => {
-                typingTimeLeft--;
-                document.getElementById('typingTime').textContent = typingTimeLeft;
-                
-                if (typingTimeLeft <= 0) {
-                    endTypingTest();
-                }
-            }, 1000);
-        }
-        
-        function checkTyping() {
-            if (!typingTestActive) return;
-            
-            const input = document.getElementById('typingInput');
-            const typed = input.value;
-            const target = currentTypingText.substring(0, typed.length);
-            
-            let correct = 0;
-            for (let i = 0; i < typed.length; i++) {
-                if (typed[i] === target[i]) correct++;
-            }
-            
-            const accuracy = typed.length > 0 ? Math.round((correct / typed.length) * 100) : 100;
-            document.getElementById('typingAccuracy').textContent = accuracy + '%';
-            
-            if (typed === currentTypingText) {
-                endTypingTest();
-            }
-            
-            const timeElapsed = (Date.now() - typingStartTime) / 1000 / 60;
-            const wordsTyped = typed.split(' ').length;
-            const wpm = Math.round(wordsTyped / timeElapsed) || 0;
-            document.getElementById('typingWPM').textContent = wpm;
-        }
-        
-        function endTypingTest() {
-            typingTestActive = false;
-            clearInterval(typingTimer);
-            document.getElementById('typingInput').disabled = true;
-            
-            const wpm = document.getElementById('typingWPM').textContent;
-            const accuracy = document.getElementById('typingAccuracy').textContent;
-            showNotification(`⌨️ Typing Test Complete! ${wpm} WPM, ${accuracy} accuracy`);
-        }
-        
-        // Quiz Functions
-        function loadQuizQuestion() {
-            if (currentQuizQuestion >= quizQuestions.length) {
-                currentQuizQuestion = 0;
-            }
-            
-            const question = quizQuestions[currentQuizQuestion];
-            document.getElementById('quizQuestion').innerHTML = `
-                <div class="font-semibold mb-2">Question ${currentQuizQuestion + 1}:</div>
-                <div>${question.question}</div>
-            `;
-            
-            const optionsDiv = document.getElementById('quizOptions');
-            optionsDiv.innerHTML = '';
-            
-            question.options.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.className = 'w-full p-3 text-left bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors';
-                button.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
-                button.onclick = () => selectQuizAnswer(index);
-                optionsDiv.appendChild(button);
-            });
-        }
-        
-        function selectQuizAnswer(selectedIndex) {
-            const question = quizQuestions[currentQuizQuestion];
-            quizTotal++;
-            
-            if (selectedIndex === question.correct) {
-                quizCorrect++;
-                showNotification('✅ Correct!');
-            } else {
-                showNotification('❌ Wrong! Correct answer was: ' + question.options[question.correct]);
-            }
-            
-            document.getElementById('quizScore').textContent = `${quizCorrect}/${quizTotal}`;
-            currentQuizQuestion++;
-            
-            setTimeout(() => {
-                loadQuizQuestion();
-            }, 1500);
-        }
-        
-        // Tech Facts Function
-        function showRandomFact() {
-            const randomFact = techFacts[Math.floor(Math.random() * techFacts.length)];
-            document.getElementById('techFact').textContent = randomFact;
-            
-            factsCount++;
-            localStorage.setItem('factsCount', factsCount.toString());
-            document.getElementById('factsCount').textContent = factsCount;
-            
-            triggerEasterEgg('💡');
-        }
-        
-        // Binary Clock Functions
-        let binaryClockMode = 'binary'; // 'binary' or 'normal'
-        
-        function updateBinaryClock() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            
-            const clockDiv = document.getElementById('binaryClock');
-            if (!clockDiv) return;
-            
-            const gridDiv = clockDiv.querySelector('.grid');
-            if (!gridDiv) {
-                // Create binary clock grid
-                const newGrid = document.createElement('div');
-                newGrid.className = 'grid grid-cols-6 gap-2 mb-2';
-                
-                for (let i = 0; i < 24; i++) {
-                    const dot = document.createElement('div');
-                    dot.className = 'w-3 h-3 rounded-full bg-gray-600 transition-colors duration-200';
-                    newGrid.appendChild(dot);
-                }
-                
-                clockDiv.insertBefore(newGrid, clockDiv.querySelector('.text-xs'));
-            }
-            
-            const dots = clockDiv.querySelectorAll('.w-3');
-            const timeString = hours + minutes + seconds;
-            
-            if (binaryClockMode === 'binary') {
-                // Convert each digit to binary and update dots
-                let dotIndex = 0;
-                for (let i = 0; i < timeString.length; i++) {
-                    const digit = parseInt(timeString[i]);
-                    const binary = digit.toString(2).padStart(4, '0');
+
+            async updateGitHubStats() {
+                try {
+                    const response = await fetch('https://api.github.com/users/yadavgkp');
+                    const data = await response.json();
                     
-                    for (let j = 0; j < 4; j++) {
-                        if (dots[dotIndex]) {
-                            dots[dotIndex].className = binary[j] === '1' 
-                                ? 'w-3 h-3 rounded-full bg-primary transition-colors duration-200'
-                                : 'w-3 h-3 rounded-full bg-gray-600 transition-colors duration-200';
+                    const repoCount = data.public_repos || 12;
+                    const commits = '450+';
+                    const stars = '23';
+                    const forks = '8';
+                    
+                    document.getElementById('githubRepos').textContent = repoCount;
+                    document.getElementById('githubCommits').textContent = commits;
+                    document.getElementById('githubStars').textContent = stars;
+                    document.getElementById('githubForks').textContent = forks;
+                    
+                    // Update dashboard duplicates
+                    document.getElementById('githubRepos2').textContent = repoCount;
+                    document.getElementById('githubCommits2').textContent = commits;
+                    document.getElementById('githubStars2').textContent = stars;
+                    
+                } catch (error) {
+                    // Fallback values
+                    const fallbackValues = {
+                        repos: '12',
+                        commits: '450+',
+                        stars: '23',
+                        forks: '8'
+                    };
+                    
+                    document.getElementById('githubRepos').textContent = fallbackValues.repos;
+                    document.getElementById('githubCommits').textContent = fallbackValues.commits;
+                    document.getElementById('githubStars').textContent = fallbackValues.stars;
+                    document.getElementById('githubForks').textContent = fallbackValues.forks;
+                    
+                    document.getElementById('githubRepos2').textContent = fallbackValues.repos;
+                    document.getElementById('githubCommits2').textContent = fallbackValues.commits;
+                    document.getElementById('githubStars2').textContent = fallbackValues.stars;
+                }
+            }
+
+            updateVisitorStats() {
+                // Realistic visitor increment
+                this.stats.todayVisitors += Math.floor(Math.random() * 2);
+                this.stats.totalVisitors += Math.floor(Math.random() * 3);
+                
+                document.getElementById('visitorCount').textContent = this.stats.todayVisitors;
+                document.getElementById('totalVisitors').textContent = this.stats.totalVisitors;
+                document.getElementById('todayVisitors').textContent = this.stats.todayVisitors;
+                document.getElementById('footerVisitors').textContent = this.stats.totalVisitors;
+                
+                this.saveData();
+            }
+
+            updatePerformanceMetrics() {
+                const responseTime = Math.floor(Math.random() * 50) + 150;
+                document.getElementById('responseTime').textContent = `${responseTime}ms`;
+                
+                const bandwidth = Math.floor(Math.random() * 20) + 35;
+                document.getElementById('bandwidth').textContent = `${bandwidth}MB`;
+            }
+
+            updateCoffeeCount() {
+                if (Math.random() < 0.3) { // 30% chance to increment
+                    this.stats.coffeeCount++;
+                    document.getElementById('coffeeCount').textContent = this.stats.coffeeCount;
+                }
+            }
+
+            updateLastUpdated() {
+                const now = new Date().toLocaleString();
+                document.getElementById('lastUpdated').textContent = now;
+            }
+
+            // Game Initialization and Functions
+            initializeGames() {
+                this.initializeQuizQuestions();
+                this.initializeMemoryGame();
+                this.initializeColorGame();
+            }
+
+            initializeQuizQuestions() {
+                this.gameStates.quiz.questions = [
+                    {
+                        question: "What does CNN stand for in deep learning?",
+                        options: ["Convolutional Neural Network", "Complex Neural Network", "Continuous Neural Network", "Circular Neural Network"],
+                        correct: 0
+                    },
+                    {
+                        question: "Which activation function is commonly used in the output layer for binary classification?",
+                        options: ["ReLU", "Sigmoid", "Tanh", "Softmax"],
+                        correct: 1
+                    },
+                    {
+                        question: "What is the purpose of dropout in neural networks?",
+                        options: ["Increase accuracy", "Prevent overfitting", "Speed up training", "Reduce model size"],
+                        correct: 1
+                    },
+                    {
+                        question: "Which optimizer is known for adaptive learning rates?",
+                        options: ["SGD", "Adam", "Momentum", "Adagrad"],
+                        correct: 1
+                    },
+                    {
+                        question: "What does GPU stand for?",
+                        options: ["General Processing Unit", "Graphics Processing Unit", "Graphical Performance Unit", "Global Processing Unit"],
+                        correct: 1
+                    },
+                    {
+                        question: "In machine learning, what is cross-validation used for?",
+                        options: ["Data cleaning", "Model evaluation", "Feature selection", "Data augmentation"],
+                        correct: 1
+                    },
+                    {
+                        question: "What is the main advantage of using Docker in MLOps?",
+                        options: ["Faster training", "Better accuracy", "Environment consistency", "More data"],
+                        correct: 2
+                    },
+                    {
+                        question: "Which library is primarily used for deep learning in Python?",
+                        options: ["Pandas", "NumPy", "TensorFlow", "Matplotlib"],
+                        correct: 2
+                    },
+                    {
+                        question: "What does API stand for?",
+                        options: ["Application Programming Interface", "Advanced Programming Interface", "Automated Programming Interface", "Application Process Interface"],
+                        correct: 0
+                    },
+                    {
+                        question: "Which metric is best for evaluating imbalanced datasets?",
+                        options: ["Accuracy", "F1-Score", "Precision", "Recall"],
+                        correct: 1
+                    }
+                ];
+            }
+
+            // Interactive Features
+            setupEventListeners() {
+                // Theme switching
+                document.querySelectorAll('.theme-color').forEach(button => {
+                    button.addEventListener('click', () => {
+                        document.querySelectorAll('.theme-color').forEach(b => b.classList.remove('active'));
+                        button.classList.add('active');
+                        document.body.setAttribute('data-theme', button.dataset.theme);
+                        localStorage.setItem('theme', button.dataset.theme);
+                        this.showToast('Theme changed!', 'fas fa-palette');
+                    });
+                });
+
+                // Dark mode toggle
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                darkModeToggle.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+                    this.showToast('Dark mode toggled!', 'fas fa-moon');
+                });
+
+                // Contact form
+                document.getElementById('contactForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleFormSubmission();
+                });
+
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey || e.metaKey) {
+                        switch(e.key) {
+                            case 'd':
+                                e.preventDefault();
+                                darkModeToggle.click();
+                                break;
+                            case 'k':
+                                e.preventDefault();
+                                this.triggerEasterEgg('⌨️');
+                                break;
                         }
-                        dotIndex++;
+                    }
+                });
+            }
+
+            // Game Functions
+            startTypingTest() {
+                this.gameStates.typing = { started: true, timer: 60, wpm: 0, accuracy: 100, startTime: Date.now() };
+                document.getElementById('typingInput').disabled = false;
+                document.getElementById('typingInput').focus();
+                document.getElementById('typingInput').value = '';
+                
+                const timerInterval = setInterval(() => {
+                    this.gameStates.typing.timer--;
+                    document.getElementById('timer').textContent = `${this.gameStates.typing.timer}s`;
+                    
+                    if (this.gameStates.typing.timer <= 0) {
+                        clearInterval(timerInterval);
+                        document.getElementById('typingInput').disabled = true;
+                        this.showToast('Typing test completed!', 'fas fa-check');
+                    }
+                }, 1000);
+                
+                this.showToast('Typing test started!', 'fas fa-keyboard');
+            }
+
+            initializeMemoryGame() {
+                const languages = ['Python', 'Java', 'C++', 'JavaScript', 'React', 'TensorFlow', 'Docker', 'AWS'];
+                this.gameStates.memory.cards = [...languages, ...languages].sort(() => Math.random() - 0.5);
+                this.gameStates.memory.flipped = [];
+                this.gameStates.memory.matches = 0;
+                this.gameStates.memory.moves = 0;
+            }
+
+            startMemoryGame() {
+                this.initializeMemoryGame();
+                const gameContainer = document.getElementById('memoryGame');
+                
+                gameContainer.innerHTML = this.gameStates.memory.cards.map((lang, index) => 
+                    `<div class="memory-card" data-value="${lang}" data-index="${index}" onclick="portfolio.flipCard(this)">
+                        <div class="card-content">?</div>
+                    </div>`
+                ).join('');
+                
+                document.getElementById('moves').textContent = '0';
+                document.getElementById('matches').textContent = '0/8';
+                this.showToast('Memory game started!', 'fas fa-brain');
+            }
+
+            flipCard(card) {
+                if (this.gameStates.memory.flipped.length === 2 || card.classList.contains('flipped')) return;
+                
+                card.classList.add('flipped');
+                card.querySelector('.card-content').textContent = card.dataset.value;
+                this.gameStates.memory.flipped.push(card);
+                
+                if (this.gameStates.memory.flipped.length === 2) {
+                    this.gameStates.memory.moves++;
+                    document.getElementById('moves').textContent = this.gameStates.memory.moves;
+                    
+                    setTimeout(() => this.checkMatch(), 1000);
+                }
+            }
+
+            checkMatch() {
+                const [card1, card2] = this.gameStates.memory.flipped;
+                const value1 = card1.dataset.value;
+                const value2 = card2.dataset.value;
+                
+                if (value1 === value2) {
+                    card1.classList.add('matched');
+                    card2.classList.add('matched');
+                    this.gameStates.memory.matches++;
+                    document.getElementById('matches').textContent = `${this.gameStates.memory.matches}/8`;
+                    
+                    if (this.gameStates.memory.matches === 8) {
+                        this.showToast('Congratulations! Game completed!', 'fas fa-trophy');
+                        this.triggerEasterEgg('🏆');
+                    }
+                } else {
+                    card1.classList.remove('flipped');
+                    card2.classList.remove('flipped');
+                    card1.querySelector('.card-content').textContent = '?';
+                    card2.querySelector('.card-content').textContent = '?';
+                }
+                
+                this.gameStates.memory.flipped = [];
+            }
+
+            startQuiz() {
+                this.gameStates.quiz.currentQuestion = 0;
+                this.gameStates.quiz.score = 0;
+                this.displayQuestion();
+                this.showToast('Quiz started!', 'fas fa-question-circle');
+            }
+
+            displayQuestion() {
+                const quiz = this.gameStates.quiz;
+                const question = quiz.questions[quiz.currentQuestion];
+                
+                document.getElementById('question').textContent = question.question;
+                document.getElementById('questionNum').textContent = `${quiz.currentQuestion + 1}/10`;
+                document.getElementById('quizScore').textContent = `${quiz.score}/10`;
+                
+                const optionsContainer = document.getElementById('options');
+                optionsContainer.innerHTML = question.options.map((option, index) => 
+                    `<button class="w-full p-3 text-left bg-gray-700 hover:bg-gray-600 rounded transition-colors" 
+                             onclick="portfolio.selectAnswer(${index})">
+                        ${option}
+                    </button>`
+                ).join('');
+            }
+
+            selectAnswer(selectedIndex) {
+                const quiz = this.gameStates.quiz;
+                const question = quiz.questions[quiz.currentQuestion];
+                
+                if (selectedIndex === question.correct) {
+                    quiz.score++;
+                    this.showToast('Correct!', 'fas fa-check');
+                } else {
+                    this.showToast('Incorrect!', 'fas fa-times');
+                }
+                
+                quiz.currentQuestion++;
+                
+                if (quiz.currentQuestion < quiz.questions.length) {
+                    setTimeout(() => this.displayQuestion(), 1000);
+                } else {
+                    this.showToast(`Quiz completed! Score: ${quiz.score}/10`, 'fas fa-trophy');
+                    document.getElementById('quizScore').textContent = `${quiz.score}/10`;
+                }
+            }
+
+            startSnakeGame() {
+                const canvas = document.getElementById('snakeGame');
+                const ctx = canvas.getContext('2d');
+                
+                this.gameStates.snake = {
+                    score: 0,
+                    highScore: this.gameStates.snake.highScore,
+                    snake: [{x: 200, y: 200}],
+                    food: {x: 100, y: 100},
+                    dx: 20,
+                    dy: 0,
+                    game: null
+                };
+                
+                document.getElementById('snakeScore').textContent = '0';
+                
+                const gameLoop = () => {
+                    this.updateSnake();
+                    this.drawSnake(ctx);
+                    this.gameStates.snake.game = requestAnimationFrame(gameLoop);
+                };
+                
+                gameLoop();
+                this.showToast('Snake game started! Use WASD or arrow keys', 'fas fa-gamepad');
+                
+                // Add keyboard controls
+                document.addEventListener('keydown', (e) => {
+                    if (!this.gameStates.snake.game) return;
+                    
+                    switch(e.key) {
+                        case 'ArrowUp':
+                        case 'w':
+                        case 'W':
+                            if (this.gameStates.snake.dy === 0) {
+                                this.gameStates.snake.dx = 0;
+                                this.gameStates.snake.dy = -20;
+                            }
+                            break;
+                        case 'ArrowDown':
+                        case 's':
+                        case 'S':
+                            if (this.gameStates.snake.dy === 0) {
+                                this.gameStates.snake.dx = 0;
+                                this.gameStates.snake.dy = 20;
+                            }
+                            break;
+                        case 'ArrowLeft':
+                        case 'a':
+                        case 'A':
+                            if (this.gameStates.snake.dx === 0) {
+                                this.gameStates.snake.dx = -20;
+                                this.gameStates.snake.dy = 0;
+                            }
+                            break;
+                        case 'ArrowRight':
+                        case 'd':
+                        case 'D':
+                            if (this.gameStates.snake.dx === 0) {
+                                this.gameStates.snake.dx = 20;
+                                this.gameStates.snake.dy = 0;
+                            }
+                            break;
+                    }
+                });
+            }
+
+            updateSnake() {
+                const head = {
+                    x: this.gameStates.snake.snake[0].x + this.gameStates.snake.dx,
+                    y: this.gameStates.snake.snake[0].y + this.gameStates.snake.dy
+                };
+                
+                this.gameStates.snake.snake.unshift(head);
+                
+                // Check food collision
+                if (head.x === this.gameStates.snake.food.x && head.y === this.gameStates.snake.food.y) {
+                    this.gameStates.snake.score += 10;
+                    document.getElementById('snakeScore').textContent = this.gameStates.snake.score;
+                    
+                    if (this.gameStates.snake.score > this.gameStates.snake.highScore) {
+                        this.gameStates.snake.highScore = this.gameStates.snake.score;
+                        document.getElementById('snakeHighScore').textContent = this.gameStates.snake.highScore;
+                        this.saveData();
+                    }
+                    
+                    // Generate new food
+                    this.gameStates.snake.food = {
+                        x: Math.floor(Math.random() * 15) * 20,
+                        y: Math.floor(Math.random() * 15) * 20
+                    };
+                } else {
+                    this.gameStates.snake.snake.pop();
+                }
+                
+                // Check wall collision
+                if (head.x < 0 || head.x >= 300 || head.y < 0 || head.y >= 300) {
+                    this.endSnakeGame();
+                }
+                
+                // Check self collision
+                for (let segment of this.gameStates.snake.snake.slice(1)) {
+                    if (head.x === segment.x && head.y === segment.y) {
+                        this.endSnakeGame();
                     }
                 }
             }
-        }
-        
-        function toggleBinaryClockMode() {
-            binaryClockMode = binaryClockMode === 'binary' ? 'normal' : 'binary';
-            
-            if (binaryClockMode === 'normal') {
-                const dots = document.querySelectorAll('#binaryClock .w-3');
-                dots.forEach(dot => {
-                    dot.className = 'w-3 h-3 rounded-full bg-gray-600 transition-colors duration-200';
-                });
-            }
-            
-            triggerEasterEgg('🕐');
-        }
-        
-        // Contact Form Functions
-        function validateForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            const isValid = name && email && subject && message && 
-                           email.includes('@') && email.includes('.');
-            
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = !isValid;
-            submitBtn.className = isValid 
-                ? 'btn-primary w-full' 
-                : 'btn-primary w-full opacity-50 cursor-not-allowed';
-        }
-        
-        function handleContactForm(event) {
-            event.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const submitText = document.getElementById('submitText');
-            const formMessage = document.getElementById('formMessage');
-            
-            // Simulate form submission
-            submitBtn.disabled = true;
-            submitText.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
-            
-            setTimeout(() => {
-                formMessage.className = 'mt-4 text-center text-green-600';
-                formMessage.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
-                formMessage.classList.remove('hidden');
+
+            drawSnake(ctx) {
+                ctx.fillStyle = '#000';
+                ctx.fillRect(0, 0, 300, 300);
                 
-                // Reset form
-                document.getElementById('contactForm').reset();
-                submitText.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                ctx.fillStyle = '#0f0';
+                for (let segment of this.gameStates.snake.snake) {
+                    ctx.fillRect(segment.x, segment.y, 18, 18);
+                }
+                
+                ctx.fillStyle = '#f00';
+                ctx.fillRect(this.gameStates.snake.food.x, this.gameStates.snake.food.y, 18, 18);
+            }
+
+            endSnakeGame() {
+                cancelAnimationFrame(this.gameStates.snake.game);
+                this.gameStates.snake.game = null;
+                this.showToast(`Game Over! Final Score: ${this.gameStates.snake.score}`, 'fas fa-skull');
+            }
+
+            initializeColorGame() {
+                this.gameStates.color = { score: 0, streak: 0, currentColor: null };
+            }
+
+            startColorGame() {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                
+                this.gameStates.color.currentColor = { r, g, b };
+                
+                document.getElementById('colorTarget').style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                document.getElementById('rgbValue').textContent = `RGB(${r}, ${g}, ${b})`;
+                
+                // Create options
+                const options = [this.gameStates.color.currentColor];
+                for (let i = 0; i < 8; i++) {
+                    options.push({
+                        r: Math.floor(Math.random() * 256),
+                        g: Math.floor(Math.random() * 256),
+                        b: Math.floor(Math.random() * 256)
+                    });
+                }
+                
+                options.sort(() => Math.random() - 0.5);
+                
+                const optionsContainer = document.getElementById('colorOptions');
+                optionsContainer.innerHTML = options.map((color, index) => 
+                    `<div class="w-full h-16 rounded border-2 border-gray-600 cursor-pointer hover:border-white transition-colors"
+                          style="background-color: rgb(${color.r}, ${color.g}, ${color.b})"
+                          onclick="portfolio.selectColor(${color.r}, ${color.g}, ${color.b})">
+                    </div>`
+                ).join('');
+            }
+
+            selectColor(r, g, b) {
+                const correct = this.gameStates.color.currentColor;
+                
+                if (r === correct.r && g === correct.g && b === correct.b) {
+                    this.gameStates.color.score++;
+                    this.gameStates.color.streak++;
+                    this.showToast('Correct!', 'fas fa-check');
+                } else {
+                    this.gameStates.color.streak = 0;
+                    this.showToast('Wrong color!', 'fas fa-times');
+                }
+                
+                document.getElementById('colorScore').textContent = this.gameStates.color.score;
+                document.getElementById('colorStreak').textContent = this.gameStates.color.streak;
+                
+                setTimeout(() => this.startColorGame(), 1000);
+            }
+
+            // Easter Eggs and Fun Features
+            triggerEasterEgg(emoji) {
+                this.easterEggCount++;
+                document.getElementById('easterEggCount').textContent = this.easterEggCount;
+                
+                const easterEgg = document.createElement('div');
+                easterEgg.className = 'easter-egg';
+                easterEgg.textContent = emoji;
+                easterEgg.style.left = Math.random() * window.innerWidth + 'px';
+                easterEgg.style.top = Math.random() * window.innerHeight + 'px';
+                
+                document.body.appendChild(easterEgg);
                 
                 setTimeout(() => {
-                    submitText.innerHTML = '<i class="fas fa-rocket mr-2"></i>Send Message';
-                    submitBtn.disabled = false;
-                    formMessage.classList.add('hidden');
+                    if (document.body.contains(easterEgg)) {
+                        document.body.removeChild(easterEgg);
+                    }
                 }, 3000);
                 
-                triggerEasterEgg('📧');
-            }, 2000);
+                this.saveData();
+                
+                if (this.easterEggCount % 10 === 0) {
+                    this.showToast(`Wow! You found ${this.easterEggCount} easter eggs!`, 'fas fa-trophy');
+                }
+            }
+
+            // Utility Functions
+            showToast(message, iconClass = 'fas fa-info-circle') {
+                const toast = document.getElementById('toast');
+                const toastMessage = document.getElementById('toastMessage');
+                const toastIcon = document.getElementById('toastIcon');
+                
+                toastMessage.textContent = message;
+                toastIcon.className = iconClass + ' mr-3';
+                
+                toast.classList.remove('hidden');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 3000);
+            }
+
+            showWelcomeMessage() {
+                setTimeout(() => {
+                    this.showToast('Welcome to my interactive portfolio! Click around to discover hidden features!', 'fas fa-rocket');
+                }, 2000);
+            }
+
+            // Skill Animation
+            animateSkill(element, percentage) {
+                const bar = element.querySelector('.skill-progress-bar');
+                bar.style.width = percentage + '%';
+                this.showToast(`Skill level: ${percentage}%`, 'fas fa-chart-bar');
+            }
+
+            // Form Handling
+            handleFormSubmission() {
+                const form = document.getElementById('contactForm');
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+                submitBtn.disabled = true;
+
+                // Simulate form submission with loading animation
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                    submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                    
+                    document.getElementById('formSuccess').classList.remove('hidden');
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.background = '';
+                        document.getElementById('formSuccess').classList.add('hidden');
+                    }, 3000);
+                    
+                    this.triggerEasterEgg('📧');
+                    this.showToast('Thank you for your message!', 'fas fa-heart');
+                }, 2000);
+            }
+
+            // Particles Initialization
+            initializeParticles() {
+                if (typeof particlesJS !== 'undefined') {
+                    particlesJS('particles-js', {
+                        particles: {
+                            number: { value: 80, density: { enable: true, value_area: 800 } },
+                            color: { value: '#ffffff' },
+                            shape: { type: 'circle' },
+                            opacity: { value: 0.5, random: false },
+                            size: { value: 3, random: true },
+                            line_linked: {
+                                enable: true,
+                                distance: 150,
+                                color: '#ffffff',
+                                opacity: 0.4,
+                                width: 1
+                            },
+                            move: {
+                                enable: true,
+                                speed: 2,
+                                direction: 'none',
+                                random: false,
+                                straight: false,
+                                out_mode: 'out',
+                                bounce: false
+                            }
+                        },
+                        interactivity: {
+                            detect_on: 'canvas',
+                            events: {
+                                onhover: { enable: true, mode: 'repulse' },
+                                onclick: { enable: true, mode: 'push' },
+                                resize: true
+                            }
+                        },
+                        retina_detect: true
+                    });
+                }
+            }
+
+            // Typed.js Initialization
+            initializeTypedText() {
+                if (typeof Typed !== 'undefined') {
+                    new Typed('#typed', {
+                        strings: [
+                            'ML Engineer',
+                            'Data Scientist', 
+                            'MLOps Specialist',
+                            'AI Developer',
+                            'Deep Learning Engineer',
+                            'Python Expert',
+                            'Problem Solver'
+                        ],
+                        typeSpeed: 70,
+                        backSpeed: 50,
+                        backDelay: 2000,
+                        loop: true
+                    });
+                }
+            }
+
+            // Charts Initialization
+            initializeCharts() {
+                if (typeof Chart !== 'undefined') {
+                    // Visitor Chart
+                    const visitorCtx = document.getElementById('visitorChart');
+                    if (visitorCtx) {
+                        new Chart(visitorCtx, {
+                            type: 'line',
+                            data: {
+                                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                datasets: [{
+                                    label: 'Daily Visitors',
+                                    data: [12, 19, 15, 25, 22, 18, 24],
+                                    borderColor: 'rgb(30, 64, 175)',
+                                    backgroundColor: 'rgba(30, 64, 175, 0.1)',
+                                    tension: 0.4,
+                                    fill: true
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: { legend: { display: false } },
+                                scales: {
+                                    y: { beginAtZero: true, grid: { display: false } },
+                                    x: { grid: { display: false } }
+                                }
+                            }
+                        });
+                    }
+
+                    // Performance Chart
+                    const performanceCtx = document.getElementById('performanceChart');
+                    if (performanceCtx) {
+                        new Chart(performanceCtx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Excellent', 'Good', 'Average'],
+                                datasets: [{
+                                    data: [75, 20, 5],
+                                    backgroundColor: [
+                                        'rgb(16, 185, 129)',
+                                        'rgb(245, 158, 11)',
+                                        'rgb(239, 68, 68)'
+                                    ],
+                                    borderWidth: 0
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: { legend: { position: 'bottom' } }
+                            }
+                        });
+                    }
+                }
+            }
+
+            // Matrix Rain Effect
+            initializeMatrixRain() {
+                const canvas = document.getElementById('matrix');
+                const ctx = canvas.getContext('2d');
+                
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                
+                const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+                const matrixArray = matrix.split("");
+                
+                const fontSize = 10;
+                const columns = canvas.width / fontSize;
+                const drops = [];
+                
+                for (let x = 0; x < columns; x++) {
+                    drops[x] = 1;
+                }
+                
+                function drawMatrix() {
+                    ctx.fillStyle = 'rgba(15, 23, 42, 0.04)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    ctx.fillStyle = '#0FA';
+                    ctx.font = fontSize + 'px monospace';
+                    
+                    for (let i = 0; i < drops.length; i++) {
+                        const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                        
+                        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                            drops[i] = 0;
+                        }
+                        drops[i]++;
+                    }
+                }
+                
+                setInterval(drawMatrix, 35);
+            }
         }
-        
-        // Utility Functions
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            triggerEasterEgg('⬆️');
+
+        // Additional Interactive Functions
+        function incrementCounter(type) {
+            portfolio.stats[type]++;
+            document.getElementById(type).textContent = portfolio.stats[type];
+            portfolio.triggerEasterEgg('📈');
+            portfolio.saveData();
         }
-        
-        function toggleMobileMenu() {
-            // Add mobile menu functionality if needed
-            triggerEasterEgg('📱');
+
+        function incrementCoffee() {
+            portfolio.stats.coffeeCount++;
+            document.getElementById('coffeeCount').textContent = portfolio.stats.coffeeCount;
+            portfolio.triggerEasterEgg('☕');
+            portfolio.showToast('Coffee counter incremented!', 'fas fa-coffee');
         }
-        
-        function triggerImageInteraction() {
-            triggerEasterEgg('📸');
-            showNotification('📸 Thanks for clicking! That\'s me in digital form!');
-        }
-        
-        function showYearsExperience() {
-            const startDate = new Date('2022-07-01');
-            const currentDate = new Date();
-            const experience = ((currentDate - startDate) / (1000 * 60 * 60 * 24 * 365)).toFixed(1);
-            showNotification(`💼 Exactly ${experience} years of professional experience!`);
-        }
-        
-        function showBerlinFacts() {
-            const facts = [
-                '🇩🇪 Berlin is the capital and largest city of Germany',
-                '🕒 Berlin is in the Central European Time (CET) zone',
-                '🌍 Berlin has over 3.7 million inhabitants',
-                '💻 Berlin is a major tech hub in Europe',
-                '🎨 Berlin is known for its vibrant tech and startup scene'
-            ];
-            const randomFact = facts[Math.floor(Math.random() * facts.length)];
-            showNotification(randomFact);
-        }
-        
+
         function openGitHub() {
             window.open('https://github.com/yadavgkp', '_blank');
-            triggerEasterEgg('💻');
+            portfolio.triggerEasterEgg('💻');
         }
-        
+
+        function copyToClipboard(text, message) {
+            navigator.clipboard.writeText(text).then(() => {
+                portfolio.showToast(message, 'fas fa-copy');
+                portfolio.triggerEasterEgg('📋');
+            });
+        }
+
+        function triggerImageInteraction() {
+            portfolio.triggerEasterEgg('📸');
+            portfolio.showToast('Thanks for clicking my photo!', 'fas fa-camera');
+        }
+
+        function setMood(element, mood) {
+            document.querySelectorAll('.mood-emoji').forEach(e => e.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            const moodMessages = {
+                'terrible': 'I hope your day gets better! 😊',
+                'bad': 'Hang in there, things will improve!',
+                'okay': 'That\'s alright, keep going!',
+                'good': 'Great to hear! Keep it up!',
+                'amazing': 'Fantastic! You\'re on fire! 🔥'
+            };
+            
+            document.getElementById('moodText').textContent = moodMessages[mood];
+            portfolio.stats.moodStats.total++;
+            portfolio.stats.moodStats.today++;
+            
+            document.getElementById('totalMoods').textContent = portfolio.stats.moodStats.total;
+            document.getElementById('todayMoods').textContent = portfolio.stats.moodStats.today;
+            
+            portfolio.triggerEasterEgg(element.dataset.mood);
+        }
+
+        function showBerlinFacts() {
+            const facts = [
+                'Berlin has more bridges than Venice!',
+                'The city has 3.7 million residents',
+                'Berlin is 9 times larger than Paris',
+                'It\'s home to over 175 museums',
+                'Berlin has the largest train station in Europe',
+                'The Berlin Wall was 96 miles long'
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            portfolio.showToast(`Berlin Fact: ${randomFact}`, 'fas fa-info-circle');
+        }
+
+        function generateFact() {
+            const facts = [
+                'The first computer bug was actually a real bug - a moth trapped in a Harvard computer in 1947!',
+                'Python was named after Monty Python\'s Flying Circus, not the snake.',
+                'The term "debugging" was coined by Grace Hopper when she found an actual bug in her computer.',
+                'There are more possible games of chess than atoms in the observable universe.',
+                'The first 1GB hard drive cost $40,000 in 1980.',
+                'WiFi was invented by an Australian radio-astronomer working on black holes.',
+                'The @ symbol was used for centuries before email was invented.',
+                'Google\'s original name was "BackRub".',
+                'The first computer programmer was Ada Lovelace in 1843.',
+                'NASA still uses software from the 1970s for some shuttle missions.',
+                'The QWERTY keyboard was designed to slow down typing to prevent typewriter jams.',
+                'The first computer virus was created in 1983.',
+                'Email existed before the World Wide Web.',
+                'The average person checks their phone 96 times per day.',
+                'More than 50% of website traffic comes from mobile devices.'
+            ];
+            
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('factDisplay').innerHTML = `<i class="fas fa-lightbulb text-yellow-400 mr-3"></i>${randomFact}`;
+            
+            portfolio.stats.factCount++;
+            document.getElementById('factsRead').textContent = portfolio.stats.factCount;
+            portfolio.triggerEasterEgg('💡');
+            portfolio.saveData();
+        }
+
+        function runCode() {
+            const code = document.getElementById('codeEditor').value;
+            const output = document.getElementById('codeOutput');
+            
+            output.innerHTML = '<div class="text-green-400"># Executing code...</div>';
+            
+            setTimeout(() => {
+                let result = '<div class="text-green-400"># Code executed successfully!</div>\n';
+                
+                // Simple code simulation
+                if (code.includes('print')) {
+                    const printMatches = code.match(/print\(['"`](.+?)['"`]\)/g);
+                    if (printMatches) {
+                        printMatches.forEach(match => {
+                            const content = match.match(/print\(['"`](.+?)['"`]\)/)[1];
+                            result += `<div class="text-white">${content}</div>\n`;
+                        });
+                    }
+                }
+                
+                if (code.includes('numpy') || code.includes('np')) {
+                    result += '<div class="text-cyan-400">Mean: 3.0</div>\n';
+                }
+                
+                if (code.includes('fib')) {
+                    result += '<div class="text-yellow-400">Fibonacci(10): 55</div>\n';
+                }
+                
+                if (code.includes('math') || code.includes('calculation')) {
+                    result += '<div class="text-purple-400">Mathematical operations completed</div>\n';
+                }
+                
+                result += '<div class="text-gray-400 mt-2"># Note: This is a demo environment</div>';
+                output.innerHTML = result;
+                
+                portfolio.triggerEasterEgg('🐍');
+                portfolio.showToast('Code executed!', 'fas fa-play');
+            }, 1500);
+        }
+
+        function clearCode() {
+            document.getElementById('codeEditor').value = '';
+            document.getElementById('codeOutput').innerHTML = '<div class="text-gray-500"># Output cleared...</div>';
+            portfolio.showToast('Code cleared!', 'fas fa-trash');
+        }
+
+        // Additional utility functions
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            portfolio.triggerEasterEgg('⬆️');
+        }
+
+        function toggleMobileMenu() {
+            portfolio.showToast('Mobile menu toggle', 'fas fa-bars');
+        }
+
+        function showPortfolioStats() {
+            const stats = `Portfolio loaded with ${portfolio.stats.totalVisitors} total visitors, ${portfolio.easterEggCount} easter eggs found, and ${portfolio.stats.factCount} facts read!`;
+            portfolio.showToast('Portfolio Statistics loaded!', 'fas fa-chart-bar');
+        }
+
+        function showYearsExperience() {
+            portfolio.showToast('3+ years of ML/Data Engineering experience', 'fas fa-calendar');
+        }
+
         function calculateWorkDuration() {
             const startDate = new Date('2023-11-01');
-            const endDate = new Date('2025-04-01');
-            const duration = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24 * 30));
-            showNotification(`📅 Contract duration: ${duration} months at Nocturne GmbH`);
+            const now = new Date();
+            const months = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
+            portfolio.showToast(`Currently ${months} months at Nocturne GmbH`, 'fas fa-briefcase');
         }
-        
+
         function showFraudStats() {
-            showNotification('🛡️ Processed over 2.1 billion UPI transactions with 99.97% accuracy!');
+            portfolio.showToast('Monitored billions of UPI transactions in real-time', 'fas fa-shield-alt');
         }
-        
-        function showResponseTime() {
-            showNotification('⚡ I typically respond within 2-4 hours during working days!');
+
+        function showProjectStats() {
+            portfolio.showToast('6 major projects completed across ML, Data Engineering, and Full-stack Development', 'fas fa-code');
         }
-        
-        // Initialize saved preferences
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.documentElement.classList.add('dark');
+
+        function testPageSpeed() {
+            const randomSpeed = Math.floor(Math.random() * 50) + 120;
+            document.getElementById('responseTime').textContent = `${randomSpeed}ms`;
+            portfolio.showToast(`Page speed tested: ${randomSpeed}ms`, 'fas fa-tachometer-alt');
         }
-        
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            changeTheme(savedTheme);
+
+        function showUptimeDetails() {
+            portfolio.showToast('99.9% uptime with robust infrastructure monitoring', 'fas fa-server');
         }
+
+        function showBandwidthUsage() {
+            portfolio.showToast('Optimized for minimal bandwidth usage', 'fas fa-wifi');
+        }
+
+        function showEngagementDetails() {
+            portfolio.showToast('High user engagement with interactive features', 'fas fa-heart');
+        }
+
+        function showAvailabilityCalendar() {
+            portfolio.showToast('Available for freelance projects and full-time opportunities', 'fas fa-calendar-check');
+        }
+
+        function scheduleCall() {
+            portfolio.showToast('Use the contact form to schedule a call!', 'fas fa-video');
+            portfolio.triggerEasterEgg('📞');
+        }
+
+        // Global variables
+        let startTypingTest = () => portfolio.startTypingTest();
+        let startMemoryGame = () => portfolio.startMemoryGame();
+        let startQuiz = () => portfolio.startQuiz();
+        let startSnakeGame = () => portfolio.startSnakeGame();
+        let startColorGame = () => portfolio.startColorGame();
+        let triggerEasterEgg = (emoji) => portfolio.triggerEasterEgg(emoji);
+        let animateSkill = (element, percentage) => portfolio.animateSkill(element, percentage);
+
+        // Load preferences
+        function loadPreferences() {
+            const savedTheme = localStorage.getItem('theme') || 'modern'; // Default to modern
+            const savedDarkMode = localStorage.getItem('darkMode') !== 'false';
+            
+            document.body.setAttribute('data-theme', savedTheme);
+            document.querySelector(`[data-theme="${savedTheme}"]`)?.classList.add('active');
+            
+            if (savedDarkMode) {
+                document.documentElement.classList.add('dark');
+            }
+        }
+
+        // Initialize everything
+        let portfolio;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPreferences();
+            portfolio = new AdvancedPortfolio();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
-</html
+</html>
