@@ -982,130 +982,125 @@
                     </div>
                 </div>
                 
-               <!-- Skills Section -->
+      <!-- Enhanced Skills Section -->
 <div class="space-y-8">
     <div class="modern-card interactive-card p-8">
         <h3 class="text-2xl font-bold mb-8 flex items-center">
             <i class="fas fa-code text-primary mr-3"></i>
-            Technical Skills
+            Technical Skills Matrix
         </h3>
         
-        <!-- Cloud & DevOps -->
-        <div class="mb-8">
-            <div class="category-header">
-                <h4 class="text-lg font-semibold flex items-center text-gray-800 dark:text-gray-200">
-                    <i class="fas fa-cloud text-blue-500 mr-2"></i>
-                    Cloud & DevOps
-                </h4>
-            </div>
-            <div class="flex flex-wrap">
-                <span class="skill-tag">AWS (EC2, S3, DynamoDB, CloudWatch)</span>
-                <span class="skill-tag">GCP & BigQuery</span>
-                <span class="skill-tag">Terraform</span>
-                <span class="skill-tag">Ansible</span>
-                <span class="skill-tag">CI/CD</span>
-                <span class="skill-tag">Git & GitHub Actions</span>
-                <span class="skill-tag">Docker & Compose</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">System Monitoring</span>
-                <span class="skill-tag">Cost Optimization</span>
+        <!-- Skill Category Tabs -->
+        <div class="flex overflow-x-auto pb-2 mb-6 scrollbar-hide">
+            <button class="skill-tab active" data-category="cloud">☁️ Cloud & DevOps</button>
+            <button class="skill-tab" data-category="backend">⚙️ Backend</button>
+            <button class="skill-tab" data-category="data">📊 Data & ML</button>
+            <button class="skill-tab" data-category="tools">🛠️ Tools</button>
+        </div>
+        
+        <!-- Cloud & DevOps Skills -->
+        <div class="skill-category" id="cloud-skills">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- AWS -->
+                <div class="skill-item group">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium flex items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" class="w-5 h-5 mr-2" />
+                            AWS
+                        </span>
+                        <span class="text-sm text-gray-500">Expert</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 90%" 
+                             data-tooltip="EC2, S3, Lambda, DynamoDB, CloudWatch"></div>
+                    </div>
+                </div>
+                
+                <!-- GCP -->
+                <div class="skill-item group">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium flex items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" class="w-5 h-5 mr-2" />
+                            Google Cloud
+                        </span>
+                        <span class="text-sm text-gray-500">Advanced</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 85%"
+                             data-tooltip="GCE, GCS, BigQuery, Cloud Functions"></div>
+                    </div>
+                </div>
+                
+                <!-- Terraform -->
+                <div class="skill-item group">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium flex items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" class="w-5 h-5 mr-2" />
+                            Terraform
+                        </span>
+                        <span class="text-sm text-gray-500">Advanced</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 88%"
+                             data-tooltip="Infrastructure as Code, Modules, State Management"></div>
+                    </div>
+                </div>
+                
+                <!-- Kubernetes -->
+                <div class="skill-item group">
+                    <div class="flex justify-between mb-1">
+                        <span class="font-medium flex items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" class="w-5 h-5 mr-2" />
+                            Kubernetes
+                        </span>
+                        <span class="text-sm text-gray-500">Intermediate</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" style="width: 75%"
+                             data-tooltip="Deployments, Services, Helm Charts"></div>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <!-- Backend & APIs -->
-        <div class="mb-8">
-            <div class="category-header">
-                <h4 class="text-lg font-semibold flex items-center text-gray-800 dark:text-gray-200">
-                    <i class="fas fa-server text-purple-500 mr-2"></i>
-                    Backend & APIs
-                </h4>
-            </div>
-            <div class="flex flex-wrap">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Django</span>
-                <span class="skill-tag">FastAPI</span>
-                <span class="skill-tag">Spring Boot</span>
-                <span class="skill-tag">REST APIs</span>
-                <span class="skill-tag">API Testing (Postman)</span>
-                <span class="skill-tag">GraphQL</span>
-                <span class="skill-tag">OAuth</span>
-                <span class="skill-tag">RabbitMQ</span>
-                <span class="skill-tag">gRPC</span>
-            </div>
+        <!-- Backend Skills (hidden by default) -->
+        <div class="skill-category hidden" id="backend-skills">
+            <!-- Similar structure for backend skills -->
         </div>
         
-        <!-- Data Engineering & ML -->
-        <div class="mb-8">
-            <div class="category-header">
-                <h4 class="text-lg font-semibold flex items-center text-gray-800 dark:text-gray-200">
-                    <i class="fas fa-database text-green-500 mr-2"></i>
-                    Data Engineering & ML
-                </h4>
-            </div>
-            <div class="flex flex-wrap">
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">PySpark & Spark SQL</span>
-                <span class="skill-tag">Airflow</span>
-                <span class="skill-tag">Kafka</span>
-                <span class="skill-tag">ETL & DataWarehousing</span>
-                <span class="skill-tag">Data Modeling</span>
-                <span class="skill-tag">Pandas & NumPy</span>
-                <span class="skill-tag">Scikit-learn</span>
-                <span class="skill-tag">TensorFlow & Keras</span>
-                <span class="skill-tag">OpenCV</span>
-                <span class="skill-tag">MLflow</span>
-                <span class="skill-tag">Dockerized ML</span>
-                <span class="skill-tag">JupyterLab</span>
-            </div>
+        <!-- Data Skills (hidden by default) -->
+        <div class="skill-category hidden" id="data-skills">
+            <!-- Similar structure for data skills -->
         </div>
         
-        <!-- Tools & IDEs -->
-        <div class="mb-8">
-            <div class="category-header">
-                <h4 class="text-lg font-semibold flex items-center text-gray-800 dark:text-gray-200">
-                    <i class="fas fa-tools text-orange-500 mr-2"></i>
-                    Tools & IDEs
-                </h4>
+        <!-- Tools Skills (hidden by default) -->
+        <div class="skill-category hidden" id="tools-skills">
+            <!-- Similar structure for tools -->
+        </div>
+        
+        <!-- Skill Legend -->
+        <div class="mt-6 flex flex-wrap gap-4 text-sm">
+            <div class="flex items-center">
+                <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                <span>Expert (80-100%)</span>
             </div>
-            <div class="flex flex-wrap">
-                <span class="skill-tag">VS Code</span>
-                <span class="skill-tag">Jupyter Notebook</span>
-                <span class="skill-tag">PyCharm</span>
-                <span class="skill-tag">Linux Shell</span>
-                <span class="skill-tag">SonarQube & Scanner</span>
-                <span class="skill-tag">Postman</span>
-                <span class="skill-tag">Docker CLI</span>
-                <span class="skill-tag">GitLab</span>
+            <div class="flex items-center">
+                <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+                <span>Advanced (60-79%)</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                <span>Intermediate (40-59%)</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-3 h-3 rounded-full bg-gray-300 mr-2"></div>
+                <span>Learning (0-39%)</span>
             </div>
         </div>
     </div>
 </div>
                     
-                    <!-- Real-time Performance Dashboard -->
-                    <div class="modern-card p-8">
-                        <h4 class="text-xl font-bold mb-6 flex items-center">
-                            <i class="fas fa-chart-line text-primary mr-3"></i>
-                            Live Performance Dashboard
-                        </h4>
-                        
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl border border-blue-200 dark:border-blue-800 cursor-pointer" onclick="triggerEasterEgg('🩺')">
-                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Medical AI</div>
-                                <div class="text-sm text-blue-600 dark:text-blue-400">Current Project</div>
-                            </div>
-                            <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl border border-green-200 dark:border-green-800 cursor-pointer" onclick="triggerEasterEgg('⚙️')">
-                                <div class="text-2xl font-bold text-green-600 dark:text-green-400">MLOps</div>
-                                <div class="text-sm text-green-600 dark:text-green-400">Specialization</div>
-                            </div>
-                            <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border border-purple-200 dark:border-purple-800 cursor-pointer" onclick="triggerEasterEgg('🧠')">
-                                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">U-Net/CNN</div>
-                                <div class="text-sm text-purple-600 dark:text-purple-400">Deep Learning</div>
-                            </div>
-                            <div class="text-center p-4 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl border border-orange-200 dark:border-orange-800 cursor-pointer" onclick="incrementCoffee()">
-                                <div class="text-2xl font-bold text-orange-600 dark:text-orange-400" id="coffeeCount">--</div>
-                                <div class="text-sm text-orange-600 dark:text-orange-400">Coffees Today</div>
-                            </div>
-                        </div>
+                   
                         
                         <!-- GitHub Activity Chart -->
                         <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
