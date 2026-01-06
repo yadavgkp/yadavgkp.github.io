@@ -1,340 +1,929 @@
-This is the **Strictly Professional** version.
-
-I have stripped out **all** simulated features (fake visitor counts, fake code runners, games, fake charts, and matrix rain).
-
-What remains is a high-performance, responsive, and strictly professional portfolio that focuses 100% on your **experience, skills, and actual project links**.
-
-### Key Changes:
-
-1. **Removed "Fake" Data:** No random numbers, no "simulated" server uptime, no visitor counters.
-2. **Real Contact Method:** Replaced the static HTML form (which doesn't work without a server) with a `mailto:` button and direct social links.
-3. **Clean Architecture:** Focused entirely on readability and presenting your Tech Stack and Experience clearly.
-
-### The Code (`index.html`)
-
-```html
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Akash Yadav - Data Infrastructure Engineer Portfolio.">
-    <title>Akash Yadav | Data Infrastructure Engineer</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        primary: '#3b82f6',
-                        secondary: '#64748b',
-                    }
-                }
+    <title>Akash Yadav | Data Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-dark: #1e3a8a;
+            --secondary: #0f172a;
+            --accent: #059669;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            transition: all 0.4s ease;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .dark body {
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .modern-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+        }
+        
+        .dark .modern-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+            color: white;
+        }
+        
+        .modern-input {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 0.875rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        .dark .modern-input {
+            background: #1e293b;
+            border-color: #334155;
+            color: #f1f5f9;
+        }
+        
+        .modern-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), transparent);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            background: #ffffff;
+            box-shadow: 0 0 0 6px rgba(30, 64, 175, 0.2);
+        }
+        
+        .dark .timeline-dot {
+            background: #0f172a;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: rgba(30, 64, 175, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 2rem;
             }
         }
-    </script>
-
-    <style>
-        /* Custom Scrollbar for coding feel */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
         
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        html {
+            scroll-behavior: smooth;
         }
-        .dark .glass-nav {
-            background: rgba(15, 23, 42, 0.8);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            border-radius: 6px;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-gray-100 transition-colors duration-300">
-
-    <nav class="fixed w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold font-mono tracking-tighter">
-                <span class="text-blue-600 dark:text-blue-400">&lt;</span>Akash<span class="text-blue-600 dark:text-blue-400">/&gt;</span>
-            </a>
-            
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
-                <a href="#stack" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Tech Stack</a>
-                <a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
-                <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+    <header class="fixed w-full z-50 py-4 px-6">
+        <div class="glass-card rounded-2xl">
+            <div class="container mx-auto flex justify-between items-center px-6 py-3">
+                <a href="#" class="text-2xl font-bold gradient-text">AKASH.YADAV</a>
+                
+                <div class="flex items-center space-x-6">
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#about" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">About</a>
+                        <a href="#experience" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Experience</a>
+                        <a href="#skills" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Skills</a>
+                        <a href="#projects" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Projects</a>
+                        <a href="#contact" class="font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Contact</a>
+                    </nav>
+                    
+                    <button id="darkModeToggle" class="p-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+    </header>
 
-            <div class="flex items-center space-x-4">
-                <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-800 transition">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-                </button>
-                <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="hidden md:inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition">
-                    Contact Me
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-3/5">
+                <div class="status-indicator mb-8 w-fit">
+                    <div class="status-dot"></div>
+                    <span>Open to new opportunities</span>
+                </div>
+                
+                <h1 class="hero-title mb-8">
+                    Hi, I'm <span class="gradient-text">Akash Yadav</span>
+                </h1>
+                
+                <div class="text-2xl md:text-4xl mb-8 h-16">
+                    <span class="font-semibold text-gray-700 dark:text-gray-300">I'm a </span>
+                    <span id="typed" class="gradient-text font-bold"></span>
+                </div>
+                
+                <p class="text-lg md:text-xl mb-12 max-w-2xl text-gray-600 dark:text-gray-300">
+                    Data Engineer specializing in ETL pipelines, Python development, and cloud infrastructure. 
+                    Building scalable data platforms at Nocturne GmbH in Berlin.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                    <a href="https://github.com/yadavgkp/yadavgkp.github.io/blob/main/Resume__yadav.pdf" target="_blank" class="btn-primary">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                    <a href="https://github.com/yadavgkp" target="_blank" class="btn-primary">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:w-2/5 flex justify-center">
+                <div class="floating">
+                    <div class="w-72 h-72 md:w-96 md:h-96 rounded-3xl border-4 border-white dark:border-gray-800 shadow-2xl bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center overflow-hidden">
+                        <img src="img.png" alt="Akash Yadav" class="max-w-full max-h-full object-contain rounded-2xl" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">
+                <span class="gradient-text">About Me</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto modern-card p-8">
+                <div class="space-y-4 text-gray-600 dark:text-gray-300">
+                    <p class="text-lg">
+                        I'm a Data Engineer with 3+ years of experience building scalable ETL pipelines and cloud-native data platforms. 
+                        Currently at <strong>Nocturne GmbH</strong> in Berlin, I architect data workflows that power analytics and ML systems for healthcare applications.
+                    </p>
+                    <p>
+                        My experience spans building <strong>real-time streaming pipelines</strong> at NPCI (processing billions of UPI transactions), 
+                        optimizing PostgreSQL databases, developing REST APIs with Django and FastAPI, and implementing infrastructure automation 
+                        with Docker, AWS, and Databricks.
+                    </p>
+                    <p>
+                        I specialize in <strong>Python, Apache Airflow, Spark Streaming, and cloud technologies</strong>. I'm passionate about 
+                        building reliable data infrastructure that enables data-driven decision making.
+                    </p>
+                </div>
+                
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                        3+ Years Experience
+                    </span>
+                    <span class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+                        ETL & Data Pipelines
+                    </span>
+                    <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
+                        Cloud & DevOps
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">
+                <span class="gradient-text">Professional Experience</span>
+            </h2>
+            
+            <div class="relative timeline max-w-6xl mx-auto">
+                <!-- Nocturne -->
+                <div class="timeline-item mb-16 lg:w-1/2 lg:pr-8 lg:ml-auto">
+                    <div class="modern-card p-8 relative">
+                        <div class="absolute -left-4 lg:-left-10 top-8 timeline-dot"></div>
+                        
+                        <div class="flex justify-between items-start mb-6 flex-wrap gap-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary mb-2">Data Engineer</h3>
+                                <p class="text-lg font-medium mb-2">Nocturne GmbH</p>
+                                <p class="text-sm text-gray-500 flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>Berlin, Germany
+                                </p>
+                            </div>
+                            <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Nov 2023 - Sep 2025</span>
+                        </div>
+                        
+                        <div class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Built and orchestrated <strong>ETL pipelines with Python, Airflow, and Pandas</strong> for healthcare analytics</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Migrated batch ETL to <strong>Databricks Delta Lake</strong> with ACID guarantees</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Designed <strong>scalable APIs with Django REST</strong> for ML model consumption</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Optimized <strong>PostgreSQL queries and schemas</strong> for improved performance</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Containerized workflows with Docker</strong>; deployed via AWS ECS</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Automated <strong>CI/CD pipelines</strong> for ML deployments</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-xs rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-xs rounded-full">Airflow</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-xs rounded-full">Django REST</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-xs rounded-full">Databricks</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-xs rounded-full">AWS ECS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NPCI -->
+                <div class="timeline-item mb-16 lg:w-1/2 lg:pl-8">
+                    <div class="modern-card p-8 relative">
+                        <div class="absolute -right-4 lg:-left-10 top-8 timeline-dot"></div>
+                        
+                        <div class="flex justify-between items-start mb-6 flex-wrap gap-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary mb-2">Associate Software Engineer</h3>
+                                <p class="text-lg font-medium mb-2">NPCI</p>
+                                <p class="text-sm text-gray-500 flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>Chennai, India
+                                </p>
+                            </div>
+                            <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Jul 2022 - Oct 2023</span>
+                        </div>
+                        
+                        <div class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Developed <strong>ETL workflows for high-volume financial transactions</strong></span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Built <strong>Spark Streaming & Kafka pipelines</strong> for real-time anomaly detection</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Optimized <strong>PostgreSQL schemas</strong> for analytics and ML</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Developed <strong>APIs for processed datasets</strong> and ML insights</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Enhanced data quality with <strong>automated monitoring</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-xs rounded-full">PySpark</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-xs rounded-full">Spark Streaming</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-xs rounded-full">Kafka</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-xs rounded-full">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">
+                <span class="gradient-text">Technical Skills</span>
+            </h2>
+            
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="modern-card p-8">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-code text-primary mr-3"></i>
+                        Programming & Frameworks
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Python (Pandas, NumPy, FastAPI, Django)</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">SQL & PostgreSQL</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">PySpark & Spark Streaming</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card p-8">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-cloud text-primary mr-3"></i>
+                        Data Engineering & Cloud
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Apache Airflow & ETL</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">AWS (EC2, RDS, S3, ECS)</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Databricks & Delta Lake</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card p-8">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-server text-primary mr-3"></i>
+                        DevOps & Infrastructure
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Docker & Containerization</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">CI/CD & Git</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Terraform (IaC)</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card p-8">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-tools text-primary mr-3"></i>
+                        Tools & Practices
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Data Modeling & Schema Design</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Kafka & Real-Time Streaming</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Agile/Scrum</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">
+                <span class="gradient-text">Key Projects</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="modern-card overflow-hidden">
+                    <div class="h-52 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">PDF Q&A App with LLMs</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            RAG pipeline using LangChain, GPT-3.5, FastAPI, and Streamlit
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-xs rounded-full">LangChain</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-xs rounded-full">FastAPI</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-xs rounded-full">GPT-3.5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card overflow-hidden">
+                    <div class="h-52 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Medical AI Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            MLOps pipeline with Docker, MLflow, and AWS for ML deployment
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-xs rounded-full">Docker</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-xs rounded-full">MLflow</span>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-xs rounded-full">AWS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card overflow-hidden">
+                    <div class="h-52 bg-gradient-to-br from-red-400 via-orange-500 to-yellow-500 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Real-time Fraud Detection</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Spark Streaming + Kafka for UPI transaction anomaly detection
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-xs rounded-full">Spark</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-xs rounded-full">Kafka</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card overflow-hidden">
+                    <div class="h-52 bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 flex items-center justify-center">
+                        <i class="fas fa-video text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">CCTV Activity Summarizer</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Computer Vision with YOLO and OpenCV for video summarization
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-xs rounded-full">YOLO</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-xs rounded-full">OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card overflow-hidden">
+                    <div class="h-52 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 flex items-center justify-center">
+                        <i class="fas fa-bolt text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Electricity Billing System</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Django + MySQL-based ETL and billing solution
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-xs rounded-full">Django</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-xs rounded-full">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://github.com/yadavgkp" target="_blank" class="btn-primary">
+                    <i class="fab fa-github"></i>
+                    View All Projects
                 </a>
             </div>
         </div>
-    </nav>
-
-    <section id="about" class="min-h-screen flex items-center justify-center pt-16">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-semibold border border-blue-200 dark:border-blue-800">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 mr-2 animate-pulse"></span>
-                    Open to Work
-                </div>
-                
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                    Data Infrastructure <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Engineer</span>
-                </h1>
-                
-                <div class="text-xl text-gray-600 dark:text-gray-400 font-mono h-8">
-                    I build <span id="typed"></span>
-                </div>
-
-                <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg">
-                    Specializing in scalable cloud-native systems, Python backend development, and DevOps practices. 
-                    Currently architecting medical imaging data pipelines at <strong>Nocturne GmbH</strong>.
-                </p>
-
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#projects" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
-                        View My Work
-                    </a>
-                    <a href="https://github.com/yadavgkp/yadavgkp.github.io/blob/main/Resume__yadav.pdf" target="_blank" class="px-6 py-3 border border-gray-300 dark:border-slate-700 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                        Download CV
-                    </a>
-                </div>
-                
-                <div class="flex gap-6 pt-6 text-gray-500 dark:text-gray-400">
-                    <a href="https://github.com/yadavgkp" target="_blank" class="hover:text-black dark:hover:text-white transition"><i class="fab fa-github text-2xl"></i></a>
-                    <a href="https://www.linkedin.com/in/akash-yadav-00ab68197" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-2xl"></i></a>
-                    <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="hover:text-green-500 transition"><i class="fas fa-envelope text-2xl"></i></a>
-                </div>
-            </div>
-
-            <div class="flex justify-center md:justify-end relative">
-                <div class="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
-                <div class="w-80 h-80 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center shadow-2xl relative z-10 overflow-hidden border border-white/10">
-                   <img src="img.png" alt="Akash Yadav" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                   <div class="hidden flex-col items-center justify-center text-gray-400">
-                       <i class="fas fa-user-astronaut text-6xl mb-4"></i>
-                       <span class="text-sm font-mono">Akash Yadav</span>
-                   </div>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <section id="stack" class="py-20 bg-white dark:bg-slate-900/50 border-y border-gray-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12">Technical <span class="text-blue-600 dark:text-blue-400">Expertise</span></h2>
+    <!-- Education -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">
+                <span class="gradient-text">Education</span>
+            </h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="p-6 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
-                    <i class="fas fa-cloud text-3xl text-blue-500 mb-4"></i>
-                    <h3 class="font-bold text-lg mb-4">Cloud & DevOps</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">AWS (EC2, S3)</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Docker</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Kubernetes</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Terraform</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">CI/CD</span>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="modern-card p-8">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white mr-6">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2 flex-wrap gap-2">
+                                <h3 class="text-xl font-bold text-primary">PG Program in AI and Machine Learning</h3>
+                                <span class="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm">Mar - Nov 2023</span>
+                            </div>
+                            <p class="text-lg font-medium mb-1">IIIT Hyderabad</p>
+                            <p class="text-sm text-gray-500">Hyderabad, India</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="p-6 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
-                    <i class="fas fa-server text-3xl text-green-500 mb-4"></i>
-                    <h3 class="font-bold text-lg mb-4">Backend & APIs</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Python</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Django/FastAPI</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Spring Boot</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">REST/gRPC</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">PostgreSQL</span>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
-                    <i class="fas fa-database text-3xl text-purple-500 mb-4"></i>
-                    <h3 class="font-bold text-lg mb-4">Data Engineering</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">PySpark</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Kafka</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Airflow</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Cassandra</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">ETL</span>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
-                    <i class="fas fa-chart-line text-3xl text-orange-500 mb-4"></i>
-                    <h3 class="font-bold text-lg mb-4">Observability</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Prometheus</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">Grafana</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">CloudWatch</span>
-                        <span class="px-2 py-1 text-xs font-mono bg-white dark:bg-slate-800 border dark:border-slate-700 rounded">ELK Stack</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="py-20">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12">Professional <span class="text-blue-600 dark:text-blue-400">Experience</span></h2>
-
-            <div class="border-l-2 border-gray-200 dark:border-slate-800 ml-3 space-y-12">
                 
-                <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-white dark:border-slate-950"></div>
-                    <div class="mb-1 text-sm font-mono text-blue-600 dark:text-blue-400">Nov 2023 - Present</div>
-                    <h3 class="text-xl font-bold">Software Engineer (Infrastructure)</h3>
-                    <div class="text-gray-600 dark:text-gray-400 mb-4">Nocturne GmbH • Berlin, Germany</div>
-                    <ul class="list-disc list-outside ml-4 text-gray-600 dark:text-gray-300 space-y-2">
-                        <li>Engineered scalable cloud-native data infrastructure and pipelines processing medical imaging data using Python and AWS.</li>
-                        <li>Designed end-to-end ETL workflows with automated data quality validation.</li>
-                        <li>Optimized cloud resource usage and costs through automated monitoring solutions.</li>
-                        <li>Built and containerized backend systems using Django REST APIs and Docker.</li>
-                    </ul>
+                <div class="modern-card p-8">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-success rounded-xl flex items-center justify-center text-white mr-6">
+                            <i class="fas fa-university text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2 flex-wrap gap-2">
+                                <h3 class="text-xl font-bold text-secondary">B.Tech in Computer Science</h3>
+                                <span class="px-4 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Jul 2018 - Jun 2022</span>
+                            </div>
+                            <p class="text-lg font-medium mb-1">Cochin University (CUSAT)</p>
+                            <p class="text-sm text-gray-500 mb-2">Kerala, India</p>
+                            <p class="text-sm"><strong>GPA:</strong> 7.63/10</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gray-400 border-4 border-white dark:border-slate-950"></div>
-                    <div class="mb-1 text-sm font-mono text-gray-500">Jul 2022 - Oct 2023</div>
-                    <h3 class="text-xl font-bold">Associate Software Engineer</h3>
-                    <div class="text-gray-600 dark:text-gray-400 mb-4">NPCI • Chennai, India</div>
-                    <ul class="list-disc list-outside ml-4 text-gray-600 dark:text-gray-300 space-y-2">
-                        <li>Designed distributed data infrastructure for real-time transaction monitoring using Spring Boot and Cassandra.</li>
-                        <li>Developed automated ETL pipelines and infrastructure automation scripts.</li>
-                        <li>Built secure RESTful APIs with integrated logging and alerting capabilities.</li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20 bg-white dark:bg-slate-900/50 border-t border-gray-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12">Key <span class="text-blue-600 dark:text-blue-400">Projects</span></h2>
+    <!-- Contact -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-4">
+                <span class="gradient-text">Let's Connect</span>
+            </h2>
+            <p class="text-xl text-center mb-16 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Ready to discuss data engineering challenges? Let's talk.
+            </p>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="modern-card p-8">
+                    <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block mb-2 font-medium">Name</label>
+                                <input type="text" class="modern-input w-full" required>
+                            </div>
+                            <div>
+                                <label class="block mb-2 font-medium">Email</label>
+                                <input type="email" class="modern-input w-full" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block mb-2 font-medium">Subject</label>
+                            <input type="text" class="modern-input w-full" required>
+                        </div>
+                        <div>
+                            <label class="block mb-2 font-medium">Message</label>
+                            <textarea rows="5" class="modern-input w-full" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
                 
-                <div class="bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 p-6 flex flex-col hover:border-blue-500 transition duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fas fa-file-alt text-2xl text-blue-500"></i>
-                        <a href="https://github.com/yadavgkp" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                <div class="space-y-6">
+                    <div class="modern-card p-8">
+                        <h3 class="text-2xl font-bold mb-6">Contact Info</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="text-primary">
+                                        akashyadav1217@ug.cusat.ac.in
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-gradient-to-br from-secondary to-success rounded-xl flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Phone</h4>
+                                    <a href="tel:+4915510680242" class="text-primary">
+                                        +49 155 10680242
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-500 rounded-xl flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">Siemenstrasse 50A, Berlin, Germany</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">AI Document Analysis</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">
-                        NLP application with GPT-3.5 API integration for document processing and PDF extraction.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="text-xs font-mono bg-white dark:bg-slate-800 px-2 py-1 rounded border dark:border-slate-700">Python</span>
-                        <span class="text-xs font-mono bg-white dark:bg-slate-800 px-2 py-1 rounded border dark:border-slate-700">OpenAI API</span>
-                        <span class="text-xs font-mono bg-white dark:bg-slate-800 px-2 py-1 rounded border dark:border-slate-700">React</span>
+                    
+                    <div class="modern-card p-8">
+                        <h4 class="text-xl font-bold mb-6">Connect</h4>
+                        <div class="space-y-4">
+                            <a href="https://github.com/yadavgkp" target="_blank" 
+                               class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                <i class="fab fa-github text-2xl mr-4"></i>
+                                <div class="flex-grow">
+                                    <div class="font-medium">GitHub</div>
+                                    <div class="text-sm text-gray-500">@yadavgkp</div>
+                                </div>
+                                <i class="fas fa-external-link-alt text-gray-400"></i>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/yadavgkp" target="_blank" 
+                               class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                                <i class="fab fa-linkedin-in text-2xl text-blue-600 mr-4"></i>
+                                <div class="flex-grow">
+                                    <div class="font-medium">LinkedIn</div>
+                                    <div class="text-sm text-gray-500">Professional Network</div>
+                                </div>
+                                <i class="fas fa-external-link-alt text-gray-400"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-                <div class="bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 p-6 flex flex-col hover:border-blue-500 transition duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fas fa-brain text-2xl text-green-500"></i>
-                        <a href="https://github.com/yadavgkp" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Medical Image Segmentation</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">
-                        Deep Learning model (U-Net) for precise medical image segmentation with MLOps pipelines.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="text-xs font-mono bg-white dark:bg-slate-800 px-2 py-1 rounded border dark:border-slate-700">TensorFlow</span>
-                        <span class="text-xs font-mono bg-white dark:bg-slate-800 px-2 py-1 rounded border dark:border-slate-700">Docker</span>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 p-6 flex flex-col hover:border-blue-500 transition duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <i class="fas fa-shield-alt text-2xl text-red-500"></i>
-                        <a href="https://github.com/yadavgkp" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Fraud Detection System</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">
-                        Large-scale ML system for monitoring transactions in real-time using Spark Streaming.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="text-xs font-mono bg-white dark:bg-slate-800 px-2 py-1 rounded border dark:border-slate-700">PySpark</span>
-                        <span class="text-xs font-mono bg-white dark:bg-slate-800 px-2 py-1 rounded border dark:border-slate-700">Big Data</span>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-gray-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
-                <p class="font-bold text-lg">&copy; 2025 Akash Yadav</p>
-                <p class="text-sm text-gray-500">Data Infrastructure Engineer • Berlin, Germany</p>
-            </div>
-            <div class="flex gap-6">
-                <a href="https://github.com/yadavgkp" target="_blank" class="text-gray-500 hover:text-black dark:hover:text-white"><i class="fab fa-github text-xl"></i></a>
-                <a href="https://www.linkedin.com/in/akash-yadav-00ab68197" target="_blank" class="text-gray-500 hover:text-blue-600"><i class="fab fa-linkedin text-xl"></i></a>
-                <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="text-gray-500 hover:text-green-500"><i class="fas fa-envelope text-xl"></i></a>
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold gradient-text mb-4">Akash Yadav</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">Data Engineer | Python Developer | Cloud Specialist</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://github.com/yadavgkp" target="_blank" class="text-2xl text-gray-600 hover:text-primary transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yadavgkp" target="_blank" class="text-2xl text-gray-600 hover:text-blue-600 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:akashyadav1217@ug.cusat.ac.in" class="text-2xl text-gray-600 hover:text-green-600 transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p class="text-sm text-gray-500">© 2025 Akash Yadav. Built with passion in Berlin.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Theme Logic
-        const themeBtn = document.getElementById('themeToggle');
-        const html = document.documentElement;
-
-        // Check local storage or system preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        } else {
-            html.classList.remove('dark');
-        }
-
-        themeBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        // Dark mode toggle
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
         });
 
-        // Typed.js Initialization
-        document.addEventListener('DOMContentLoaded', () => {
+        // Typed.js
+        if (typeof Typed !== 'undefined') {
             new Typed('#typed', {
                 strings: [
-                    'Scalable Data Pipelines',
-                    'Cloud Infrastructure (AWS)',
-                    'Backend Systems'
+                    'Data Engineer',
+                    'Python Developer',
+                    'ETL Specialist',
+                    'Cloud Engineer',
+                    'Problem Solver'
                 ],
-                typeSpeed: 50,
-                backSpeed: 30,
+                typeSpeed: 70,
+                backSpeed: 50,
                 backDelay: 2000,
                 loop: true
             });
+        }
+
+        // Particles.js
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80 },
+                    color: { value: '#ffffff' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5 },
+                    size: { value: 3 },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        opacity: 0.4
+                    },
+                    move: { enable: true, speed: 2 }
+                }
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            e.target.reset();
         });
     </script>
 </body>
 </html>
-
-```
